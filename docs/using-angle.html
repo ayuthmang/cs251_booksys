@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if (gt IE 8)]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+        <title>Angle HTML 1.3.0 | Using Angle</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <link rel="icon" type="image/x-icon" href="assets/images/favicons/favicon.ico" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/favicons/apple-touch-icon-114x114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/favicons/apple-touch-icon-72x72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/images/favicons/apple-touch-icon-60x60-precomposed.png">
+        <link rel="stylesheet" href="assets/css/main.css">
+    </head>
+    <body class="bs-docs-home ">
+        <header class="navbar navbar-default navbar-fixed-top bs-docs-nav" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="index.html" class="navbar-brand">Angle HTML</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="getting-started.html">Getting Started</a>
+                        </li>
+                        <li>
+                            <a href="using-angle.html">Using Angle</a>
+                        </li>
+                        <li>
+                            <a href="changelog.html">Changelog</a>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-right">
+                        <a href="http://www.themeforest.net/item/angle-flat-responsive-bootstrap-multipurpose-theme/6519550&ref=oxygenna" target="_blank" class="btn btn-success"><i class="fa fa-shopping-cart"></i> Purchase</a>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="http://oxygenna.ticksy.com" target="_blank">Get Support</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="bs-header" id="content">
+            <div class="container">
+                <h1>Using Angle</h1>
+                <p>How to create and modify the theme&#x27;s content.</p>
+            </div>
+        </div>
+        <div id="online-docs-warning" class="alert alert-info text-center">
+            <div class="container">
+                <strong>Online Docs Available</strong>
+                Looks like you are looking at the offline docs. You can find possibly more up to date docs <a href="http://anglehtmldocs.oxygenna.com">online here</a>
+            </div>
+        </div>
+        <div class="container bs-docs-container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="bs-sidebar hidden-print affix-top" role="complementary">
+                        <ul class="nav bs-sidenav">
+                            <li><a href="#page-layout">Page Layout</a>
+                                <ul class="nav">
+                                    <li><a href="#top-bar">Top bar</a>
+                                    </li>
+                                    <li><a href="#menu-header">Menu Header</a>
+                                    </li>
+                                    <li><a href="#page-content">Page Content</a>
+                                    </li>
+                                    <li><a href="#sections">Sections</a>
+                                    </li>
+                                    <li><a href="#decorations">Decorations</a>
+                                    </li>
+                                    <li><a href="#one-page-website">One Page website</a>
+                                    </li>
+                                    <li><a href="#sidebar">Sidebar</a>
+                                    </li>
+                                    <li><a href="#footer">Footer</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#typography">Typography</a>
+                                <ul class="nav">
+                                    <li><a href="#text-size">Text Size</a>
+                                    </li>
+                                    <li><a href="#text-alignment">Text Alignment</a>
+                                    </li>
+                                    <li><a href="#text-alignment-for-mobiles">Text Alignment for Mobiles</a>
+                                    </li>
+                                    <li><a href="#text-weight">Text Weight</a>
+                                    </li>
+                                    <li><a href="#text-transformations">Text Transformations</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#theme-components">Theme Components</a>
+                                <ul class="nav">
+                                    <li><a href="#color-swatches">Color Swatches</a>
+                                    </li>
+                                    <li><a href="#changing-the-default-colors">Changing the default colors</a>
+                                    </li>
+                                    <li><a href="#page-header">Page header</a>
+                                    </li>
+                                    <li><a href="#slideshow">Slideshow</a>
+                                    </li>
+                                    <li><a href="#revolution-slider">Revolution Slider</a>
+                                    </li>
+                                    <li><a href="#image">Image</a>
+                                    </li>
+                                    <li><a href="#map">Map</a>
+                                    </li>
+                                    <li><a href="#pricing-tables">Pricing tables</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#services">Services</a>
+                                <ul class="nav">
+                                    <li><a href="#border-icon-lists">Border Icon Lists</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#staff-member">Staff member</a>
+                            </li>
+                            <li><a href="#portolio">Portolio</a>
+                                <ul class="nav">
+                                    <li><a href="#setting-the-filters">Setting the filters</a>
+                                    </li>
+                                    <li><a href="#setting-up-the-portfolio-items">Setting up the portfolio items</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#features">Features</a>
+                                <ul class="nav">
+                                    <li><a href="#buttons">Buttons</a>
+                                    </li>
+                                    <li><a href="#boxes">Boxes</a>
+                                    </li>
+                                    <li><a href="#social-icons">Social Icons</a>
+                                    </li>
+                                    <li><a href="#fancy-list-icons">Fancy List Icons</a>
+                                    </li>
+                                    <li><a href="#blockquotes">Blockquotes</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#contact-form">Contact Form</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="bs-docs-section">
+                        <h1 id="page-layout">Page Layout</h1>
+                        <h2 id="top-bar">Top bar</h2>
+                        <p>Optionally you can add a top bar on each page, if you add this markup after the <code>&lt;body&gt;</code>.</p>
+                        <pre><code>&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;top top-left&quot;&gt;
+        add content for the left side of the topbar
+    &lt;/div&gt;
+    &lt;div class=&quot;top top-right&quot;&gt;
+        add content for the right side of the topbar
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        <p>Feel free to add what you want inside the right and left <em>divs</em>.</p>
+                        <h2 id="menu-header">Menu Header</h2>
+                        <p>The header area <code>&lt;header id=&quot;masthead&quot;&gt;...&lt;/header&gt;</code>
+                            of the page contains the page Logo and the navigation list. The navigation is designed following bootstrap&#39;s responsive rules so in smaller screens it will collapse to a responsive dropdown menu. You can read more about the markup of the navigation
+                            in bootstrap’ s <a href="http://getbootstrap.com/components/#navbar">website</a>.</p>
+                        <p>You can have two different menu styles. Adding the <strong>navbar-sticky</strong> class to the <code>&lt;header&gt;</code> as in</p>
+                        <pre><code>&lt;header id=&quot;masthead&quot; class=&quot;navbar navbar-sticky swatch-red-white&quot; role=&quot;banner&quot;&gt;</code></pre>
+                        <p>will make the header scroll along with the page. In order to make the header stay always on top we just need to remove the <strong>navbar-sticky</strong> class.</p>
+                        <p>For a menu with a logo on the left, a navigation list and a search widget on the right side use the following markup</p>
+                        <pre><code>&lt;div id=&quot;masthead&quot; class=&quot;navbar navbar-sticky swatch-red-white&quot; role=&quot;banner&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;!-- setting a logo --&gt;
+        &lt;div class=&quot;navbar-header&quot;&gt;
+            &lt;button type=&quot;button&quot; class=&quot;navbar-toggle collapsed&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.main-navbar&quot;&gt;
+                &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;a href=&quot;../index.html&quot; class=&quot;navbar-brand&quot;&gt;
+                &lt;img src=&quot;assets/images/angle.gif&quot; alt=&quot;One of the best themes ever&quot;&gt;Angle
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;!-- setting a logo end--&gt;
+        &lt;nav class=&quot;collapse navbar-collapse main-navbar&quot; role=&quot;navigation&quot;&gt;
+            &lt;!-- for a search widget --&gt;
+            &lt;div class=&quot;menu-sidebar pull-right&quot;&gt;
+                &lt;div id=&quot;search-4&quot; class=&quot;sidebar-widget widget_search&quot;&gt;
+                    &lt;div class=&quot;top-search&quot;&gt;
+                      &lt;form&gt;
+                          &lt;div class=&quot;input-group&quot;&gt;
+                              &lt;input type=&quot;text&quot; value=&quot;&quot; name=&quot;s&quot; id=&quot;s&quot; class=&quot;form-control&quot; placeholder=&quot;Search here...&quot;&gt;
+                              &lt;span class=&quot;input-group-btn&quot;&gt;
+                                  &lt;button class=&quot;btn&quot; type=&quot;submit&quot;&gt;
+                                      &lt;i class=&quot;fa fa-search&quot;&gt;&lt;/i&gt;
+                                  &lt;/button&gt;
+                              &lt;/span&gt;
+                          &lt;/div&gt;
+                      &lt;/form&gt;
+                      &lt;i class=&quot;fa fa-search search-trigger navbar-text&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- for a search widget end--&gt;
+            &lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;
+                &lt;li class=&quot;dropdown&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;Home&lt;/a&gt;
+                    &lt;ul class=&quot;dropdown-menu&quot;&gt;
+                        &lt;li&gt;&lt;a href=&quot;index.html&quot;&gt;v1. Classic&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;business.html&quot;&gt;v2. Product Launch&lt;/a&gt;&lt;/li&gt;
+                        ...
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                ...
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        <h3 id="header-options">Header options</h3>
+                        <p>In the <strong>theme.js</strong> located in the <strong>assets/js</strong> folder you can locate this script at the top of the file</p>
+                        <pre><code>var scriptData = scriptData || {
+  navbarHeight : 90,
+  navbarScrolled : 70,
+  navbarScrolledPoint : 200,
+  scrollFinishedMessage : &#39;No more items to load.&#39;,
+  hoverMenu : {
+      hoverActive : false,
+      hoverDelay : 1,
+      hoverFadeDelay : 200
+  }
+};</code></pre>
+                        <div class="alert alert-danger">
+                            The change of the menu height cannot be altered from the <strong>navbarHeight</strong> or <strong>navbarScrolled</strong> options.
+                        </div>
+                        <ul>
+                            <li><strong>navbarScrolledPoint:</strong> Sets the pixels that need to be scrolled for the menu to change height.</li>
+                            <li><strong>hoverActive:</strong> When <em>true</em> the menu opens on hover, when <em>false</em> the menu opens on click.</li>
+                            <li><strong>hoverDelay:</strong> Delay in seconds before the hover menu closes after moving mouse off the menu.</li>
+                            <li><strong>hoverFadeDelay:</strong> Delay of the Fade In/Fade Out animation.</li>
+                        </ul>
+                        <h3 id="special-menu-items">Special menu items</h3>
+                        <ol>
+                            <li>
+                                <p>A menu item can have the look of a button if you add the <strong>nav-highlight</strong> class to the <code>&lt;li&gt;&lt;/li&gt;</code> that holds the item e.g.</p>
+                                <pre><code> &lt;li class=&quot;nav-highlight&quot;&gt;&lt;a href=&quot;your_link&quot;&gt;Back to normal Angle&lt;/a&gt;&lt;/li&gt;</code></pre>
+                                <p>
+                                    <img src="assets/images/highlight-button.png" alt="special">
+                                </p>
+                            </li>
+                            <li>Use the same markup but add the <strong>nav-highlight-ghost</strong> class for a <strong>bordered menu button</strong>.
+                                <img src="assets/images/highlight-ghost-button.png" alt="special">
+                            </li>
+                            <li>You can add a divider by using the following markup<pre><code> &lt;li role=&quot;presentation&quot; class=&quot;divider&quot;&gt;&lt;/li&gt;</code></pre>
+                                <img src="assets/images/divider.png" alt="special">
+                            </li>
+                            <li>
+                                <p>A menu can have icons next to the each menu item. You can use the font-awesome icons and the following markup to achieve that e.g</p>
+                                <pre><code> &lt;i class=&quot;menu-icon fa fa-photo&quot;&gt;&lt;/i&gt;</code></pre>
+                            </li>
+                        </ol>
+                        <h3 id="search-widget">Search widget</h3>
+                        <p>The menu comes with a <strong>search</strong> widget, which has the following markup</p>
+                        <pre><code>&lt;div id=&quot;search-4&quot; class=&quot;sidebar-widget  widget_search&quot;&gt;
+    &lt;form role=&quot;search&quot; method=&quot;get&quot; id=&quot;searchform&quot; action=&quot;blog-classic.html&quot;&gt;
+        &lt;div class=&quot;input-group&quot;&gt;
+            &lt;input type=&quot;text&quot; value=&quot;&quot; name=&quot;s&quot; id=&quot;s&quot; class=&quot;form-control&quot; placeholder=&quot;Search&quot;&gt;
+            &lt;span class=&quot;input-group-btn&quot;&gt;
+                &lt;button class=&quot;btn&quot; type=&quot;submit&quot; id=&quot;searchsubmit&quot; value=&quot;Search&quot;&gt;
+                    &lt;i class=&quot;fa fa-search&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/div&gt;</code></pre>
+                        <div class="alert alert-info">
+                            You will have to implement the functionality of the search widget as this is not built in.
+                        </div>
+                        <hr>
+                        <h2 id="page-content">Page Content</h2>
+                        <p>The content <code>&lt;div id=&quot;content&quot; role=&quot;main&quot;&gt; ...&lt;/div&gt;</code> area hosts the main content of the theme. It is divided in sections to visually and semantically separate the content.
+                            <img src="assets/images/sections.jpg" alt="sections">
+                        </p>
+                        <hr>
+                        <h2 id="sections">Sections</h2>
+                        <p>Sections are defined using the following HTML5 markup</p>
+                        <pre><code>&lt;section class=&quot;section&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        Content goes here…
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                        <p>Additional classes can be applied to the section to style the content.</p>
+                        <h3 id="fullheight-sections">Fullheight sections</h3>
+                        <p>A section can be <strong>fullheight</strong> (have a height at minimum as the screen size) by assigning a class to the section: <strong>section-fullheight</strong> as in</p>
+                        <pre><code>&lt;section class=&quot;section section-fullheight&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        Content goes here…
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                        <h3 id="section-options">Section options</h3>
+                        <p>The following options can be used to setup your section</p>
+                        <ol>
+                            <li>Section color swatches add the colors of the section. Possible options are
+                                <strong>swatch-beige-black</strong>, <strong>swatch-black-beige</strong>, <strong>swatch-black-white</strong>, <strong>swatch-black-yellow</strong>, <strong>swatch-blue-white</strong>, <strong>swatch-green-white</strong>, <strong>swatch-red-white</strong>, <strong>swatch-white-black</strong>, <strong>swatch-white-blue</strong>, <strong>swatch-white-green</strong>, <strong>swatch-white-red</strong>, <strong>swatch-yellow-black</strong>.</li>
+                            <li><strong>container-fullwidth</strong> added instead of <strong>container</strong> in the <code>&lt;div&gt;</code> inside the section will make it fullwidth.</li>
+                            <li>To setup the section&#39;s <strong>decorations</strong> see the <a href="/using-angle.html#decorations">decorations</a> section.</li>
+                            <li>Sections can have different heights. Different heights can be achieved, if the classes <strong>section-short</strong>, <strong>section-tiny</strong> or <strong>section-nopadding</strong> are assigned to the section. The <strong>section-fullheight</strong> class
+                                will make the section vertically cover the entire viewport.
+                                <br>
+                            </li>
+                            <li>
+                                <p>Sections are by default padded. You can create fullwidth sections by adding the container-fullwidth class to the first <code>&lt;div&gt;</code> inside the <code>&lt;section&gt;</code>.</p>
+                                <pre><code> &lt;section class=&quot;section&quot;&gt;
+     &lt;div class=&quot;container-fullwidth&quot;&gt;
+         Content goes here…
+     &lt;/div&gt;
+ &lt;/section&gt;</code></pre>
+                            </li>
+                            <li>
+                                <p>A new option of Angle that makes content building easier is the <strong>Section Content Vertical Alignment</strong> option. You can enable that by adding to the <code>&lt;row&gt;</code>the class <strong>vertical-middle</strong> for
+                                    the content to be aligned with the middle of the section, <strong>vertical-bottom</strong> for it to be aligned with the bottom or no class to be aligned with the top of the section. That way you no longer have to worry
+                                    about realigning your content every time you add or remove an element, this will automatically be taken care of by this option. E.g.</p>
+                                <pre><code> &lt;section class=&quot;section swatch-white-red&quot;&gt;
+     &lt;div class=&quot;container&quot;&gt;
+         &lt;div class=&quot;row vertical-middle&quot;&gt;
+             &lt;div class=&quot;col-md-6&quot;&gt;
+                 &lt;img alt=&quot;&quot; src=&quot;some_img&quot;&gt;
+             &lt;/div&gt;
+             &lt;div class=&quot;col-md-6&quot;&gt;
+                 &lt;p&gt;I am text block.&lt;/p&gt;
+             &lt;/div&gt;
+         &lt;/div&gt;
+     &lt;/div&gt;
+ &lt;/section&gt;</code></pre>
+                                <p>
+                                    <div class="alert alert-info">
+                                        Keep in mind that the alignment will be applied to <strong>all</strong> the elements of that section.
+                                    </div>
+                                    <img src="assets/images/section-align.png" alt="section">
+                                </p>
+                            </li>
+                            <li>
+                                <p>Using the following markup will add a background overlay</p>
+                                <pre><code> &lt;div class=&quot;background-overlay&quot; style=&quot;background-color: rgba(0,0,0,0.2);&quot;&gt;&lt;/div&gt;</code></pre>
+                                <p>Setting the <strong>rgba(0,0,0,0.2)</strong> sets the color overlay, with the last attribute(0.2) representing the <strong>opacity</strong> ranging from 0(transparent) to 1.
+                                    <img src="assets/images/background-video.png" alt="videos">
+                                </p>
+                            </li>
+                            <li>
+                                <p>If a user wants to add a background image with background overlay, it is advised to use this markup</p>
+                                <pre><code> &lt;section class=&quot;section swatch-red-white&quot;&gt;
+     &lt;div class=&quot;background-media skrollable skrollable-between&quot; style=&quot;background-image:url(&#39;yourUrl&#39;);background-size:cover;background-position:center 0%;&quot;&gt;&lt;/div&gt;
+     &lt;div class=&quot;background-overlay&quot; style=&quot;background-color: rgba(0,0,0,0.2);&quot;&gt;&lt;/div&gt;
+     &lt;div class=&quot;container-fullwidth&quot;&gt;
+         Content goes here…
+     &lt;/div&gt;
+ &lt;/section&gt;</code></pre>
+                                <p>This will add a background image fixed, aligned in the center.
+                                    <img src="assets/images/section_background.png" alt="sections">
+                                </p>
+                            </li>
+                            <li>
+                                <p>If a user wants to create a section with a video as background, this markup should be used</p>
+                                <pre><code> &lt;div class=&quot;background-media&quot;&gt;
+     &lt;video poster=&quot;your_poster&quot; style=&quot;width: 100%; height: 100%;&quot; loop autoplay class=&quot;section-background-video&quot;&gt;
+         &lt;source type=&quot;video/mp4&quot; src=&quot;your_audio.mp4&quot;&gt;
+         &lt;source type=&quot;video/webm&quot; src=&quot;your_audio.webm&quot;&gt;
+         &lt;source type=&quot;video/ogg&quot; src=&quot;your_audio.ogg&quot;&gt;
+     &lt;/video&gt;
+ &lt;/div&gt;</code></pre>
+                            </li>
+                            <li>
+                                <p>A section with a background image can utilize the <strong>parallax effect</strong>, which will add a great sense of interactivity between the user and the website. Parallax scrolling is a special scrolling technique in computer
+                                    graphics, wherein background images move slower than foreground images, creating an illusion of depth and adding to the immersion. For the parallax effect to take place, two <strong>data attributes</strong> must be added
+                                    in the <code>&lt;div&gt;</code> of the background media, e.g</p>
+                                <pre><code>&lt;div class=&quot;background-media&quot; style=&quot;background-image: url(background_img);&quot; data-start=&quot;background-position: 50% 0px&quot; data-top-bottom=&quot;background-position: 50% -90px&quot;&gt;
+&lt;/div&gt;</code></pre>
+                                <p>The <strong>background-position</strong> element of the <strong>data-start</strong> attribute has two parameters. The first parameter defines the alignment of the image along the horizontal axis(50% = center). The second parameter
+                                    defines the movement along the axis as the user scrolls down(0 = no movement). The <strong>data-top-bottom</strong> attribute works the same way for the vertical axis.
+                                    <br>
+                                </p>
+                                <div class="alert alert-info">
+                                    <a href="https://github.com/Prinzhorn/skrollr">Click here</a> to visit the <strong>skrollr</strong> plugin&#39;s page on Github for a more detailed description.
+                                </div>
+                            </li>
+                        </ol>
+                        <h3 id="section-headers">Section headers</h3>
+                        <p>Section Header can be used at the beginning of a section to create an impressive title. The following markup should be used</p>
+                        <pre><code>&lt;header class=&quot;section-header underline&quot;&gt;
+  &lt;h1 class=&quot;headline super hairline&quot;&gt;Features&lt;/h1&gt;
+      &lt;p&gt;Angle is a uniquely designed HTML theme. It&#39;s super easy to modify and uses advanced CSS techniques built on the latest Bootstrap Framework.&lt;/p&gt;
+&lt;/header&gt;</code></pre>
+                        <p>We are assigning a class <strong>section-header</strong> and also the <strong>underline</strong> class, which will underline the section header( will underline even if you omit it). If you do not want the underline, add instead the <strong>no-underline</strong> class.
+                            For the size of the header&#39;s font, we are assigning the <strong>normal</strong> class (36px), the <strong>big</strong> class (24px), the <strong>bigger</strong> class (32px), the <strong>super</strong> class (60px), or the <strong>hyper</strong> (96px)
+                            class. The class <strong>hairline</strong> sets the font weight of the section. Alternatively, you can set it to be <strong>regular</strong>, <strong>black</strong>, <strong>bold</strong> or <strong>light</strong>. Whatever you put
+                            in the <code>&lt;p&gt;&lt;/p&gt;</code> will be used as subtitle.</p>
+                        <p>
+                            <img src="assets/images/header.png" alt="header">
+                        </p>
+                        <hr>
+                        <h2 id="decorations">Decorations</h2>
+                        <p>Decorations are svgs that are used at the top or at the bottom of each section, representing some cool geometrical shapes that make sections look more awesome. If you want to add a decoration, first look for the code of that particular
+                            decoration in the <strong>src/assets/decorations/<em>position</em>/</strong> folder, where <em>position</em> is either <em>top</em> or <em>bottom</em>, depending on where you want the decoration to be added. Do not forget also to
+                            add inside the <code>&lt;section&gt;</code> the class <strong>has-top</strong> if you will add a decoration to the top or <strong>has-bottom</strong> for the bottom.</p>
+                        <div class="alert alert-danger">
+                            <i class="fa fa-gittip"></i> It is <strong>highly recommended</strong> that you use the top decoration <strong>only</strong>, for every section that you create, in order to avoid overlapping decorations. In case you use <strong>media backgrounds</strong>(image
+                            or video), avoid using decorations completely in the current section. Should you want to add decorations to it anyway, do it by adding bottom decoration to the section before it and top decoration to the section after it.
+                        </div>
+                        <h3 id="top-decorations">Top decorations</h3>
+                        <p>In case you want to add the <strong>left-slope</strong> decoration, locate the code of the svg from the <em>left-slope.svg</em> file. Then, add an extra div with the class <strong>decor-top</strong> after the <code>&lt;section&gt;</code> tag
+                            and add inside that div the svg like this</p>
+                        <pre><code>&lt;section class=&quot;section has-top&quot;&gt;
+    &lt;div class=&quot;decor-top&quot;&gt;
+      &lt;svg class=&quot;decor&quot; height=&quot;100%&quot; preserveaspectratio=&quot;none&quot; version=&quot;1.1&quot; viewbox=&quot;0 0 100 100&quot; width=&quot;100%&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+        &lt;path d=&quot;M0 0 L100 100 L0 100&quot; stroke-width=&quot;0&quot;&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;background-media&quot; style=&quot;background-image:url(&#39;yourUrl&#39;);background-repeat:no-repeat;background-size:cover;background-attachment:fixed;background-position:center 0%;&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;background-overlay&quot; style=&quot;background-color:rgba(0,0,0,0.8)&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;container-fullwidth&quot;&gt;
+        Content goes here…
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                        <h3 id="bottom-decorations">Bottom decorations</h3>
+                        <p>Similar to the top decorations, add the extra code before closing the <code>&lt;/section&gt;</code>. Remember to use the svg from the <strong>.../bottom</strong> folder! It would look like this</p>
+                        <pre><code>  content before...
+  &lt;div class=&quot;decor-bottom&quot;&gt;
+    &lt;svg class=&quot;decor&quot; height=&quot;100%&quot; preserveaspectratio=&quot;none&quot; version=&quot;1.1&quot; viewbox=&quot;0 0 100 100&quot; width=&quot;100%&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+      &lt;path d=&quot;M0 0 L100 0 L100 100&quot; stroke-width=&quot;0&quot;&gt;&lt;/path&gt;
+    &lt;/svg&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                        <p>
+                            <img src="assets/images/decorations.png" alt="decorations">
+                        </p>
+                        <hr>
+                        <h2 id="one-page-website">One Page website</h2>
+                        <p>Angle is easy to build as an <strong>one-page</strong> website. In order to achieve that you need to make sure of two things. Firstly, you need to assign to the sections that you want to scroll to a specific unique <strong>id</strong> as
+                            in</p>
+                        <pre><code>&lt;section class=&quot;section&quot; id=&quot;home&quot;&gt;
+...
+&lt;/section&gt;</code></pre>
+                        <p>Secondly, you need to make sure that each menu item links to the desired section, by assigning to the <em>href</em> attribute the <strong>#</strong> symbol followed by the <strong>id</strong> of the section as in</p>
+                        <pre><code>&lt;a class=&quot;dropdown-toggle&quot; title=&quot;Home&quot; href=&quot;#home&quot; data-toggle=&quot;dropdown&quot;&gt;Home&lt;/a&gt;</code></pre>
+                        <p>As a result, when you click on the <strong>Home</strong> menu item, you will be scrolled to the home section of the page. For example, if we had a page with three sections, it would look like this</p>
+                        <pre><code>&lt;body&gt;
+    &lt;div id=&quot;content&quot;&gt;
+        &lt;article&gt;
+            Add your menu here
+            &lt;section class=&quot;section&quot; id=&quot;home&quot;&gt;
+            ...
+            &lt;/section&gt;
+            &lt;section class=&quot;section&quot; id=&quot;services&quot;&gt;
+            ...
+            &lt;/section&gt;
+            &lt;section class=&quot;section&quot; id=&quot;portfolio&quot;&gt;
+            ...
+            &lt;/section&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+                        <p>Now you have to connect your menu item links to your sections, so you will make the <em>href</em> attribute of each <code>&lt;a&gt;</code> point to your sections. You should build your menu according to the <a href="using-angle.html#menu-header">Menu Header</a> section.
+                            For the above example, replace this chunk of code</p>
+                        <pre><code>&lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;
+    &lt;li class=&quot;dropdown&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;Home&lt;/a&gt;
+        &lt;ul class=&quot;dropdown-menu&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;index.html&quot;&gt;v1. Home-Classic&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;business.html&quot;&gt;v2. Home-Business&lt;/a&gt;&lt;/li&gt;
+            ...
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    ...
+&lt;/ul&gt;</code></pre>
+                        <p>with this</p>
+                        <pre><code>&lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;
+    &lt;li class=&quot;active current-menu-item&quot;&gt;&lt;a href=&quot;#home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;&quot;&gt;&lt;a href=&quot;#services&quot;&gt;Services&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;&quot;&gt;&lt;a href=&quot;#portfolio&quot;&gt;Portfolio&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                        <p>Now you have menu items that link to your sections and the user will scroll to each section when clicking on the respective link.</p>
+                        <hr>
+                        <h2 id="sidebar">Sidebar</h2>
+                        <p>To create a page with a sidebar use the following markup</p>
+                        <pre><code>&lt;section class=&quot;section&quot;&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-md-9&quot;&gt;
+        Main content
+      &lt;/div&gt;
+      &lt;div class=&quot;col-md-3 sidebar&quot;&gt;
+        &lt;div class=”sidebar-widget”&gt;
+          &lt;h3 class=”sibebar-header”&gt;
+          widget content
+        &lt;/div&gt;
+        &lt;div class=”sidebar-widget”&gt;
+          &lt;h3 class=”sibebar-header”&gt;
+          widget content
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                        <p>Angle supports search, categories, tag cloud, recent posts, archive, text and twitter widgets (by using the classes widget_search, widget_categories, widget_tag_cloud, widget_recent_entries, widget_archive, widget_text and widget_oxy_twitter
+                            classes), but you can use any type of content on your sidebar.</p>
+                        <div class="alert alert-success">
+                            <i class="fa fa-gittip"></i> To change to left sidebar just reverse the order of the .col-md-9 <em>div</em> and the .col-md-3 <em>div</em> element in the above markup.
+                        </div>
+                        <p>
+                            <img src="assets/images/sidebar-right.png" alt="sidebar">
+                        </p>
+                        <hr>
+                        <h2 id="footer">Footer</h2>
+                        <p>The footer area <code>&lt;footer  id=&quot;footer&quot;&gt; ...</code> of the page contains the page&#39;s footer and requires the following markup</p>
+                        <pre><code>&lt;footer  class=&quot;section swatch-red-white has-top&quot; id=&quot;footer&quot; role=”contentinfo”&gt;
+  &lt;div class=”container”&gt;
+    footer content here
+  &lt;/div&gt;
+&lt;footer&gt;</code></pre>
+                        <p>
+                            <img src="assets/images/footer.png" alt="footer">
+                        </p>
+                        <p>Use a different color swatch instead of the <strong>swatch-red-white</strong> if you want to change the colors of the footer. If you want to setup your footer&#39;s columns use the following markup</p>
+                        <pre><code>&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-3&quot;&gt;
+        add content here
+    &lt;/div&gt;
+    &lt;div class=&quot;col-md-3&quot;&gt;
+        add content here
+    &lt;/div&gt;
+    &lt;div class=&quot;col-md-3&quot;&gt;
+        add content here
+    &lt;/div&gt;
+    &lt;div class=&quot;col-md-3&quot;&gt;
+        add content here
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        <p>This will create a 4-column footer. Use a 3 column footer by adding 3 divs with a <strong>col-md-4</strong> class.</p>
+                        <hr>
+                        <h1 id="typography">Typography</h1>
+                        <h2 id="text-size">Text Size</h2>
+                        <p>Angle offers a variety of classes that will make your typography stand out. In order to set the <strong>font size</strong>, we can use the <strong>big</strong> class (24px), <strong>bigger</strong> class (32px), the <strong>super</strong> class
+                            (60px), or the <strong>hyper</strong> (96px) class. E.g</p>
+                        <pre><code>&lt;h1 class=&quot;text-center normal&quot;&gt;This is a normal sized title&lt;/h1&gt;</code></pre>
+                        <p>In case we want to underline the text we can use the <strong>bordered</strong> class.</p>
+                        <h2 id="text-alignment">Text Alignment</h2>
+                        <p>Angle offers three classes to align your text left, right or in the center. They are <strong>text-left</strong>, <strong>text-right</strong> and <strong>text-center</strong> respectively.</p>
+                        <h2 id="text-alignment-for-mobiles">Text Alignment for Mobiles</h2>
+                        <p>Angle offers three classes to align your text left, right or in the center for mobile devices. They are <strong>small-screen-left</strong>, <strong>small-screen-right</strong> and <strong>small-screen-center</strong> respectively.</p>
+                        <h2 id="text-weight">Text Weight</h2>
+                        <p>Make your text stand out by assigning different weights through these classes: <strong>black</strong>, <strong>bold</strong>, <strong>regular</strong>, <strong>light</strong>, <strong>hairline</strong>.</p>
+                        <h2 id="text-transformations">Text Transformations</h2>
+                        <p>Assigning the following classes to a text will make them uppercase, lowercase and italic respectively: <strong>text-caps</strong>, <strong>text-lowercase</strong>, and <strong>text-italic</strong>. In addition, assigning the <strong>text-none</strong> class
+                            removes all the transformations that might have been inherited from parent elements.e.g</p>
+                        <pre><code>&lt;h1 class=&quot;text-center normal text-caps&quot;&gt;This is a normal sized title
+    &lt;p class=&quot;text-none&quot;&gt;this is a subtitle with no transformations&lt;/p&gt;
+&lt;/h1&gt;</code></pre>
+                        <hr>
+                        <h1 id="theme-components">Theme Components</h1>
+                        <p>Angle comes with a set of theme related components that you can use along with the bootstrap components.</p>
+                        <hr>
+                        <h2 id="color-swatches">Color Swatches</h2>
+                        <p>Color swatches are what give Angle its nice colorful look. Different color swatches can be assigned to sections to achieve different styling throughout the pages. For example, if we would like to have a white background with red
+                            elements, we would assign the <strong>swatch-white-red</strong> class to the section like this</p>
+                        <pre><code>&lt;section class=&quot;section swatch-white-red&quot;&gt;
+    &lt;div class=&quot;container-fullwidth&quot;&gt;
+        Content goes here…
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                        <p>More color swatches that you can use with Angle are <strong>swatch-beige-black</strong>, <strong>swatch-black-beige</strong>, <strong>swatch-black-white</strong>, <strong>swatch-black-yellow</strong>, <strong>swatch-blue-white</strong>, <strong>swatch-green-white</strong>, <strong>swatch-red-white</strong>, <strong>swatch-white-black</strong>, <strong>swatch-white-blue</strong>, <strong>swatch-white-green</strong>, <strong>swatch-yellow-black</strong>.</p>
+                        <p>
+                            <img src="assets/images/color-swatches.png" alt="swatches">
+                        </p>
+                        <h3 id="create-a-new-custom-color-swatch">Create a new custom color swatch</h3>
+                        <p>In order to create a new color swatch, a new set of <em>CSS</em> rules needs to be created and added to a new file that you will create. Move the new file into the <strong>/assets/css</strong> folder and include it in the header.</p>
+                        <ol>
+                            <li>Visit <a href="http://sassmeister.com/gist/e848c65730d925b8b408">sassmeister</a>.</li>
+                            <li>On the left side of the screen is the code that you will modify. Change the <strong>$swatch-name</strong> variable to the name of the color swatch that you wish. If you name the color swatch blue for e.g., the color swatch&#39;s
+                                name will be <em>swatch-blue</em>.</li>
+                            <li>From <strong>line 14</strong> to <strong>line 33</strong>, you can set the color that you want each element to have for this color swatch.</li>
+                            <li>After the scss is compiled, grab the whole content from the right half of the page(Ctrl+a),copy it, and paste it to the new file that you have created.</li>
+                            <li>Make sure that file is included in the header of your website.</li>
+                            <li>You can now assign the new color swatch to your sections, adding your personal touch to the design.</li>
+                        </ol>
+                        <hr>
+                        <h2 id="changing-the-default-colors">Changing the default colors</h2>
+                        <p>If you want to change the default colors of Angle, you need to replace the contents of the <strong>color-defaults.css</strong> file in the <strong>/assets/css</strong> folder. The pocedure is similar to creating a new color swatch.
+                            To do so, follow these simple steps</p>
+                        <ol>
+                            <li>Visit <a href="http://sassmeister.com/gist/b168a8bfd2b4e9d896de">sassmeister</a>.</li>
+                            <li>On the left side of the screen is the code that you will modify. From <strong>line 10</strong> to <strong>line 46</strong>, you can set the color that you want each element to have.</li>
+                            <li>After the scss is compiled, grab the whole content of the right half of the page(Ctrl+a),copy it, and replace the content of the <strong>color-defaults.css</strong> file with it.</li>
+                        </ol>
+                        <hr>
+                        <h2 id="page-header">Page header</h2>
+                        <p>The page header follows the same markup as any other section.</p>
+                        <div class="alert alert-info">
+                            To learn more about <strong>Sections</strong> go to <a href="/using-angle.html#sections">Sections</a> documentation.
+                        </div>
+                        <hr>
+                        <h2 id="slideshow">Slideshow</h2>
+                        <p>Angle uses flexslider to create impressive and responsive slideshows that respond even to touch events. The general markup used to create a slideshow is the following</p>
+                        <pre><code>&lt;div class=&quot;flexslider&quot; id=&quot;someID&quot;&gt;
+  &lt;ul class=&quot;slides&quot;&gt;
+    &lt;li&gt;
+      A slide (any content)
+    &lt;/li&gt;
+    &lt;li&gt;
+        Another  slide (any content)
+    &lt;/li&gt;
+    …
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+                        <p>You can control the behaviour of the slideshow by passing data attributes to the <em>.flexslider</em> div. The data attributes used are:</p>
+                        <ul>
+                            <li><strong>data-slideshow</strong>: defines if the slider will start automatically (“true”) or not (“false”), default value “true”.</li>
+                            <li><strong>data-flex-animation</strong>: defines the animation type, “slide” (default) or” fade”.</li>
+                            <li><strong>data-flex-speed</strong>: defines the slideshow animation speed, 7000 (default) or any number.</li>
+                            <li><strong>data-flex-directions</strong>: defines the visibility of the navigation arrows, “hide” or “show” (default).</li>
+                            <li><strong>data-flex-directions-type</strong>: defines the type of the direction arrows, “fancy” (with background like the “our clients” slideshow ) or “simple”.</li>
+                            <li><strong>data-flex-directions-position</strong>: defines the positioning of the direction arrows, “inside” (inside the slider, default) or” outside” the slider.</li>
+                            <li><strong>data-flex-controls</strong>: defines the visibility of the navigation controls, “hide” (default) or “show”.</li>
+                            <li><strong>data-flex-controlsposition</strong>: defines the positioning of the controls, “inside” (default), or “outside”.</li>
+                            <li><strong>data-flex-controlsalign</strong>: defines the alignment of the controls, “center” (default) “left” or “right”.</li>
+                            <li><strong>data-flex-itemwidth</strong>: the width of each item in case of a multi item carousel, 0 (default for 100%) or a number representing pixels (you can read more on flexsliders website ).</li>
+                        </ul>
+                        <p>For example, to create a slideshow with navigation arrows and navigation controls outside the slideshow aligned to the left, that uses the effect “fade” and changes every 5 seconds you should use the following markup.</p>
+                        <pre><code>&lt;div class=&quot;flexslider&quot; data-flex-directions=”show”  data-flex-directions-type=”simple” data-flex-controls=”show”  data-flex-controlsalign=”left”  data-flex-speed=5000  id=&quot;someID&quot;&gt;</code></pre>
+                        <div class="alert alert-success">
+                            <i class="fa fa-gittip"></i> Default values can be omitted. For more info on Flexslider please visit the owner&#39;s webiste <a href="http://www.woothemes.com/flexslider/">here</a>
+                        </div>
+                        <div class="alert alert-danger">
+                            <i class="fa fa-gittip"></i> Each slideshow should have an id.
+                        </div>
+                        <hr>
+                        <h2 id="revolution-slider">Revolution Slider</h2>
+                        <p>Angle comes bundled with the <strong>Revolution Slider</strong> plugin. In order to be able to use it in your pages you need to make sure that :</p>
+                        <ul>
+                            <li>
+                                <p>You add the following lines to your HTML <code>&lt;head&gt;</code>
+                                </p>
+                                <pre><code>  &lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js&gt;
+  &lt;script src=&quot;assets/js/tools.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;assets/js/revolution.min.js&quot;&gt;&lt;/script&gt;
+  &lt;link href=&quot;assets/css/revolution.css&quot; media=&quot;screen&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;</code></pre>
+                            </li>
+                        </ul>
+                        <div class="alert alert-info">
+                            <i class="fa fa-gittip"></i> For more info on how to use <strong>Revolution Slider</strong> in your website read the instructions <a href="http://catapultthemes.com/documentation/documentation.html">here</a>
+                        </div>
+                        <hr>
+                        <h2 id="image">Image</h2>
+                        <p>In Angle you can have a shaped image with the following markup</p>
+                        <pre><code>&lt;div class=&quot;box-wrap alignnone animated none&quot; data-animation=&quot;none&quot;&gt;
+  &lt;div class=&quot;box-square box-medium flat-shadow&quot;&gt;
+    &lt;div class=&quot;box-dummy&quot;&gt;&lt;/div&gt;
+    &lt;span class=&quot;box-inner&quot;&gt;
+      &lt;img alt=&quot;&quot; src=&quot;image_source&quot;&gt;
+    &lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        <p>The markup above uses the <strong>box-square</strong> class to create square images. You can alternatively set that to be <strong>box-rect</strong> for rectangle, <strong>box-round</strong> for round or <strong>box-hex</strong> for hexagons.</p>
+                        <p>Similarly, you can set the image&#39;s size by adding the <strong>box-small</strong>, <strong>box-medium</strong>, <strong>box-normal</strong>, <strong>box-big</strong>, or <strong>box-huge</strong> classes. The <strong>flat-shadow</strong> class
+                            adds a shadow effect on the image, removing it will remove the shadow.</p>
+                        <div class="alert alert-success">
+                            <i class="fa fa-gittip"></i> You can also add animation on hover by setting the <strong>data-animation</strong> attribute to <em>bounceIn</em> for example.
+                        </div>
+                        <div class="alert alert-success">
+                            <i class="fa fa-gittip"></i> For a quick look at the available animations you can go to <a href="http://daneden.github.io/animate.css/">Animations</a>.
+                        </div>
+                        <hr>
+                        <h2 id="map">Map</h2>
+                        <p>Adding a map in Angle is pretty easy. What you need to do is add this markup wherever you want in your markup</p>
+                        <pre><code>&lt;div class=&quot;google-map&quot; id=&quot;map&quot; style=&quot;height:354px;&quot; &gt;&lt;/div&gt;</code></pre>
+                        <p>You can adjust the height to your needs.</p>
+                        <p>The map&#39;s settings can be easily modified from <strong>map.js</strong>, located in <strong>assets/js/map.js</strong>. You will see at the top of this files these lines of javascript</p>
+                        <pre><code>window.map = {
+mapType: &#39;ROADMAP&#39;,
+mapZoom: 15,
+mapStyle: &#39;flat&#39;,
+mapScroll: &#39;off&#39;,
+marker: &#39;show&#39;,
+lat: &#39;51.5171&#39;,
+lng: &#39;0.1062&#39;,
+markerURL: &#39;assets/images/marker.png&#39;
+};</code></pre>
+                        <ol>
+                            <li><strong>mapType</strong> : <strong>ROADMAP</strong>, <strong>SATELLITE</strong>, <strong>TERRAIN</strong> or <strong>HYBRID</strong>.</li>
+                            <li><strong>mapZoom</strong> : the amount of zoom that you wish to have (1-20)</li>
+                            <li><strong>mapStyle</strong> : <strong>flat</strong> or <strong>regular</strong>
+                            </li>
+                            <li><strong>mapScroll</strong> : <strong>on</strong> or <strong>off</strong> for the map to be scrollable.</li>
+                            <li><strong>marker</strong> : <strong>show</strong> or <strong>hide</strong>.</li>
+                            <li><strong>lat</strong> : Set the latitude of the map&#39;s location.</li>
+                            <li><strong>lng</strong> : Set the longitude of the map&#39;s location.</li>
+                            <li><strong>markerURL</strong> : Set the URL of the marker&#39;s icon.</li>
+                        </ol>
+                        <div class="alert alert-success">
+                            <i class="fa fa-gittip"></i> Keep in mind that you need to include the
+                            <code>&lt;script src=&quot;https://maps.googleapis.com/maps/api/js?sensor=false&quot;&gt;&lt;/script&gt;</code> and <code>&lt;script src=&quot;assets/js/map.min.js&quot;&gt;&lt;/script&gt;</code> at the and of the <code>&lt;body&gt;</code>.
+                        </div>
+                        <p>
+                            <img src="assets/images/contact-form.png" alt="contact-form">
+                        </p>
+                        <hr>
+                        <h2 id="pricing-tables">Pricing tables</h2>
+                        <p>You can create a pricing table by using the following markup.</p>
+                        <pre><code>&lt;div class=&quot;pricing-col
+        pricing-featured
+    &quot;&gt;
+    &lt;h2 class=&quot;pricing-head&quot;&gt;Personal&lt;/h2&gt;
+    &lt;div class=&quot;pricing-body&quot;&gt;
+        &lt;div class=&quot;pricing-price&quot;&gt;
+            &lt;div class=&quot;overlay&quot;&gt;
+                &lt;h4&gt;
+                    &lt;small&gt;$&lt;/small&gt;
+                    19
+                    &lt;small&gt;month&lt;/small&gt;
+                &lt;/h4&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;ul class=&quot;pricing-list&quot;&gt;
+                &lt;li&gt;5 project&lt;/li&gt;
+                &lt;li&gt;50 GB Storage&lt;/li&gt;
+                &lt;li&gt;50 Users&lt;/li&gt;
+                &lt;li&gt;50 GB Bandwidth&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;a href=&quot;some&quot; class=&quot;btn btn-lg btn-primary&quot;&gt;Sign Up&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        <p>By using the <strong>pricing-featured</strong> class the pricing column stands out more by adding some extra padding.
+                            <img src="assets/images/pricing.png" alt="pricing">
+                        </p>
+                        <hr>
+                        <h1 id="services">Services</h1>
+                        <p>If you want to create services you need to use the following markup</p>
+                        <pre><code>&lt;ul class=&quot;list-unstyled row  box-list&quot;&gt;
+  &lt;li class=&quot;col-md-3&quot;&gt;
+    &lt;div class=&quot;box-round box-big&quot;&gt;
+      &lt;div class=&quot;box-dummy&quot;&gt;&lt;/div&gt;
+      &lt;a class=&quot;box-inner&quot; href=&quot;some_link&quot; target=&quot;_self&quot;&gt;
+        &lt;img width=&quot;600&quot; height=&quot;600&quot; src=&quot;image_source&quot; alt=&quot;custom-icon-composer&quot; data-animation=&quot;bounce&quot;&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  .
+  .
+  .
+&lt;/ul&gt;</code></pre>
+                        <p>This will create a list of images, please look at the <a href="/using-angle.html#image">Image</a> section in order to view the options for an image.</p>
+                        <p>Before closing the <code>&lt;li&gt;</code> you can set a header as in</p>
+                        <pre><code>&lt;h3 class=&quot;text-center&quot;&gt;
+    &lt;a href=&quot;some_link&quot; target=&quot;_self&quot;&gt;
+    Some header&lt;/a&gt;
+&lt;/h3&gt;</code></pre>
+                        <p>Add then any text that you want</p>
+                        <pre><code>&lt;p class=&quot;text-center&quot;&gt;
+    We have designed this site mobile first so it looks great on mobile devices of all shapes and sizes.
+&lt;/p&gt;</code></pre>
+                        <p>If you need a <strong>Read more</strong> button, do the following</p>
+                        <pre><code>&lt;a href=&quot;page_link&quot; class=&quot;more-link text-center&quot; target=&quot;_self&quot;&gt;
+    Read more
+&lt;/a&gt;</code></pre>
+                        <hr>
+                        <h2 id="border-icon-lists">Border Icon Lists</h2>
+                        <p>If you want to create a horizontal border icon list you should create a list of icons (see <a href="/using-angle.html#services">services</a>) and assign to the <code>&lt;ul&gt;</code> the class <strong>horizontal-icon-border</strong>.
+                            In order to create a vertically aligned border icon list you need to use the <strong>vertical-icon-border</strong> class.</p>
+                        <hr>
+                        <h1 id="staff-member">Staff member</h1>
+                        <p>If you want to create a staff member you need to use the following markup</p>
+                        <pre><code>&lt;div class=&quot;box-hex flat-shadow box-huge&quot;&gt;
+    &lt;div class=&quot;box-dummy&quot;&gt;&lt;/div&gt;
+        &lt;figure class=&quot;box-inner &quot;&gt;
+            &lt;img class=&quot;svg-inject&quot; src=&quot;image_src&quot; alt=&quot;alt_text&quot;&gt;
+        &lt;/figure&gt;
+        &lt;figcaption class=&quot;box-caption&quot;&gt;
+            &lt;h4&gt;Says&lt;/h4&gt;
+            &lt;p&gt;I like ancient stuff&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;div class=&quot;hex-right&quot;&gt;&lt;/div&gt;&lt;div class=&quot;hex-left&quot;&gt;&lt;/div&gt;&lt;/div&gt;</code></pre>
+                        <p>This markup will create a figure with captions on hover. Use the following markup if you want to set a title, a subtitle, some text and a list of social icons below the figure</p>
+                        <pre><code>&lt;h3 class=&quot;text-center&quot;&gt;
+  &lt;a href=&quot;some&quot;&gt;
+    John Langan
+  &lt;/a&gt;
+  &lt;small class=&quot;block&quot;&gt;Art Director&lt;/small&gt;
+&lt;/h3&gt;
+&lt;p class=&quot;text-center &quot;&gt;some text&lt;/p&gt;
+&lt;ul class=&quot;list-inline text-center social-icons social-simple&quot;&gt;
+  &lt;li&gt;
+      &lt;a href=&quot;some&quot; target=&quot;_self&quot;&gt;
+          &lt;i class=&quot;fa fa-facebook&quot;&gt;&lt;/i&gt;
+      &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+      &lt;a href=&quot;some&quot; target=&quot;_self&quot;&gt;
+          &lt;i class=&quot;fa fa-twitter&quot;&gt;&lt;/i&gt;
+      &lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                        <p>
+                            <img src="assets/images/staff-member.png" alt="stafflist">
+                        </p>
+                        <hr>
+                        <h1 id="portolio">Portolio</h1>
+                        <p>You can create three different Portfolio items. Image, Gallery and Video. Lets create a page with many portfolio items of each type, along with filters, using <a href="isotope.metafizzy.co/">Isotope</a>.</p>
+                        <h2 id="setting-the-filters">Setting the filters</h2>
+                        <p>In order to create filters you need to create an unordered list like this</p>
+                        <pre><code>&lt;ul class=&quot;isotope-filters text-center&quot;&gt;
+  &lt;li class=&quot;active&quot;&gt;
+      &lt;a class=&quot;pseudo-border active&quot; data-filter=&quot;*&quot; href=&quot;#&quot;&gt;   all
+      &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+      &lt;a class=&quot;pseudo-border&quot; data-filter=&quot;.filter-gallery&quot; href=&quot;#&quot;&gt;gallery&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+      &lt;a class=&quot;pseudo-border&quot; data-filter=&quot;.filter-image&quot; href=&quot;#&quot;&gt;image&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+      &lt;a class=&quot;pseudo-border&quot; data-filter=&quot;.filter-video&quot; href=&quot;#&quot;&gt;video&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                        <p>The <strong>data-filter</strong> attribute will be used later to apply the filters to the portfolio items.</p>
+                        <h2 id="setting-up-the-portfolio-items">Setting up the portfolio items</h2>
+                        <p>Firstly, we wrap all the portfolio items inside this <em>div</em>
+                        </p>
+                        <pre><code>&lt;div class=&quot;portfolio isotope portfolio-hex portfolio-shadows&quot;&gt;
+    put the items here....
+&lt;/div&gt;</code></pre>
+                        <p>The following markup is used to create the portfolio items in two columns, added inside the previous <code>&lt;div&gt;</code>
+                        </p>
+                        <pre><code>  &lt;div class=&quot;portfolio-item infinite-item col-md-6 col-sm-6 filter-gallery filter-image&quot;&gt;
+    &lt;figure class=&quot;portfolio-figure&quot;&gt;
+      Add item-specific code here...
+      //Add this if you want overlay effect
+      &lt;figcaption&gt;
+        &lt;h4&gt;
+            &lt;a href=&quot;some_link&quot;&gt;
+                Title
+            &lt;/a&gt;
+        &lt;/h4&gt;
+        &lt;p&gt;Subtitle&lt;/p&gt;
+        Add item-specific code here...
+        &lt;a class=&quot;magnific more&quot; href=&quot;img_src&quot;&gt;
+            &lt;i class=&quot;fa fa-search-plus&quot;&gt;&lt;/i&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;link&quot; href=&quot;some_link&quot;&gt;
+            &lt;i class=&quot;fa fa-link&quot;&gt;&lt;/i&gt;
+        &lt;/a&gt;
+      &lt;/figcaption&gt;
+      // until here for overlay effect
+    &lt;/figure&gt;
+    .
+    .
+    .
+  &lt;/div&gt;</code></pre>
+                        <p>If you want to use more columns, you can use e.g. <strong>col-md-4</strong> for a three-column layout,or <strong>col-md-3</strong> for a four-column layout. The options that you can set for a portfolio item are the following:</p>
+                        <ol>
+                            <li>The shape of the portfolio items is defined by the classes <strong>portfolio-hex</strong>, <strong>portfolio-round</strong>, <strong>portfolio-square</strong> and <strong>portfolio-rect</strong>. Add this class to the wrapping <code>&lt;div&gt;</code> of
+                                the portfolio items.</li>
+                            <li>You can add flat shadows to the portfolio items by adding the <strong>portfolio-shadows</strong> to the same <code>&lt;div&gt;</code>.</li>
+                            <li>
+                                <p>If you want to have an overlay effect when hovering on the portfolio item, add the following code inside the <code>&lt;figure&gt;</code> after the item specific code,as in the previous example</p>
+                                <pre><code> &lt;figcaption&gt;
+     &lt;h4&gt;
+         &lt;a href=&quot;some_link&quot;&gt;
+             Title
+         &lt;/a&gt;
+     &lt;/h4&gt;
+     &lt;p&gt;Subtitle&lt;/p&gt;
+     Add item-specific code here...
+     &lt;a class=&quot;magnific more&quot; href=&quot;img_src&quot;&gt;
+         &lt;i class=&quot;fa fa-search-plus&quot;&gt;&lt;/i&gt;
+     &lt;/a&gt;
+     &lt;a class=&quot;link&quot; href=&quot;some_link&quot;&gt;
+         &lt;i class=&quot;fa fa-link&quot;&gt;&lt;/i&gt;
+     &lt;/a&gt;
+   &lt;/figcaption&gt;</code></pre>
+                            </li>
+                        </ol>
+                        <p>The above code is the same for all the portfolio item types. Now we add the <strong>item-specific</strong> code.</p>
+                        <h3 id="gallery">Gallery</h3>
+                        <p>If you want to create a gallery portfolio item use the following markup</p>
+                        <pre><code>&lt;a class=&quot;magnific-gallery more&quot; data-links=&quot;link1 , link2, ...&quot;
+data-prev-text=&quot;Previous&quot; data-next-text=&quot;Next&quot;&gt;
+    &lt;i class=&quot;fa fa-search-plus&quot;&gt;&lt;/i&gt;
+&lt;/a&gt;</code></pre>
+                        <p>The <strong>data-links</strong> attribute sets the images that will be the gallery images, separated by a comma.</p>
+                        <h3 id="image">Image</h3>
+                        <p>If you want to create an image portfolio item use the following markup</p>
+                        <pre><code>&lt;a class=&quot;magnific more&quot; href=&quot;image_src&quot; title=&quot;image_title&quot; data-prev-text=&quot;Previous&quot; data-next-text=&quot;Next&quot;&gt;
+  &lt;i class=&quot;fa fa-search-plus&quot;&gt;&lt;/i&gt;
+&lt;/a&gt;</code></pre>
+                        <h3 id="video">Video</h3>
+                        <p>If you want to create a video portfolio item use the following markup</p>
+                        <pre><code>&lt;a class=&quot;magnific-vimeo more&quot; href=&quot;video_src&quot;&gt;
+  &lt;i class=&quot;fa fa-search-plus&quot;&gt;&lt;/i&gt;
+&lt;/a&gt;</code></pre>
+                        <p>
+                            <img src="assets/images/portfolio-hex.png" alt="portfolio-hex">
+                        </p>
+                        <hr>
+                        <h1 id="features">Features</h1>
+                        <h2 id="buttons">Buttons</h2>
+                        <p>Buttons in Angle follow the bootstrap markup as described on <a href="http://getbootstrap.com/css/#buttons">Bootstrap website</a>. What is new in Angle is the extra icons that we can add on the left or right side of the buttons,
+                            even with a hexagon container which makes them fancier.</p>
+                        <p>To add a simple icon you can use this markup</p>
+                        <pre><code>&lt;a class=&quot;btn btn-primary&quot; href=&quot;#&quot;&gt;
+    &lt;i class=&quot;fa fa-comment&quot;&gt;&lt;/i&gt;
+    &amp;nbsp; Comment
+&lt;/a&gt;</code></pre>
+                        <p>To add a fancy button you can use this markup</p>
+                        <pre><code>&lt;a class=&quot;btn btn-lg btn-primary btn-icon-left&quot; href=&quot;#&quot;&gt;
+    Buy it
+    &lt;span class=&quot;hex-alt hex-alt-big&quot;&gt;
+      &lt;i class=&quot;fa fa-shopping-cart&quot;&gt;&lt;/i&gt;
+    &lt;/span&gt;
+&lt;/a&gt;</code></pre>
+                        <p>The icon can be put to the right if you change the <strong>btn-icon-left</strong> to <strong>btn-icon-right</strong>.</p>
+                        <hr>
+                        <h2 id="boxes">Boxes</h2>
+                        <p>Angle offers a great element that you can shape as you want and choose the exact size that fits to your needs. <strong>Boxes</strong> can be either <strong>round</strong>, <strong>square</strong>, <strong>rectangle</strong> or <strong>hexagons</strong>.
+                            This is the markup to be used for a round box</p>
+                        <pre><code>&lt;div class=&quot;box-round box-big&quot;&gt;
+  &lt;div class=&quot;box-dummy&quot;&gt;&lt;/div&gt;
+  &lt;span class=&quot;box-inner&quot;&gt;
+    &lt;i class=&quot;fa fa-apple&quot; data-animation=&quot;tada&quot;&gt;&lt;/i&gt;
+  &lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                        <p>To achieve the shape that you wish, you need to replace <strong>box-round</strong> with <strong>box-square</strong>, <strong>box-rect</strong> or <strong>box-hex</strong> respectively. In order to change the size of the box, change <strong>box-big</strong> to <strong>box-mini</strong>, <strong>box-small</strong>, <strong>box-medium</strong> or <strong>box-huge</strong>.</p>
+                        <p>Instead of an icon you can use an image</p>
+                        <pre><code>&lt;div class=&quot;box-round box-big&quot;&gt;
+  &lt;div class=&quot;box-dummy&quot;&gt;&lt;/div&gt;
+  &lt;span class=&quot;box-inner&quot;&gt;
+    &lt;img alt=&quot;&quot; data-animation=&quot;swing&quot; src=&quot;img_src&quot;&gt;
+  &lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                        <p>Another cool feature that you can add is shadows. To do that, you need to add two classes to the outter <code>&lt;div&gt;</code> using this markup for the hexagons.</p>
+                        <pre><code>&lt;div class=&quot;box-hex box-big flat-shadow flat-hex&quot;&gt;
+    &lt;div class=&quot;box-dummy&quot;&gt;&lt;/div&gt;
+    &lt;span class=&quot;box-inner&quot;&gt;
+      &lt;img alt=&quot;&quot; data-animation=&quot;swing&quot; src=&quot;img_src&quot; class=&quot;&quot;&gt;
+    &lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                        <p>The class <strong>flat-shadow</strong> should always be added, and then depending on the shape of the image, add the class <strong>flat-hex</strong> for the hexagons, <strong>flat-rect</strong> for the rectangles, <strong>flat-square</strong> for
+                            the squares and <strong>flat-circle</strong> for the round.</p>
+                        <p>
+                            <img src="assets/images/boxes.png" alt="boxes">
+                        </p>
+                        <hr>
+                        <h2 id="social-icons">Social Icons</h2>
+                        <p>You can add social icons using the following markup</p>
+                        <pre><code>&lt;ul class=&quot;list-unstyled inline social-icons social-simple&quot;&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;#&quot;&gt;
+      &lt;i class=&quot;fa fa-twitter&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;#&quot;&gt;
+      &lt;i class=&quot;fa fa-facebook&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;#&quot;&gt;
+      &lt;i class=&quot;fa fa-pinterest&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                        <p>This will add a list of three social icons of a small size. You can change the class <strong>social-simple</strong> to <strong>social-big</strong> if you want them to be bigger.</p>
+                        <p>
+                            <img src="assets/images/social-icons.png" alt="social-icons">
+                        </p>
+                        <hr>
+                        <h2 id="fancy-list-icons">Fancy List Icons</h2>
+                        <p>You can create a list of fancy icons by using the following markup</p>
+                        <pre><code>&lt;div class=&quot;col-md-4  text-default&quot;&gt;
+    &lt;div class=&quot;list-fancy-icons&quot;&gt;
+        &lt;div class=&quot;list-item&quot;&gt;
+            &lt;div class=&quot;hex&quot;&gt;
+                &lt;i class=&quot;fa fa-heart&quot; data-animation=&quot;bounce&quot;&gt;&lt;/i&gt;
+            &lt;/div&gt;
+            &lt;h3&gt;Some header&lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;list-fancy-icons&quot;&gt;
+        &lt;div class=&quot;list-item&quot;&gt;
+            &lt;div class=&quot;hex&quot;&gt;
+                &lt;i class=&quot;fa fa-star&quot; data-animation=&quot;shake&quot;&gt;&lt;/i&gt;
+            &lt;/div&gt;
+            &lt;h3&gt;Some header&lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        <p>This will create a list of two fancy icons, which will be aligned on the left side of an <code>&lt;h3&gt;</code> header and a subtitle. The icons used are <strong>font-awesome</strong> icons, defined by the classes <strong>fa fa-heart</strong> and <strong>fa fa-star</strong>.
+                            The shape of the icons is defined by the class
+                            <strong>hex</strong>. Alternatively you can have <strong>square</strong> or <strong>round</strong>.</p>
+                        <div class="alert alert-success">
+                            <i class="fa fa-gittip"></i> If you want to take a look at the font-awesome icons you can go <a href="http://fortawesome.github.io/Font-Awesome/icons/">here</a>.
+                        </div>
+                        <p>
+                            <img src="assets/images/fancy-list.png" alt="fancy-list">
+                        </p>
+                        <h2 id="blockquotes">Blockquotes</h2>
+                        <p>You can create a blockquote by using the following markup</p>
+                        <pre><code>&lt;blockquote&gt;
+  &lt;p&gt;
+    &lt;br&gt;
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    &lt;br&gt;
+  &lt;/p&gt;
+  &lt;small&gt;Sam Doe biz inc&lt;/small&gt;
+&lt;/blockquote&gt;</code></pre>
+                        <p>If you want to create a <strong>fancy blockquote</strong>, which will add an image to the left side of the blockquote, you need to use the following markup</p>
+                        <pre><code>&lt;blockquote class=&quot;fancy-blockquote&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-2&quot;&gt;
+            &lt;div class=&quot;box-round box-huge&quot;&gt;
+                &lt;div class=&quot;box-dummy&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;box-inner&quot;&gt;
+                    &lt;img width=&quot;300&quot; height=&quot;300&quot; src=&quot;img_src&quot; class=&quot;attachment-square-image-small wp-post-image&quot; alt=&quot;some alt&quot; draggable=&quot;false&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-10&quot;&gt;
+            &lt;p&gt;Nullam vitae sollicitudin eros. Cras varius vehicula velit ac congue quam dictum sed. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.Donec sed odio dui. &lt;/p&gt;
+            &lt;small&gt;Sue Doe&lt;/small&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/blockquote&gt;</code></pre>
+                        <p>In order to read more on how to add a boxed image, go to <a href="/using-angle.html#boxes">boxes</a>.</p>
+                        <hr>
+                        <h1 id="contact-form">Contact Form</h1>
+                        <p>The contact form now uses the <strong>PHPMailer</strong>, which is a full-featured email creation and transfer class for PHP. For more about PHPMailer please visit the official website
+                            <a href="http://phpmailer.worxware.com/"><a href="http://phpmailer.worxware.com/">http://phpmailer.worxware.com/</a></a>.
+                            <br>To setup your contact form you will need to edit the <strong>contact_mailer.php</strong> file in the main theme folder. The first <strong>62 lines</strong> can be modified to customise your contact form.</p>
+                        <ol>
+                            <li>Set the main host. It is by default set to <code>smtp.gmail.com</code> if you are using a <strong>GMail</strong> account. Other options are
+                                <ul>
+                                    <li>Hotmail =&gt; <code>smtp.live.com</code>
+                                    </li>
+                                    <li>Yahoo =&gt; <code>smtp.mail.yahoo.com</code>
+                                    </li>
+                                    <li>Lycos =&gt; <code>smtp.mail.lycos.com</code>
+                                    </li>
+                                    <li>AOL =&gt; <code>smtp.aol.com</code>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Set the SMTP username and password. This is the email account that PHPMailer will use to send the email. Change <code>some_email@email.com</code> to the email that you want to use and <code>secret</code> to the password of that
+                                email, from <strong>lines 16, 17</strong>.</li>
+                            <li>Set the address that the email of the form will be delivered to. Change the <code>receiver@mail.com</code> from <strong>line 21</strong> to the address that you want.</li>
+                            <li>Set the company name - When a message arrives in your inbox it will have a subject with your company name inside. To change this edit <strong>line 26</strong> and change the <em>your_company</em> to your company name.</li>
+                            <li>
+                                <p>Set which fields are required - to change which fields are required in your form you can edit the following</p>
+                                <pre><code> $field_rules = array(
+  &#39;name&#39; =&gt; &#39;required&#39;,
+  &#39;email&#39; =&gt; &#39;required|valid_email&#39;,
+  &#39;message&#39; =&gt; &#39;required&#39;
+ );</code></pre>
+                                <p>Remove the lines of the fields you do not want to be required.</p>
+                            </li>
+                            <li>
+                                <p>Change error validation messages - to change the error messages that popup on the forms change the following section</p>
+                                <pre><code> $error_messages = array(
+  &#39;required&#39; =&gt; &#39;This field is required&#39;,
+  &#39;valid_email&#39; =&gt; &#39;Please enter a valid email address&#39;
+ );
+ // select where each inputs error messages will be shown
+ $error_placements = array(
+  &#39;name&#39; =&gt; &#39;top&#39;,
+  &#39;email&#39; =&gt; &#39;top&#39;,
+  &#39;subject&#39; =&gt; &#39;right&#39;,
+  &#39;message&#39; =&gt; &#39;right&#39;,
+  &#39;submitButton&#39; =&gt; &#39;right&#39;
+ );</code></pre>
+                            </li>
+                        </ol>
+                        <p><strong>$error_messages</strong> - defines the messages shown in the popups.</p>
+                        <p><strong>$error_placements</strong> - defines where the popups will appear on (top|bottom|left|right).</p>
+                        <div class="alert alert-success">
+                            <i class="fa fa-gittip"></i> Keep in mind that you need to include the
+                            <code>&lt;script src=&quot;assets/js/contact.min.js&quot;&gt;&lt;/script&gt;</code> at the and of the <code>&lt;body&gt;</code>.
+                        </div>
+                        <p>
+                            <img src="assets/images/contact-form.png" alt="contact-form">
+                        </p>
+                        <p>#</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="docs-footer" role="contentinfo">
+            <div class="container">
+                <ul class="bs-masthead-links pull-left">
+                    <li class="current-version">
+                        Currently v1.3.0
+                    </li>
+                    <li>
+                        <a href="changelog.html">Changelog</a>
+                    </li>
+                    <li>
+                        <a href="http://themeforest.net/user/oxygenna/portfolio" target="_blank">Our Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="http://www.oxygenna.com/contact" target="_blank">Contact Us</a>
+                    </li>
+                </ul>
+                <ul class="bs-masthead-links pull-right">
+                    <li>
+                        Made with <i class="fa fa-heart"></i> in Sitia, Greece
+                    </li>
+                </ul>
+                </li>
+        </footer>
+    </body>
+    <script src="assets/js/main.js"></script>
+</html>
