@@ -16,7 +16,6 @@
 //        print $conn->connect_error;
         die("Connection failed: " . $conn->connect_error);
     }
-    $isAdmin = true;
     $id = $_REQUEST['id'];
     $pass = $_REQUEST['pass'];
 
