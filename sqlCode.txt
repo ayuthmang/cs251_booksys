@@ -1,0 +1,33 @@
+
+--insert admin account to database
+INSERT INTO `admin`(`uid`, `fname`, `lname`, `password`) VALUES ([uid],[fname],[lname],[password])
+
+--insert seat to database
+INSERT INTO `seat`(`seatid`, `sid`, `max_seat`, `status`) VALUES ([seatid],[studentid],[max_seat],[status])
+
+--insert data into server log
+INSERT INTO `serverlog`(`sid`, `message`) VALUES ([studentID],[messageForLog])
+
+--insert data into student table
+INSERT INTO `student`(`sid`, `fname`, `lname`, `priority`, `password`)
+VALUES ([studentID],[firstName],[lastName],[priority],[password])
+
+--insert all seat
+INSERT INTO `seat`(`seatid`, `sid`, `max_seat`, `status`) VALUES ('$i','',32,0)
+
+--update seat
+UPDATE seat
+SET sid='5809610347', status = '1'
+WHERE seatid='01' AND sid = '' AND status = 0;
+
+-- empty a selected seat
+UPDATE seat
+SET sid='', status = '0'
+WHERE seatid='01' ;
+
+-- add log to server
+INSERT INTO serverlog (sid, message) VALUES ('5809610347' , '$fname logged into server');
+
+-- clear all seat
+UPDATE seat
+SET sid ='' , status=0
