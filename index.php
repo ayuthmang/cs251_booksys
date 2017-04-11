@@ -1,5 +1,6 @@
 <?php
-    error_reporting(E_ALL ^ E_NOTICE);
+//    error_reporting(E_ALL ^ E_NOTICE);
+//    error_reporting(E_ERROR | E_PARSE);
     session_save_path("/tmp");
     session_start();
 ?>
@@ -46,7 +47,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="./index.php" class="navbar-brand">
-                        <img src="" alt="">BKKSYS
+                        <img src="" alt="">Lab107 Booking System
                     </a>
                 </div>
                 <nav class="collapse navbar-collapse main-navbar" role="navigation">
@@ -56,9 +57,9 @@
 						<li>
 						<?php
 //                        print_r ($_SESSION);
-							if($_SESSION['C_ID']){
+							if(isset($_SESSION['sid']) && $_SESSION['sid'] != ''){
 								echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown"> 
-									Hello!! '.$_SESSION['C_ID'].'</a>';
+									Hello!! '.$_SESSION['fname'].'</a>';
 								echo '<ul class="dropdown-menu">';
 								echo '<li><a href="profile.php">Profile</a>';
 								echo '</li>';
@@ -70,6 +71,17 @@
 								echo '</li>';
 								
                                
+                                echo '</ul>';
+							} elseif(isset($_SESSION['uid']) && $_SESSION['uid'] != ''){
+								echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown"> 
+									Hello!! '.$_SESSION['fname'].'</a>';
+								echo '<ul class="dropdown-menu">';
+								echo '<li><a href="profile.php">Profile</a>';
+								echo '</li>';
+                                echo '<li><a href="management.php">Management</a>';
+                                echo '</li>';
+								echo '<li><a href="logout.php">Logout</a>';
+								echo '</li>';
                                 echo '</ul>';
 							}else{
 								echo '<li class="">';
