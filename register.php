@@ -1,9 +1,9 @@
 <?php
-    $servername = "localhost";
-$username = "root"; // database id
-$password = ""; // database password
-$dbname = "mydb"; //database name
-$conn = new mysqli($servername,$username,$password,$dbname);
+    $servername = "188.166.248.254";
+    $username = "blacksource_root"; // database id
+    $password = "ifyounot"; // database password
+    $dbname = "blacksource_bksys"; //database name
+    $conn = new mysqli($servername,$username,$password,$dbname);
 //    print_r($_REQUEST);
 if($conn->connect_error){
 //    print $conn->connect_error;
@@ -11,22 +11,15 @@ if($conn->connect_error){
 }
 
     $id = $_REQUEST['cid'];
-    $pass = $_REQUEST['cpass'];
-    $name = $_REQUEST['cname'];
-    $lastname = $_REQUEST['clastname'];
-    $gender = $_REQUEST['cgender'];
-    $mail = $_REQUEST['cmail'];
-    $address = $_REQUEST['caddress'];
 
-    $telephone = $_REQUEST['cphone'];
+    $sid = NULL;
+    $fname = NULL;
+    $lname = NULL;
+    $priority = NULL;
+    $password = NULL;
 
-    $insertToAccount = "INSERT INTO `accounts`(`C_ID`, `C_PASSWORD`, `C_TYPE`) 
-                                          VALUES ('".$id."','".$pass."','1')";
-
-
-    $insertToAccInfo = "INSERT INTO `accinfo`(`C_ID`, `C_NAME`, `C_LASTNAME`, `C_GENDER`, `C_PHONE`, `C_MAIL`, `C_ADDRESS`)
-                                     VALUES ('".$id."' , '".$name."','".$lastname."','".$gender."','".$telephone."','".$mail."','".$address."') ";
-
+    $insertToAccount = "INSERT INTO `student`(`sid`, `fname`, `lname`, `priority`, `password`)
+                         VALUES ([studentID],[firstName],[lastName],[priority],[password])"
 
     if($conn->query($insertToAccount) === true){
         print "Insert to account table successful";

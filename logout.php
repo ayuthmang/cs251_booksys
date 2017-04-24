@@ -1,7 +1,7 @@
 <?php
 
 error_reporting(E_ALL ^ E_NOTICE);
-session_save_path("/tmp");
+// session_save_path("/tmp");
 session_start();
 
 print_r($_SESSION);
