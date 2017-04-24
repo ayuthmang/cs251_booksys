@@ -9,6 +9,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
     <head>
+
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -57,6 +58,7 @@ session_start();
                     	<li class="dropdown active"><a href =# class="dropdown-toggle"
                     	data-toggle = "dropdown">Home</a></li>
 						<li>
+
 						<?php
 //                        print_r ($_SESSION);
 							if(isset($_SESSION['sid']) && $_SESSION['sid'] != ''){
@@ -120,14 +122,14 @@ session_start();
             <section class="section swatch-beige-black">
                 <div class="container">
                     <header class="section-header underline text-center">
-                        <h1 class="headline super hairline"><b>Welcome to Booking System</b></h1>
+                        <h1 class="headline super hairline "><b><?php echo ' '.$_SESSION['fname'].',  ' ?> Hello.</b></h1>
                     </header>
 
                     <div class="text-center">
                         <a class="btn btn-primary btn-lg btn-icon-right pull-center" href="booking-form.php">
                             Booking Now
                             <div class="hex-alt hex-alt-big">
-                                <i class="fa fa-rocket" data-animation="tada"></i>
+                                <i class="fa fa-desktop" data-animation="tada"></i>
                             </div>
                         </a>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
