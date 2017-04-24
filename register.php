@@ -19,7 +19,7 @@ if($conn->connect_error){
     $password = NULL;
 
     $insertToAccount = "INSERT INTO `student`(`sid`, `fname`, `lname`, `priority`, `password`)
-                         VALUES ([studentID],[firstName],[lastName],[priority],[password])"
+                         VALUES ([studentID],[firstName],[lastName],[priority],[password])";
 
     if($conn->query($insertToAccount) === true){
         print "Insert to account table successful";

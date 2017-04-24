@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b10c894-ccf4-4e59-8716-76b33590e7a7" name="Default" comment="Finished login admin and student">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/booking-form.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login-form.html" afterPath="$PROJECT_DIR$/login-form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/booking-form.php" afterPath="$PROJECT_DIR$/booking-form.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.php" afterPath="$PROJECT_DIR$/login.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logout.php" afterPath="$PROJECT_DIR$/logout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profile-edit.php" afterPath="$PROJECT_DIR$/profile-edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profile.php" afterPath="$PROJECT_DIR$/profile.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register.php" afterPath="$PROJECT_DIR$/register.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,36 +29,27 @@
     <favorites_list name="web" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="sqlCode.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sqlCode.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="36" column="70" lean-forward="true" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="70" />
+            <state relative-caret-position="760">
+              <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
               <folding>
-                <marker date="1493025014288" expanded="true" signature="1067:1146" ph="SELECT sid ,... student" />
-                <marker date="1493025014288" expanded="true" signature="1174:1240" ph="SELECT uid ,... admin" />
+                <marker date="1493039399600" expanded="true" signature="3695:3740" ph="..." />
+                <marker date="1493039399600" expanded="true" signature="4287:4338" ph="..." />
+                <marker date="1493039399600" expanded="true" signature="7125:7126" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login-form.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login-form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="44" column="37" lean-forward="false" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="37" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -70,31 +57,16 @@
       <file leaf-file-name="booking-form.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/booking-form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="146" column="54" lean-forward="true" selection-start-line="146" selection-start-column="54" selection-end-line="146" selection-end-column="54" />
+            <state relative-caret-position="629">
+              <caret line="190" column="63" lean-forward="true" selection-start-line="190" selection-start-column="63" selection-end-line="190" selection-end-column="63" />
               <folding>
-                <marker date="1493026743364" expanded="true" signature="3556:3557" ph="..." />
-                <marker date="1493026743364" expanded="true" signature="3556:3605" ph="..." />
-                <marker date="1493026743364" expanded="true" signature="4329:4384" ph="..." />
-                <marker date="1493026743364" expanded="true" signature="6748:6762" ph="SELECT * FRO... SEAT" />
-                <marker date="1493026743364" expanded="true" signature="6748:6766" ph="SELECT * FRO... seat" />
-                <marker date="1493026743364" expanded="true" signature="7812:7860" ph="..." />
-                <marker date="1493026743364" expanded="true" signature="8679:9125" ph="..." />
-                <marker date="1493026743364" expanded="true" signature="8740:9111" ph="..." />
-                <marker date="1493026743364" expanded="true" signature="8776:9091" ph="..." />
-                <marker date="1493026743364" expanded="true" signature="8889:9072" ph="..." />
-                <marker date="1493026743364" expanded="true" signature="9185:9225" ph="..." />
+                <marker date="1493041204726" expanded="true" signature="3556:3557" ph="..." />
+                <marker date="1493041204726" expanded="true" signature="3556:3605" ph="..." />
+                <marker date="1493041204726" expanded="true" signature="4329:4384" ph="..." />
+                <marker date="1493041204726" expanded="true" signature="6748:6762" ph="SELECT * FRO... SEAT" />
+                <marker date="1493041204726" expanded="true" signature="6748:6766" ph="SELECT * FRO... seat" />
+                <marker date="1493041204726" expanded="true" signature="7489:7507" ph="SELECT * FRO... seat" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mysqli.php" pinned="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/mysqli/mysqli.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="2078" column="9" lean-forward="false" selection-start-line="2078" selection-start-column="9" selection-end-line="2078" selection-end-column="9" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -155,17 +127,17 @@
         <option value="$PROJECT_DIR$/profile-form.html" />
         <option value="$PROJECT_DIR$/profile.html" />
         <option value="$PROJECT_DIR$/management.php" />
-        <option value="$PROJECT_DIR$/register.php" />
         <option value="$PROJECT_DIR$/editprofile.php" />
         <option value="$PROJECT_DIR$/profile-edit.php" />
         <option value="$PROJECT_DIR$/profile.php" />
-        <option value="$PROJECT_DIR$/logout.php" />
         <option value="$PROJECT_DIR$/sqlCode.txt" />
         <option value="$PROJECT_DIR$/execute.php" />
         <option value="$PROJECT_DIR$/register-form.html" />
         <option value="$PROJECT_DIR$/booking-form.html" />
         <option value="$PROJECT_DIR$/login-form.html" />
         <option value="$PROJECT_DIR$/login.php" />
+        <option value="$PROJECT_DIR$/logout.php" />
+        <option value="$PROJECT_DIR$/register.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/booking-form.php" />
       </list>
@@ -179,9 +151,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 7.1.1" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -245,7 +218,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -275,6 +247,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -422,6 +395,7 @@
       <workItem from="1493017355110" duration="627000" />
       <workItem from="1493017996875" duration="1268000" />
       <workItem from="1493020746906" duration="19000" />
+      <workItem from="1493036346033" duration="2750000" />
     </task>
     <task id="LOCAL-00001" summary="Updated login">
       <created>1491304747318</created>
@@ -483,7 +457,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36754000" />
+    <option name="totallyTimeSpent" value="39504000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -495,37 +469,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24617068" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1663113" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32880098" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32945737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40262583" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32880098" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32945737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16666667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -565,13 +529,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/booking-form.php</url>
-          <line>156</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
@@ -590,9 +547,9 @@
         <state relative-caret-position="1513">
           <caret line="92" column="4" lean-forward="true" selection-start-line="92" selection-start-column="4" selection-end-line="92" selection-end-column="4" />
           <folding>
-            <marker date="1493025083697" expanded="true" signature="3695:3740" ph="..." />
-            <marker date="1493025083697" expanded="true" signature="4287:4338" ph="..." />
-            <marker date="1493025083697" expanded="true" signature="7125:7126" ph="..." />
+            <marker date="1493039399600" expanded="true" signature="3695:3740" ph="..." />
+            <marker date="1493039399600" expanded="true" signature="4287:4338" ph="..." />
+            <marker date="1493039399600" expanded="true" signature="7125:7126" ph="..." />
           </folding>
         </state>
       </provider>
@@ -626,8 +583,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1493025014288" expanded="true" signature="1067:1146" ph="SELECT sid ,... student" />
-            <marker date="1493025014288" expanded="true" signature="1174:1240" ph="SELECT uid ,... admin" />
+            <marker date="1493036506683" expanded="true" signature="1067:1146" ph="SELECT sid ,... student" />
+            <marker date="1493036506683" expanded="true" signature="1174:1240" ph="SELECT uid ,... admin" />
           </folding>
         </state>
       </provider>
@@ -637,9 +594,9 @@
         <state relative-caret-position="1020">
           <caret line="68" column="33" lean-forward="true" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
           <folding>
-            <marker date="1493025083697" expanded="true" signature="3695:3740" ph="..." />
-            <marker date="1493025083697" expanded="true" signature="4287:4338" ph="..." />
-            <marker date="1493025083697" expanded="true" signature="7125:7126" ph="..." />
+            <marker date="1493039399600" expanded="true" signature="3695:3740" ph="..." />
+            <marker date="1493039399600" expanded="true" signature="4287:4338" ph="..." />
+            <marker date="1493039399600" expanded="true" signature="7125:7126" ph="..." />
           </folding>
         </state>
       </provider>
@@ -664,9 +621,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="2" />
           <folding>
-            <marker date="1493025083697" expanded="true" signature="3695:3740" ph="..." />
-            <marker date="1493025083697" expanded="true" signature="4287:4338" ph="..." />
-            <marker date="1493025083697" expanded="true" signature="7125:7126" ph="..." />
+            <marker date="1493039399600" expanded="true" signature="3695:3740" ph="..." />
+            <marker date="1493039399600" expanded="true" signature="4287:4338" ph="..." />
+            <marker date="1493039399600" expanded="true" signature="7125:7126" ph="..." />
           </folding>
         </state>
       </provider>
@@ -692,8 +649,8 @@
         <state relative-caret-position="345">
           <caret line="23" column="89" lean-forward="false" selection-start-line="23" selection-start-column="89" selection-end-line="23" selection-end-column="89" />
           <folding>
-            <marker date="1493025014288" expanded="true" signature="1067:1146" ph="SELECT sid ,... student" />
-            <marker date="1493025014288" expanded="true" signature="1174:1240" ph="SELECT uid ,... admin" />
+            <marker date="1493036506683" expanded="true" signature="1067:1146" ph="SELECT sid ,... student" />
+            <marker date="1493036506683" expanded="true" signature="1174:1240" ph="SELECT uid ,... admin" />
           </folding>
         </state>
       </provider>
@@ -710,9 +667,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="2" />
           <folding>
-            <marker date="1493025083697" expanded="true" signature="3695:3740" ph="..." />
-            <marker date="1493025083697" expanded="true" signature="4287:4338" ph="..." />
-            <marker date="1493025083697" expanded="true" signature="7125:7126" ph="..." />
+            <marker date="1493039399600" expanded="true" signature="3695:3740" ph="..." />
+            <marker date="1493039399600" expanded="true" signature="4287:4338" ph="..." />
+            <marker date="1493039399600" expanded="true" signature="7125:7126" ph="..." />
           </folding>
         </state>
       </provider>
@@ -738,8 +695,8 @@
         <state relative-caret-position="345">
           <caret line="23" column="89" lean-forward="false" selection-start-line="23" selection-start-column="89" selection-end-line="23" selection-end-column="89" />
           <folding>
-            <marker date="1493025014288" expanded="true" signature="1067:1146" ph="SELECT sid ,... student" />
-            <marker date="1493025014288" expanded="true" signature="1174:1240" ph="SELECT uid ,... admin" />
+            <marker date="1493036506683" expanded="true" signature="1067:1146" ph="SELECT sid ,... student" />
+            <marker date="1493036506683" expanded="true" signature="1174:1240" ph="SELECT uid ,... admin" />
           </folding>
         </state>
       </provider>
@@ -763,9 +720,9 @@
         <state relative-caret-position="1305">
           <caret line="87" column="22" lean-forward="true" selection-start-line="51" selection-start-column="15" selection-end-line="87" selection-end-column="22" />
           <folding>
-            <marker date="1493025083697" expanded="true" signature="3695:3740" ph="..." />
-            <marker date="1493025083697" expanded="true" signature="4287:4338" ph="..." />
-            <marker date="1493025083697" expanded="true" signature="7125:7126" ph="..." />
+            <marker date="1493039399600" expanded="true" signature="3695:3740" ph="..." />
+            <marker date="1493039399600" expanded="true" signature="4287:4338" ph="..." />
+            <marker date="1493039399600" expanded="true" signature="7125:7126" ph="..." />
           </folding>
         </state>
       </provider>
@@ -790,8 +747,8 @@
         <state relative-caret-position="75">
           <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="9" selection-end-column="64" />
           <folding>
-            <marker date="1493025014288" expanded="true" signature="1067:1146" ph="SELECT sid ,... student" />
-            <marker date="1493025014288" expanded="true" signature="1174:1240" ph="SELECT uid ,... admin" />
+            <marker date="1493036506683" expanded="true" signature="1067:1146" ph="SELECT sid ,... student" />
+            <marker date="1493036506683" expanded="true" signature="1174:1240" ph="SELECT uid ,... admin" />
           </folding>
         </state>
       </provider>
@@ -823,9 +780,9 @@
         <state relative-caret-position="1290">
           <caret line="86" column="22" lean-forward="false" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="22" />
           <folding>
-            <marker date="1493025083697" expanded="true" signature="3695:3740" ph="..." />
-            <marker date="1493025083697" expanded="true" signature="4287:4338" ph="..." />
-            <marker date="1493025083697" expanded="true" signature="7125:7126" ph="..." />
+            <marker date="1493039399600" expanded="true" signature="3695:3740" ph="..." />
+            <marker date="1493039399600" expanded="true" signature="4287:4338" ph="..." />
+            <marker date="1493039399600" expanded="true" signature="7125:7126" ph="..." />
           </folding>
         </state>
       </provider>
@@ -853,13 +810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="514">
           <caret line="66" column="87" lean-forward="false" selection-start-line="66" selection-start-column="87" selection-end-line="66" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -900,50 +850,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sqlCode.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="6" selection-end-column="16" />
-          <folding>
-            <marker date="1493025083697" expanded="true" signature="3695:3740" ph="..." />
-            <marker date="1493025083697" expanded="true" signature="4287:4338" ph="..." />
-            <marker date="1493025083697" expanded="true" signature="7125:7126" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/register-form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="111" column="45" lean-forward="true" selection-start-line="111" selection-start-column="45" selection-end-line="111" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
+    <entry file="file://$PROJECT_DIR$/assets/css/fonts.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="36" column="70" lean-forward="true" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="70" />
-          <folding>
-            <marker date="1493025014288" expanded="true" signature="1067:1146" ph="SELECT sid ,... student" />
-            <marker date="1493025014288" expanded="true" signature="1174:1240" ph="SELECT uid ,... admin" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -955,7 +872,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/fonts.css">
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+          <folding>
+            <marker date="1493039399600" expanded="true" signature="3695:3740" ph="..." />
+            <marker date="1493039399600" expanded="true" signature="4287:4338" ph="..." />
+            <marker date="1493039399600" expanded="true" signature="7125:7126" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/mysqli/mysqli.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="1739" column="27" lean-forward="false" selection-start-line="1739" selection-start-column="0" selection-end-line="1739" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="94" />
+          <folding>
+            <marker date="1493036506683" expanded="true" signature="1067:1146" ph="SELECT sid ,... student" />
+            <marker date="1493036506683" expanded="true" signature="1174:1240" ph="SELECT uid ,... admin" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="23" column="48" lean-forward="true" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+          <folding>
+            <marker date="1493039336488" expanded="true" signature="556:717" ph="INSERT INTO `student`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqlCode.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -963,30 +929,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/mysqli/mysqli.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="2078" column="9" lean-forward="false" selection-start-line="2078" selection-start-column="9" selection-end-line="2078" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/booking-form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="146" column="54" lean-forward="true" selection-start-line="146" selection-start-column="54" selection-end-line="146" selection-end-column="54" />
+        <state relative-caret-position="629">
+          <caret line="190" column="63" lean-forward="true" selection-start-line="190" selection-start-column="63" selection-end-line="190" selection-end-column="63" />
           <folding>
-            <marker date="1493026743364" expanded="true" signature="3556:3557" ph="..." />
-            <marker date="1493026743364" expanded="true" signature="3556:3605" ph="..." />
-            <marker date="1493026743364" expanded="true" signature="4329:4384" ph="..." />
-            <marker date="1493026743364" expanded="true" signature="6748:6762" ph="SELECT * FRO... SEAT" />
-            <marker date="1493026743364" expanded="true" signature="6748:6766" ph="SELECT * FRO... seat" />
-            <marker date="1493026743364" expanded="true" signature="7812:7860" ph="..." />
-            <marker date="1493026743364" expanded="true" signature="8679:9125" ph="..." />
-            <marker date="1493026743364" expanded="true" signature="8740:9111" ph="..." />
-            <marker date="1493026743364" expanded="true" signature="8776:9091" ph="..." />
-            <marker date="1493026743364" expanded="true" signature="8889:9072" ph="..." />
-            <marker date="1493026743364" expanded="true" signature="9185:9225" ph="..." />
+            <marker date="1493041204726" expanded="true" signature="3556:3557" ph="..." />
+            <marker date="1493041204726" expanded="true" signature="3556:3605" ph="..." />
+            <marker date="1493041204726" expanded="true" signature="4329:4384" ph="..." />
+            <marker date="1493041204726" expanded="true" signature="6748:6762" ph="SELECT * FRO... SEAT" />
+            <marker date="1493041204726" expanded="true" signature="6748:6766" ph="SELECT * FRO... seat" />
+            <marker date="1493041204726" expanded="true" signature="7489:7507" ph="SELECT * FRO... seat" />
           </folding>
         </state>
       </provider>
