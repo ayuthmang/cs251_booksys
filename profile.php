@@ -1,6 +1,11 @@
 <?php
 // session_save_path("/tmp");
+ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
 session_start();
+
+if (empty($_SESSION['fname'])) {
+    header("location:login-form.html");
+}
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +42,7 @@ session_start();
     <link rel="stylesheet" href="assets/css/fonts.min.css" media="screen">
 </head>
 <body>
-<header id="masthead" class="navbar navbar-sticky swatch-red-white" role="banner">
+<header id="masthead" class="navbar navbar-sticky swatch-black-yellow" role="banner">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".main-navbar">
@@ -56,24 +61,41 @@ session_start();
                 </li>
                 <li>
                     <?php
-                    //                    print_r ($_SESSION);
-                    if(isset($_SESSION['C_ID']) && $_SESSION['C_ID']){
+                    //                        print_r ($_SESSION);
+                    if(isset($_SESSION['sid']) && $_SESSION['sid'] != ''){
                         echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown"> 
-									Hello!! '.$_SESSION['C_ID'].'</a>';
+									Student '.$_SESSION['fname'].'</a>';
                         echo '<ul class="dropdown-menu">';
                         echo '<li><a href="profile.php">Profile</a>';
                         echo '</li>';
-                        if($_SESSION["C_TYPE"]==1){
-                            echo '<li><a href="management.php" class="dropdown-toggle" class="dropdown active">Management</a>';
+                        if(isset($_SESSION['C_TYPE']) && $_SESSION["C_TYPE"]==1){
+                            echo '<li><a href="management.php">Management</a>';
                             echo '</li>';
                         }
                         echo '<li><a href="logout.php">Logout</a>';
                         echo '</li>';
+
+
                         echo '</ul>';
-
-
+                    } elseif(isset($_SESSION['uid']) && $_SESSION['uid'] != ''){
+                        echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown"> 
+									Administrator '.$_SESSION['fname'].'</a>';
+                        echo '<ul class="dropdown-menu">';
+                        echo '<li class="dropdown active"><a href="profile.php">Profile</a>';
+                        echo '</li>';
+                        echo '<li><a href="management.php">Management</a>';
+                        echo '</li>';
+                        echo '<li><a href="logout.php">Logout</a>';
+                        echo '</li>';
+                        echo '</ul>';
                     }else{
-                        header("login-form.html");
+                        echo '<li class="">';
+                        echo'<a href =login-form.html >Login</a>';
+                        echo '</li>';
+                        echo '<li class="">';
+                        echo'<a href =register-form.html>Register</a>';
+                        echo '</li>';
+
                     }
 
                     ?>
@@ -84,37 +106,56 @@ session_start();
     </div>
 </header>
 <div id="content" role="main">
-    <section class="section swatch-white-red">
+    <section class="section swatch-black-yellow">
         <div class="container" align="center">
             <form action="profile-edit.php" method="post">
-                UserID &nbsp
-                <input type="text" name="cid" value=<?php echo htmlspecialchars($_SESSION['C_ID']); ?> disabled>
-                <br> <br>
+<!--                UserID &nbsp-->
+<!--                <input type="text" name="cid" value=--><?php //echo htmlspecialchars($_SESSION['C_ID']); ?><!-- disabled>-->
+<!--                <br> <br>-->
 <!--                User Password-->
 <!--                <input type="text" name="cpass" value="">-->
 <!--                <br> <br>-->
 
+                <div class="row text-center">
+                    <div class="col-md-6 col-md-offset-3">
+                        <form class="contact-form" id="contactForm">
 
-                Name &nbsp
-                <input type="text" name="cname" value="">
-                <br> <br>
+                            <div class="form-group form-icon-group">
+                                <input name="id" class="form-control" id="id" required="" type="text" placeholder="Your ID">
+                                <i class="fa fa-user"></i>
+                            </div>
 
-                Last Name &nbsp
-                <input type="text" name="clastname" value="">
-                <br> <br>
+                            <div class="form-group form-icon-group">
+                                <input name="fname" class="form-control" id="fname" required="" type="text" placeholder="Your first name *">
+                                <i class="fa fa-user"></i>
+                            </div>
 
-                Phone&nbsp
-                <input type="text" name="cphone" value="">
-                <br> <br>
 
-                eMail&nbsp
-                <input type="text" name="cmail" value="">
-                <br> <br>
+                            <div class="form-group form-icon-group">
+                                <input name="lname" class="form-control" id="lname" required="" type="text" placeholder="Your last name">
+                                <i class="fa fa-key"></i>
+                            </div>
 
-                Address&nbsp
-                <input type="text" name="caddress" value="">
-                <br> <br>
-                <input type="submit" value="Update">
+                            <div class="form-group form-icon-group">
+                                <input name="pass" class="form-control" id="pass" required="" type="password" placeholder="New Password">
+                                <i class="fa fa-key"></i>
+                            </div>
+
+
+                            <div class="form-group text-center">
+                                <button class="btn btn-primary btn-icon btn-icon-right type="submit">
+                                Edit Profile
+                                <div class="hex-alt">
+                                    <i class="fa fa-terminal"></i>
+                                </div>
+                                </button>
+                            </div>
+
+
+                        </form>
+                        <div id="messages"></div>
+                    </div>
+                </div>
 
             </form>
         </div>
@@ -122,7 +163,7 @@ session_start();
 
 
     <footer id="footer" role="contentinfo">
-        <section class="section swatch-red-white has-top">
+        <section class="section swatch-black-yellow has-top">
             <div class="decor-top">
                 <svg class="decor" height="100%" preserveaspectratio="none" version="1.1" viewbox="0 0 100 100" width="100%" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 0 L50 100 L100 0 L100 100 L0 100" stroke-width="0"></path>

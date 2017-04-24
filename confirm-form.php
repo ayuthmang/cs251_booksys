@@ -5,6 +5,12 @@
 ini_set('session.save_path', realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
 
 session_start();
+
+if (!isset($_SESSION['sid']) || $_SESSION['sid'] == '' ||
+    !isset($_SESSION['sid']) || $_SESSION['uid'] == '' )
+{
+    header("location:login-form.html");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

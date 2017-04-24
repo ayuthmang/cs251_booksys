@@ -1,6 +1,5 @@
 <?php
     error_reporting(E_ALL ^ E_NOTICE);
-
     session_reset();
     ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
     // session_save_path("/tmp");
@@ -45,7 +44,7 @@
             echo "Welcome admin ".$_SESSION['fname']." <br>";
 //            echo "Auto redirect to home in 3 secconds ...";
 //            sleep(3);
-//            header("location:index.php");
+            header("location:index.php");
             $loginSucceed = true;
         }
 
@@ -60,7 +59,7 @@
         $loginSucceed = true;
 //        echo "Auto redirect to home in 3 secconds ...";
 //        sleep(3);
-//        header("location:index.php");
+        header("location:index.php");
         session_write_close();
     }
     if(!$loginSucceed){
