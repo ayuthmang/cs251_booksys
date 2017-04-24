@@ -150,33 +150,55 @@ session_start();
                                 $conn = new mysqli($servername, $username, $password, $dbname);
                                 if ($conn->connect_error) {
                                     die("Connection failed: " . $conn->connect_error);
+
                                 }
 
 
-                                $objResult = null;
-                                $objResult = mysqli_fetch_array($conn->query($mySqlCommand));
-//                                mysqli_query($conn , $mySqlCommand , $objResult);
-                                print_r ($objResult);
+//                                $objResult = mysqli_fetch_array($conn->query($mySqlCommand));
 
 
-                                for ($i = 1; $i <= 32; $i++) {
-                                    for ($j = 0 ; $j < 4 ; $j++){
+                                $query = "SELECT * FROM seat";
 
+
+                                    /* fetch associative array */
+
+
+
+                                    /* free result set */
+
+
+                                if ($result = $conn->query($query)) {
+
+                                    while ($row = $result->fetch_assoc()) {
+
+                                        //printf ("%s (%s) %s\n <br>", $row["seatid"], $row["sid"] , $row["status"]);
                                         echo "<tr>";
-                                        echo "<td> $i </td>";
-                                        echo "<td> '".$objResult[$i][$j]."'</td>";
-                                        echo "<td>Status</td>";
+                                        echo "<td>".$row['seatid']."</td>";
+                                        echo "<td> ".$row['sid']." </td>";
+                                        $status = "Unknown";
+                                        switch ($row['status']){
+                                            case 0: //avaliable
+                                                $status = "Avaliable";
+                                                break;
+                                            case 1: //waiting for confirmation
+                                                $status = "Waiting for confirmation";
+                                                break;
+                                            case 2: //confirmed
+                                                $status = "Not Avaliable";
+                                                break;
+                                        }
+                                        echo "<td>$status </td>";
                                         echo "<td>Select</td>";
                                         echo "</tr>";
                                     }
-
+                                    $result->free();
                                 }
 
                                 ?>
-                                <td>1</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td
+<!--                                <td>1</td>-->
+<!--                                <td>Mark</td>-->
+<!--                                <td>Otto</td>-->
+<!--                                <td>@mdo</td-->
                             </tr>
 
                             </tbody>

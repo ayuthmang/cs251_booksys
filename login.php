@@ -34,6 +34,7 @@
 //    print $loginAdminQuery;
 
 //    print $loginQuery;
+    $loginSucceed = false;
     $objResult = mysqli_fetch_array($conn->query($loginStudentQuery));
     if(!$objResult){ //ifnot student
         $objResult = mysqli_fetch_array($conn->query($loginAdminQuery));
@@ -42,10 +43,10 @@
             $_SESSION['fname'] = $objResult['fname'];
             $conn->close();
             echo "Welcome admin ".$_SESSION['fname']." <br>";
-            echo "Auto redirect to home in 3 secconds ...";
+//            echo "Auto redirect to home in 3 secconds ...";
 //            sleep(3);
 //            header("location:index.php");
-            session_write_close();
+            $loginSucceed = true;
         }
 
     }else{
@@ -55,17 +56,22 @@
         $_SESSION['priority'] = $objResult['priority'];
         $conn->close();
         echo "Welcome student ".$_SESSION['fname']." <br>";
-        echo "Auto redirect to home in 3 secconds ...";
+
+        $loginSucceed = true;
+//        echo "Auto redirect to home in 3 secconds ...";
 //        sleep(3);
 //        header("location:index.php");
         session_write_close();
     }
+    if(!$loginSucceed){
 
+        $conn->close();
+        print "User name or password is incorrect";
+    }
+    session_write_close();
 //    print_r($_SESSION);
 //    print_r($objResult);
-    session_write_close();
-    $conn->close();
-    print "User name or password is incorrect";
+
 
 
 //    print_r($objResult);
