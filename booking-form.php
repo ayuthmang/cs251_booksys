@@ -5,6 +5,15 @@
 ini_set('session.save_path', realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
 
 session_start();
+
+//print $_SESSION['sid'];
+//print $_SESSION['uid'];
+
+
+if (empty($_SESSION['fname'])) {
+    header("location:login-form.html");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -140,58 +149,57 @@ session_start();
                             </tr>
                             </thead>
                             <tbody>
-                                <?php
-                                //SELECT * from seat
-                                $mySqlCommand = "SELECT * FROM seat";
-                                $servername = "188.166.248.254";
-                                $username = "blacksource_root"; // database id
-                                $password = "ifyounot"; // database password
-                                $dbname = "blacksource_bksys"; //database name
-                                $conn = new mysqli($servername, $username, $password, $dbname);
-                                if ($conn->connect_error) {
-                                    die("Connection failed: " . $conn->connect_error);
+                            <?php
+                            //SELECT * from seat
+                            $mySqlCommand = "SELECT * FROM seat";
+                            $servername = "188.166.248.254";
+                            $username = "blacksource_root"; // database id
+                            $password = "ifyounot"; // database password
+                            $dbname = "blacksource_bksys"; //database name
+                            $conn = new mysqli($servername, $username, $password, $dbname);
+                            if ($conn->connect_error) {
+                                die("Connection failed: " . $conn->connect_error);
 
-                                }
-
-
-//                                $objResult = mysqli_fetch_array($conn->query($mySqlCommand));
+                            }
 
 
-                                $query = "SELECT * FROM seat";
+                            //                                $objResult = mysqli_fetch_array($conn->query($mySqlCommand));
 
 
-                                    /* fetch associative array */
+                            $query = "SELECT * FROM seat";
 
 
+                            /* fetch associative array */
 
-                                    /* free result set */
+
+                            /* free result set */
 
 
-                                if ($result = $conn->query($query)) {
+                            if ($result = $conn->query($query)) {
 
-                                    while ($row = $result->fetch_assoc()) {
-                                        //printf ("%s (%s) %s\n <br>", $row["seatid"], $row["sid"] , $row["status"]);
-                                        echo "<tr>";
-                                        echo "<td>".$row['seatid']."</td>";
-                                        echo "<td> ".$row['sid']." </td>";
-                                        $status = "Unknown";
-                                        switch ($row['status']){
-                                            case 0: //avaliable
-                                                $status = "Avaliable";
-                                                echo "<td class='alert-success'>$status</td>";
-                                                echo "
+                                while ($row = $result->fetch_assoc()) {
+                                    //printf ("%s (%s) %s\n <br>", $row["seatid"], $row["sid"] , $row["status"]);
+                                    echo "<tr>";
+                                    echo "<td>" . $row['seatid'] . "</td>";
+                                    echo "<td> " . $row['sid'] . " </td>";
+                                    $status = "Unknown";
+                                    switch ($row['status']) {
+                                        case 0: //avaliable
+                                            $status = "Avaliable";
+                                            echo "<td class='alert-success'>$status</td>";
+                                            echo "
                                                       <form action='confirm.php' method='post'>
                                                          <td>
                                                             <a class='btn btn-success' href='#'>Reservation</a>
                                                          </td>
                                                       </form>
                                                      ";
-                                                echo "</tr>";
-                                                break;
-                                            case 1: //waiting for confirmation
-                                                $status = "Waiting for confirmation";
-                                                echo "<td class='alert-warning'>$status</td>";
-                                                echo "
+                                            echo "</tr>";
+                                            break;
+                                        case 1: //waiting for confirmation
+                                            $status = "Waiting for confirmation";
+                                            echo "<td class='alert-warning'>$status</td>";
+                                            echo "
                                                       <form action='confirm.php' method='post'>
                                                          <td>
                                                             <a class='btn btn-success' href='#'>Confirm Seat</a>
@@ -200,35 +208,34 @@ session_start();
                                                          </td>
                                                       </form> 
                                                      ";
-                                                echo "</tr>";
-                                                break;
-                                            case 2: //confirmed
-                                                $status = "Not Avaliable";
-                                                echo "<td class='validation_error'>$status</td>";
-                                                echo "
+                                            echo "</tr>";
+                                            break;
+                                        case 2: //confirmed
+                                            $status = "Not Avaliable";
+                                            echo "<td class='validation_error'>$status</td>";
+                                            echo "
                                                       <form action='confirm.php' method='post'>
                                                          <td>
                                                             <a class='btn btn-danger' href='#'>Revoke Seat <Now></Now></a>
                                                          </td>
                                                       </form>
                                                      ";
-                                                echo "</tr>";
-                                                break;
-                                        }
-
+                                            echo "</tr>";
+                                            break;
+                                    }
 
 
 //                                        echo "<td>$status</td>";
 
-                                    }
-                                    $result->free();
                                 }
+                                $result->free();
+                            }
 
-                                ?>
-                                <td>1</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td
+                            ?>
+<!--                            <td>1</td>-->
+<!--                            <td>Mark</td>-->
+<!--                            <td>Otto</td>-->
+<!--                            <td>@mdo</td-->
 
                             </tbody>
                         </table>

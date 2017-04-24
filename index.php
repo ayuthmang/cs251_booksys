@@ -50,7 +50,7 @@ session_start();
                         <span class="icon-bar"></span>
                     </button>
                     <a href="./index.php" class="navbar-brand">
-                        <img src="assets/images/logo.png" alt="">Lab107 Booking System
+                        <img src="assets/images/logo.png" alt="">Booking System
                     </a>
                 </div>
                 <nav class="collapse navbar-collapse main-navbar" role="navigation">
@@ -105,6 +105,14 @@ session_start();
             </div>
         </header>
         <div id="content" role="main">
+            <div class="decor-top">
+                <svg xmlns="http://www.w3.org/2000/svg" class="decor hidden-xs hidden-sm" viewBox="0 0 100 100" preserveAspectRatio="none meet" width="100%" height="100%" version="1.1">
+                    <path stroke-width="0" d="M 0 100 L 0 50 L 2 50 L 2 100 L 4 100 L 4 50 L 6 50 L 6 100 L 8 100 L 8 50 L 10 50 L 10 100 L 12 100 L 12 50 L 14 50 L 14 100 L 16 100 L 16 50 L 18 50 L 18 100 L 20 100 L 20 50 L 22 50 L 22 100 L 24 100 L 24 50 L 26 50 L 26 100 L 28 100 L 28 50 L 30 50 L 30 100 L 32 100 L 32 50 L 34 50 L 34 100 L 36 100 L 36 50 L 38 50 L 38 100 L 40 100 L 40 50 L 42 50 L 42 100 L 44 100 L 44 50 L 46 50 L 46 100 L 48 100 L 48 50 L 50 50 L 50 100 L 52 100 L 52 50 L 54 50 L 54 100 L 56 100 L 56 50 L 58 50 L 58 100 L 60 100 L 60 50 L 62 50 L 62 100 L 64 100 L 64 50 L 66 50 L 66 100 L 68 100 L 68 50 L 70 50 L 70 100 L 72 100 L 72 50 L 74 50 L 74 100 L 76 100 L 76 50 L 78 50 L 78 100 L 80 100 L 80 50 L 82 50 L 82 100 L 84 100 L 84 50 L 86 50 L 86 100 L 88 100 L 88 50 L 90 50 L 90 100 L 92 100 L 92 50 L 94 50 L 94 100 L 96 100 L 96 50 L 98 50 L 98 100 L 100 100" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="decor visible-xs visible-sm" viewBox="0 0 100 100" preserveAspectRatio="none meet" width="100%" height="100%" version="1.1">
+                    <path stroke-width="0" d="M 0 100 L 0 50 L 5 50 L 5 100 L 10 100 L 10 50 L 15 50 L 15 100 L 20 100 L 20 50 L 25 50 L 25 100 L 30 100 L 30 50 L 35 50 L 35 100 L 40 100 L 40 50 L 45 50 L 45 100 L 50 100 L 50 50 L 55 50 L 55 100 L 60 100 L 60 50 L 65 50 L 65 100 L 70 100 L 70 50 L 75 50 L 75 100 L 80 100 L 80 50 L 85 50 L 85 100 L 90 100 L 90 50 L 95 50 L 95 100 L 100 100" />
+                </svg>
+            </div>
         <!--    <section class="section swatch-black-beige">
                 <div class="container" align="center">
                     <form action="color-swatches.html">
@@ -119,31 +127,48 @@ session_start();
                 </div>
             </section>-->
 
-            <section class="section swatch-beige-black">
+            <section class="section swatch-black-yellow">
                 <div class="container">
-                    <header class="section-header underline text-center">
-                        <h1 class="headline super hairline "><b><?php echo ' '.$_SESSION['fname'].',  ' ?> Hello.</b></h1>
-                    </header>
+
+
+                            <b><?php
+                                if(isset($_SESSION['fname']) && $_SESSION['fname'] != '') {
+
+                                    echo '<header class="section-header underline text-center">';
+                                    echo '<h1 class="headline super hairline ">';
+                                        echo ' ' . $_SESSION['fname'] . ',  Hello.';
+
+                                    echo "</h1>";
+                                    echo '</header>';
+                                }
+                                else{
+                                    echo '<header class="section-header underline text-center">';
+                                    echo '<h1 class="headline super hairline bordered-header">';
+                                    echo 'Welcome to Booking System';
+                                    echo "</h1>";
+                                    echo '</header>';
+                                }
+                                ?>
+                            </b>
+
+
+
 
                     <div class="text-center">
                         <a class="btn btn-primary btn-lg btn-icon-right pull-center" href="booking-form.php">
-                            Booking Now
+                            BOOKING NOW
                             <div class="hex-alt hex-alt-big">
                                 <i class="fa fa-desktop" data-animation="tada"></i>
                             </div>
                         </a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                        <a class="btn btn-primary btn-lg btn-icon-right pull-center" href="#">
+
+                        <a class="btn btn-success btn-lg btn-icon-right pull-center" href="confirm-form.php">
                             CONFIRM BOOKING
                             <div class="hex-alt hex-alt-big">
-                                <i class="fa fa-rocket" data-animation="tada"></i>
+                                <i class="fa fa-check-circle" data-animation="tada"></i>
                             </div>
                         </a>
-
                     </div>
 
                 </div>
