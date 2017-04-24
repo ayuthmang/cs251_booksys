@@ -1,5 +1,5 @@
 <?php
-session_save_path("/tmp");
+// session_save_path("/tmp");
 session_start();
 ?>
 
@@ -57,7 +57,7 @@ session_start();
                 <li>
                     <?php
                     //                    print_r ($_SESSION);
-                    if($_SESSION['C_ID']){
+                    if(isset($_SESSION['C_ID']) && $_SESSION['C_ID']){
                         echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown"> 
 									Hello!! '.$_SESSION['C_ID'].'</a>';
                         echo '<ul class="dropdown-menu">';

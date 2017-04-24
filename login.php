@@ -1,11 +1,12 @@
 <?php
     error_reporting(E_ALL ^ E_NOTICE);
 
-
     session_reset();
-    session_save_path("/tmp");
+    ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
+    // session_save_path("/tmp");
     session_start();
 
+    // print session_save_path();
     $servername = "188.166.248.254";
     $username = "blacksource_root"; // database id
     $password = "ifyounot"; // database password
@@ -42,8 +43,9 @@
             $conn->close();
             echo "Welcome admin ".$_SESSION['fname']." <br>";
             echo "Auto redirect to home in 3 secconds ...";
-            sleep(3);
-            header("location:index.php");
+//            sleep(3);
+//            header("location:index.php");
+            session_write_close();
         }
 
     }else{
@@ -54,8 +56,9 @@
         $conn->close();
         echo "Welcome student ".$_SESSION['fname']." <br>";
         echo "Auto redirect to home in 3 secconds ...";
-        sleep(3);
-        header("location:index.php");
+//        sleep(3);
+//        header("location:index.php");
+        session_write_close();
     }
 
 //    print_r($_SESSION);
