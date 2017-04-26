@@ -180,17 +180,17 @@ if (empty($_SESSION['fname'])) {
                                 while ($row = $result->fetch_assoc()) {
                                     //printf ("%s (%s) %s\n <br>", $row["seatid"], $row["sid"] , $row["status"]);
                                     echo "<tr>";
-                                    echo "<td>" . $row['seatid'] . "</td>";
-                                    echo "<td> " . $row['sid'] . " </td>";
+                                    echo "<td>".$row['seatid']."</td>";
+                                    echo "<td>".$row['sid']."</td>";
                                     $status = "Unknown";
                                     switch ($row['status']) {
                                         case 0: //avaliable
                                             $status = "Avaliable";
                                             echo "<td class='alert-success'>$status</td>";
                                             echo "
-                                                      <form action='confirm.php' method='post'>
+                                                      <form action='booking.php' method='post'>
                                                          <td>
-                                                            <a class='btn btn-success' href='#'>Reservation</a>
+                                                            <button class='btn btn-success' type='submit' id='".$row['seatid']."|".$row['sid']."'>Reservation</button>
                                                          </td>
                                                       </form>
                                                      ";
@@ -200,11 +200,11 @@ if (empty($_SESSION['fname'])) {
                                             $status = "Waiting for confirmation";
                                             echo "<td class='alert-warning'>$status</td>";
                                             echo "
-                                                      <form action='confirm.php' method='post'>
+                                                      <form action='booking.php' method='post'>
                                                          <td>
-                                                            <a class='btn btn-success' href='#'>Confirm Seat</a>
+                                                            <button class='btn btn-success' type='submit'id='".$row['seatid']."|".$row['sid']."' name='".$row['seatid']."|".$row['sid']."'>Confirm Seat</button>
                                                             
-                                                            <a class='btn btn-danger' href='#'>Revoke Seat</a>
+                                                            <button class='btn btn-danger' type='submit' id='".$row['seatid']."|".$row['sid']."'>Revoke Seat</a>
                                                          </td>
                                                       </form> 
                                                      ";
@@ -214,9 +214,9 @@ if (empty($_SESSION['fname'])) {
                                             $status = "Not Avaliable";
                                             echo "<td class='validation_error'>$status</td>";
                                             echo "
-                                                      <form action='confirm.php' method='post'>
+                                                      <form action='booking.php' method='post'>
                                                          <td>
-                                                            <a class='btn btn-danger' href='#'>Revoke Seat <Now></Now></a>
+                                                            <button class='btn btn-danger' type='submit'>Revoke Seat</button>
                                                          </td>
                                                       </form>
                                                      ";
