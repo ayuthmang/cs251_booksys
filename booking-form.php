@@ -184,9 +184,9 @@ if (empty($_SESSION['fname'])) {
                                             echo "<td class='alert-success'>$status</td>";
                                             echo "<td>";
                                             echo "<form action='booking.php' method='post'>";
-                                            echo "  <button name='".$row['seatid']."' class='btn btn-success' type='submit' id='" . $row['seatid'] . "|" . $row['sid'] . "'>
-                                                     Reservation
-                                                    </button>
+                                            echo "<button type='submit' class='btn btn-success' name='selectedseatid' value='".$row['seatid']."'>
+                                                    Reservation
+                                                  </button>
                                                   ";
                                             echo "</form>";
 
@@ -196,13 +196,39 @@ if (empty($_SESSION['fname'])) {
                                         case 1: //waiting for confirmation
                                             $status = "Waiting for confirmation";
                                             echo "<td class='alert-warning'>$status</td>";
-                                            echo "
-                                                      
-                                                         <td>
-                                                            <a class='btn btn-warning' href='confirm-form.php'>Goto Confirm Page</a>
-                                                         </td>
-                                                      
-                                                 ";
+
+
+                                            echo "<td>";
+                                            echo "<form action='booking.php' method='post'>";
+
+
+
+                                            if($_SESSION['sid'] === $row['sid']){
+//                                                var_dump($row);
+//                                                var_dump($_SESSION);
+                                                echo "<button type='submit' class='btn btn-danger' name='selectedseatid' value='".$row['seatid']."'>
+                                                        Revoke Seat
+                                                      </button>
+                                                  ";
+                                            }
+//                                            echo "<button type='submit' class='btn btn-success' name='selectedseatid' value='".$row['seatid']."'>
+//                                                    Reservation
+//                                                  </button>
+//                                                  ";
+                                            echo "</form>";
+
+                                            echo "</td>";
+                                            echo "</tr>";
+
+
+
+//                                            echo "
+//
+//                                                         <td>
+//                                                            <a class='btn btn-warning' href='confirm-form.php'>Goto Confirm Page</a>
+//                                                         </td>
+//
+//                                                 ";
 
                                             /*
                                                             <button class='btn btn-success' type='submit'id='".$row['seatid']."|".$row['sid']."' name='".$row['seatid']."|".$row['sid']."'>Confirm Seat</button>
@@ -219,10 +245,13 @@ if (empty($_SESSION['fname'])) {
                                             echo "<td>";
                                             echo "<form action='booking.php' method='post'>";
 
-                                            echo "<button type='submit' class='btn btn-danger' name='selectedseatid' value='".$row['seatid']."'>
-                                                    Revoke Seat
-                                                  </button>
+
+                                            if($_SESSION['sid'] === $row['sid']) {
+                                                echo "<button type='submit' class='btn btn-danger' name='selectedseatid' value='".$row['seatid']."'>
+                                                        Revoke Seat
+                                                      </button>
                                                   ";
+                                            }
                                             echo "</form>";
 
                                             echo "</td>";
