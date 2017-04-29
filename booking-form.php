@@ -4,7 +4,10 @@
 // session_save_path("/tmp");
 ini_set('session.save_path', realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
 
+
 session_start();
+
+//var_dump($_SESSION);
 
 //print $_SESSION['sid'];
 //print $_SESSION['uid'];
@@ -18,6 +21,8 @@ if (empty($_SESSION['fname'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <title>Select a Seat | Booking System</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -54,23 +59,25 @@ if (empty($_SESSION['fname'])) {
 <body>
 
 <header id="masthead" class="navbar navbar-sticky swatch-black-yellow" role="banner">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".main-navbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="./index.php" class="navbar-brand">
-                <img src="assets/images/logo.png" alt="">Booking System
-            </a>
-        </div>
-        <nav class="collapse navbar-collapse main-navbar" role="navigation">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown active"><a href=# class="dropdown-toggle"
-                                               data-toggle="dropdown">Home</a></li>
-                <li>
-                    <?php
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".main-navbar">
+<span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+</button>
+    <a href="./index.php" class="navbar-brand">
+    <img src="assets/images/logo.png" alt="">Select a Seat | Booking System
+    </a>
+
+</div>
+    <nav class="collapse navbar-collapse main-navbar" role="navigation">
+    <ul class="nav navbar-nav navbar-right">
+    <li class="dropdown active"><a href=# class="dropdown-toggle"
+                                   data-toggle="dropdown">Home</a></li>
+        <li>
+
+        <?php
                     //                        print_r ($_SESSION);
                     if (isset($_SESSION['sid']) && $_SESSION['sid'] != '') {
                         echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown"> 
@@ -161,66 +168,66 @@ if (empty($_SESSION['fname'])) {
                                 die("Connection failed: " . $conn->connect_error);
 
                             }
-
-
-                            //                                $objResult = mysqli_fetch_array($conn->query($mySqlCommand));
-
-
                             $query = "SELECT * FROM seat";
-
-
-                            /* fetch associative array */
-
-
-                            /* free result set */
-
 
                             if ($result = $conn->query($query)) {
 
                                 while ($row = $result->fetch_assoc()) {
                                     //printf ("%s (%s) %s\n <br>", $row["seatid"], $row["sid"] , $row["status"]);
                                     echo "<tr>";
-                                    echo "<td>".$row['seatid']."</td>";
-                                    echo "<td>".$row['sid']."</td>";
+                                    echo "<td>" . $row['seatid'] . "</td>";
+                                    echo "<td>" . $row['sid'] . "</td>";
                                     $status = "Unknown";
                                     switch ($row['status']) {
                                         case 0: //avaliable
                                             $status = "Avaliable";
                                             echo "<td class='alert-success'>$status</td>";
-                                            echo "
-                                                      <form action='booking.php' method='post'>
-                                                         <td>
-                                                            <button class='btn btn-success' type='submit' id='".$row['seatid']."|".$row['sid']."'>Reservation</button>
-                                                         </td>
-                                                      </form>
-                                                     ";
+                                            echo "<td>";
+                                            echo "<form action='booking.php' method='post'>";
+                                            echo "  <button name='".$row['seatid']."' class='btn btn-success' type='submit' id='" . $row['seatid'] . "|" . $row['sid'] . "'>
+                                                     Reservation
+                                                    </button>
+                                                  ";
+                                            echo "</form>";
+
+                                            echo "</td>";
                                             echo "</tr>";
                                             break;
                                         case 1: //waiting for confirmation
                                             $status = "Waiting for confirmation";
                                             echo "<td class='alert-warning'>$status</td>";
                                             echo "
-                                                      <form action='booking.php' method='post'>
+                                                      
                                                          <td>
+                                                            <a class='btn btn-warning' href='confirm-form.php'>Goto Confirm Page</a>
+                                                         </td>
+                                                      
+                                                 ";
+
+                                            /*
                                                             <button class='btn btn-success' type='submit'id='".$row['seatid']."|".$row['sid']."' name='".$row['seatid']."|".$row['sid']."'>Confirm Seat</button>
                                                             
                                                             <button class='btn btn-danger' type='submit' id='".$row['seatid']."|".$row['sid']."'>Revoke Seat</a>
-                                                         </td>
-                                                      </form> 
-                                                     ";
+                                            */
                                             echo "</tr>";
                                             break;
                                         case 2: //confirmed
                                             $status = "Not Avaliable";
                                             echo "<td class='validation_error'>$status</td>";
-                                            echo "
-                                                      <form action='booking.php' method='post'>
-                                                         <td>
-                                                            <button class='btn btn-danger' type='submit'>Revoke Seat</button>
-                                                         </td>
-                                                      </form>
-                                                     ";
+
+
+                                            echo "<td>";
+                                            echo "<form action='booking.php' method='post'>";
+
+                                            echo "<button type='submit' class='btn btn-danger' name='selectedseatid' value='".$row['seatid']."'>
+                                                    Revoke Seat
+                                                  </button>
+                                                  ";
+                                            echo "</form>";
+
+                                            echo "</td>";
                                             echo "</tr>";
+
                                             break;
                                     }
 
@@ -232,10 +239,15 @@ if (empty($_SESSION['fname'])) {
                             }
 
                             ?>
-<!--                            <td>1</td>-->
-<!--                            <td>Mark</td>-->
-<!--                            <td>Otto</td>-->
-<!--                            <td>@mdo</td-->
+                            <!--                            <td>1</td>-->
+                            <!--                            <td>Mark</td>-->
+                            <!--                            <td>Otto</td>-->
+                            <!--                            <td>@mdo</td-->
+
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
 
                             </tbody>
                         </table>

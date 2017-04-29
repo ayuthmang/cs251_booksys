@@ -58,7 +58,7 @@ if (empty($_SESSION['fname'])) {
                 <span class="icon-bar"></span>
             </button>
             <a href="./index.php" class="navbar-brand">
-                <img src="assets/images/logo.png" alt="">Booking System
+                <img src="assets/images/logo.png" alt="">Confirm Seat | Booking System
             </a>
         </div>
         <nav class="collapse navbar-collapse main-navbar" role="navigation">
@@ -129,7 +129,7 @@ if (empty($_SESSION['fname'])) {
     <section class="section swatch-black-yellow">
         <div class="container">
             <header class="section-header underline text-center">
-                <h1 class="headline super lead">Select a Seat</h1>
+                <h1 class="headline super lead">Confirm a Seat</h1>
             </header>
 
             <div class="text-left">
