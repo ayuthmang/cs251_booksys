@@ -22,6 +22,33 @@ if (empty($_SESSION['fname'])) {
 <html lang="en">
 <head>
 
+
+
+
+    <script type="text/javascript">
+        function display_ct() {
+            var strcount
+            var x = new Date()
+            var x1= "Time: " + x.getHours( )+ ":" + x.getMinutes() + ":" + x.getSeconds();
+
+//            var x1=x.getMonth() + "/" + x.getDate() + "/" + x.getYear();
+//            x1 = x1 + " - " + x.getHours( )+ ":" + x.getMinutes() + ":" + x.getSeconds();
+            document.getElementById('ct').innerHTML = x1;
+
+            tt=display_c();
+        }
+        function display_c(){
+            var refresh=1000; // Refresh rate in milli seconds
+            mytime=setTimeout('display_ct()',refresh)
+        }
+    </script>
+
+
+
+
+
+
+
     <title>Select a Seat | Booking System</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,13 +83,13 @@ if (empty($_SESSION['fname'])) {
     <link rel="stylesheet" href="assets/css/swatch-yellow-black.min.css">
     <link rel="stylesheet" href="assets/css/fonts.min.css" media="screen">
 </head>
-<body>
+<body onload="display_ct()">
 
 <header id="masthead" class="navbar navbar-sticky swatch-black-yellow" role="banner">
 <div class="container">
 <div class="navbar-header">
 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".main-navbar">
-<span class="icon-bar"></span>
+    <span class="icon-bar"></span>
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
 </button>
@@ -73,11 +100,22 @@ if (empty($_SESSION['fname'])) {
 </div>
     <nav class="collapse navbar-collapse main-navbar" role="navigation">
     <ul class="nav navbar-nav navbar-right">
+
+
+    <li class="swatch-black-yellow"><a href=# id="ct" class="dropdown-toggle"
+                                   data-toggle="dropdown">Time: </a>
+    </li>
+
     <li class="dropdown active"><a href=# class="dropdown-toggle"
-                                   data-toggle="dropdown">Home</a></li>
+                                   data-toggle="dropdown">Home</a>
+    </li>
+
+
+
         <li>
 
         <?php
+
                     //                        print_r ($_SESSION);
                     if (isset($_SESSION['sid']) && $_SESSION['sid'] != '') {
                         echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown"> 
@@ -139,9 +177,15 @@ if (empty($_SESSION['fname'])) {
 
     <section class="section swatch-black-yellow">
         <div class="container">
+
+
             <header class="section-header underline text-center">
-                <h1 class="headline super lead">Select a Seat</h1>
+                <h1 class="headline super lead">
+                    Select a Seat
+
+                </h1>
             </header>
+
 
             <div class="text-left">
                 <div class="row-fluid">

@@ -3,7 +3,7 @@
 
     session_start();
 
-    var_dump($_SESSION);
+//    var_dump($_SESSION);
 
 //    var_dump($_REQUEST);
 //    print "<br>";
@@ -65,9 +65,9 @@
                                            WHERE seatid=".$_REQUEST['selectedseatid'].";  ";
         $conn->query($queryReservationSeatInDatabase);
 
-        echo "<br>";
-        print $queryReservationSeatInDatabase;
-        echo "<br>";
+//        echo "<br>";
+//        print $queryReservationSeatInDatabase;
+//        echo "<br>";
         if($conn->affected_rows === 1){
             echo "<br>Reservation seat ".$_REQUEST['selectedseatid']." success";
         }else{
