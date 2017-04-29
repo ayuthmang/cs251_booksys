@@ -10,32 +10,22 @@ if($conn->connect_error){
     die("Connection failed: " . $conn->connect_error);
 }
 
-    $id = $_REQUEST['cid'];
+    $id = $_REQUEST['sid'];
+    $fname = $_REQUEST['fname'];
+    $lname = $_REQUEST['lname'];
+    $password = $_REQUEST['password'];
 
-    $sid = NULL;
-    $fname = NULL;
-    $lname = NULL;
-    $priority = NULL;
-    $password = NULL;
 
     $insertToAccount = "INSERT INTO `student`(`sid`, `fname`, `lname`, `priority`, `password`)
-                         VALUES ([studentID],[firstName],[lastName],[priority],[password])";
+                         VALUES ('".$id."', '".$fname."', '".$lname."' , 0 , '".$password."')";
 
+    print $insertToAccount;
     if($conn->query($insertToAccount) === true){
-        print "Insert to account table successful";
+        print "Registration success";
     }
     else{
-        print "Insert to account table failed";
+        print "Registration failed";
 
     }
 
-
-    print "<br>";
-    if($conn->query($insertToAccInfo) === true){
-        print "Insert to accountinfo table successful";
-    }
-    else{
-        print "Insert to accountinfo table failed";
-
-    }
     $conn->close();

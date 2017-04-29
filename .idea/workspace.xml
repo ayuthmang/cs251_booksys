@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9b10c894-ccf4-4e59-8716-76b33590e7a7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/booking-form.php" afterPath="$PROJECT_DIR$/booking-form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/booking.php" afterPath="$PROJECT_DIR$/booking.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register-form.html" afterPath="$PROJECT_DIR$/register-form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register.php" afterPath="$PROJECT_DIR$/register.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,7 +44,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="booking-form.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="booking-form.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/booking-form.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="159">
@@ -105,6 +105,35 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="register-form.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/register-form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="401">
+              <caret line="111" column="24" lean-forward="true" selection-start-line="111" selection-start-column="24" selection-end-line="111" selection-end-column="24" />
+              <folding>
+                <element signature="e#5182#5188#0" expanded="true" />
+                <element signature="e#5287#5293#0" expanded="true" />
+                <element signature="e#5393#5399#0" expanded="true" />
+                <element signature="e#5498#5504#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/register.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+              <folding>
+                <marker date="1493503667942" expanded="true" signature="562:667" ph="INSERT INTO `student`... " />
+                <marker date="1493503667942" expanded="true" signature="562:725" ph="INSERT INTO `student`... " />
+                <marker date="1493503667942" expanded="true" signature="562:726" ph="INSERT INTO `student`... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -117,7 +146,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>class</find>
       <find>black</find>
       <find>session</find>
       <find>home</find>
@@ -147,6 +175,7 @@
       <find>selectedseatid</find>
       <find>body</find>
       <find>ct</find>
+      <find>id=&quot;ct&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>swatch-black-beige</replace>
@@ -172,10 +201,8 @@
         <option value="$PROJECT_DIR$/execute.php" />
         <option value="$PROJECT_DIR$/booking-form.html" />
         <option value="$PROJECT_DIR$/logout.php" />
-        <option value="$PROJECT_DIR$/register.php" />
         <option value="$PROJECT_DIR$/assets/css/theme.min.css" />
         <option value="$PROJECT_DIR$/assets/css/color-defaults.min.css" />
-        <option value="$PROJECT_DIR$/register-form.html" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/profile.php" />
@@ -185,6 +212,8 @@
         <option value="$PROJECT_DIR$/booking.php" />
         <option value="$PROJECT_DIR$/serverDate.js" />
         <option value="$PROJECT_DIR$/booking-form.php" />
+        <option value="$PROJECT_DIR$/register.php" />
+        <option value="$PROJECT_DIR$/register-form.html" />
       </list>
     </option>
   </component>
@@ -433,7 +462,7 @@
       <workItem from="1493020746906" duration="19000" />
       <workItem from="1493036346033" duration="19329000" />
       <workItem from="1493226029399" duration="2729000" />
-      <workItem from="1493480549566" duration="15541000" />
+      <workItem from="1493480549566" duration="16555000" />
     </task>
     <task id="LOCAL-00001" summary="Updated login">
       <created>1491304747318</created>
@@ -498,11 +527,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493499726023</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Working with Reservation and Revoke Seat">
+      <created>1493502806396</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1493502806396</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74353000" />
+    <option name="totallyTimeSpent" value="75367000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -832,16 +868,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="23" column="48" lean-forward="true" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
-          <folding>
-            <marker date="1493039336488" expanded="true" signature="556:717" ph="INSERT INTO `student`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/theme.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -895,19 +921,6 @@
             <marker date="1493058701595" expanded="true" signature="4282:4333" ph="..." />
             <marker date="1493058701595" expanded="true" signature="7995:8043" ph="..." />
             <marker date="1493058701595" expanded="true" signature="9540:9541" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register-form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="64" column="48" lean-forward="false" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
-          <folding>
-            <element signature="e#5183#5189#0" expanded="true" />
-            <element signature="e#5289#5295#0" expanded="true" />
-            <element signature="e#5397#5403#0" expanded="true" />
-            <element signature="e#5504#5510#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1017,6 +1030,31 @@
             <marker date="1493502665356" expanded="true" signature="8294:8312" ph="SELECT * FRO... seat" />
             <marker date="1493502665356" expanded="true" signature="11438:11638" ph="..." />
             <marker date="1493502665356" expanded="true" signature="12942:13074" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <marker date="1493503667942" expanded="true" signature="562:667" ph="INSERT INTO `student`... " />
+            <marker date="1493503667942" expanded="true" signature="562:725" ph="INSERT INTO `student`... " />
+            <marker date="1493503667942" expanded="true" signature="562:726" ph="INSERT INTO `student`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register-form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="111" column="24" lean-forward="true" selection-start-line="111" selection-start-column="24" selection-end-line="111" selection-end-column="24" />
+          <folding>
+            <element signature="e#5182#5188#0" expanded="true" />
+            <element signature="e#5287#5293#0" expanded="true" />
+            <element signature="e#5393#5399#0" expanded="true" />
+            <element signature="e#5498#5504#0" expanded="true" />
           </folding>
         </state>
       </provider>
