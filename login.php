@@ -6,11 +6,19 @@
     session_start();
 
     // print session_save_path();
+
     $servername = "188.166.248.254";
     $username = "blacksource_root"; // database id
     $password = "ifyounot"; // database password
     $dbname = "blacksource_bksys"; //database name
     $conn = new mysqli($servername,$username,$password,$dbname);
+
+
+    //work with thai
+    mysqli_set_charset($conn, "utf8");
+
+
+
     //    print_r($_REQUEST);
     if($conn->connect_error){
 //        print $conn->connect_error;
@@ -59,6 +67,8 @@
         $loginSucceed = true;
 //        echo "Auto redirect to home in 3 secconds ...";
 //        sleep(3);
+
+//        var_dump($objResult);
         header("location:index.php");
         session_write_close();
     }
@@ -67,6 +77,7 @@
         $conn->close();
         print "User name or password is incorrect";
     }
+
     session_write_close();
 //    print_r($_SESSION);
 //    print_r($objResult);
