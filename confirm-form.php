@@ -187,7 +187,7 @@ if (empty($_SESSION['fname'])) {
                                                 echo "
                                                       <form action='confirm.php' method='post'>
                                                          <td>
-                                                            <a class='btn btn-success' href='#'>Reservation</a>
+                                                            
                                                          </td>
                                                       </form>
                                                      ";
@@ -196,16 +196,22 @@ if (empty($_SESSION['fname'])) {
                                             case 1: //waiting for confirmation
                                                 $status = "Waiting for confirmation";
                                                 echo "<td class='alert-warning'>$status</td>";
-                                                echo "
-                                                      <form action='confirm.php' method='post'>
-                                                         <td>
-                                                            <a class='btn btn-success' href='#'>Confirm Seat</a>
-                                                            
-                                                            <a class='btn btn-danger' href='#'>Revoke Seat</a>
-                                                         </td>
-                                                      </form> 
-                                                     ";
+                                                echo "<form action='confirm.php' method='post'>";
+                                                echo "    <td>";
+                                                echo "        <button type='submit' class='btn btn-success' name='selectedseatid' value='".$row['seatid']."' href='#'>
+                                                                Confirm Seat
+                                                              </button>";
+
+                                                echo "        <button type='submit' class='btn btn-danger' name='selectedseatid' value='".$row['seatid']."' href='#'>
+                                                                Revoke Seat
+                                                              </button>";
+                                                echo "    </td>";
+                                                echo "</form> ";
                                                 echo "</tr>";
+//                                                echo "<button type='submit' class='btn btn-danger' name='selectedseatid' value='".$row['seatid']."'>
+//                                                        Revoke Seat
+//                                                      </button>
+//                                                  ";
                                                 break;
                                             case 2: //confirmed
                                                 $status = "Not Avaliable";
@@ -213,7 +219,7 @@ if (empty($_SESSION['fname'])) {
                                                 echo "
                                                       <form action='confirm.php' method='post'>
                                                          <td>
-                                                            <a class='btn btn-danger' href='#'>Revoke Seat <Now></Now></a>
+                                                            
                                                          </td>
                                                       </form>
                                                      ";
@@ -230,10 +236,10 @@ if (empty($_SESSION['fname'])) {
                                 }
 
                                 ?>
-                                <td>1</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td
 
                             </tbody>
                         </table>
