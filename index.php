@@ -13,7 +13,7 @@ session_start();
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title></title>
+        <title>Home | Booking System</title>
         <link rel="icon" type="image/x-icon" href="assets/images/favicons/favicon.ico" />
         <link rel="icon" type="image/png" href="assets/images/favicons/favicon.png" />
         <!-- For iPhone 4 Retina display: -->
@@ -50,7 +50,7 @@ session_start();
                         <span class="icon-bar"></span>
                     </button>
                     <a href="./index.php" class="navbar-brand">
-                        <img src="assets/images/logo.png" alt="">Booking System
+                        <img src="assets/images/logo.png" alt="">Home | Booking System
                     </a>
                 </div>
                 <nav class="collapse navbar-collapse main-navbar" role="navigation">

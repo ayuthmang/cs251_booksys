@@ -116,7 +116,7 @@ if (empty($_SESSION['fname'])) {
 
         <?php
 
-                    //                        print_r ($_SESSION);
+                    //print_r ($_SESSION);
                     if (isset($_SESSION['sid']) && $_SESSION['sid'] != '') {
                         echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown"> 
 									Student ' . $_SESSION['fname'] . '</a>';
@@ -133,6 +133,7 @@ if (empty($_SESSION['fname'])) {
 
                         echo '</ul>';
                     } elseif (isset($_SESSION['uid']) && $_SESSION['uid'] != '') {
+                        //if an administrator
                         echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown"> 
 									Administrator ' . $_SESSION['fname'] . '</a>';
                         echo '<ul class="dropdown-menu">';
@@ -246,14 +247,15 @@ if (empty($_SESSION['fname'])) {
                                             echo "<form action='booking.php' method='post'>";
 
 
-
-                                            if($_SESSION['sid'] === $row['sid']){
-//                                                var_dump($row);
-//                                                var_dump($_SESSION);
-                                                echo "<button type='submit' class='btn btn-danger' name='selectedseatid' value='".$row['seatid']."'>
-                                                        Revoke Seat
-                                                      </button>
-                                                  ";
+                                            if(isset($_SESSION['sid'])){
+                                                if($_SESSION['sid'] === $row['sid']){
+    //                                                var_dump($row);
+    //                                                var_dump($_SESSION);
+                                                    echo "<button type='submit' class='btn btn-danger' name='selectedseatid' value='".$row['seatid']."'>
+                                                            Revoke Seat
+                                                          </button>
+                                                      ";
+                                                }
                                             }
 //                                            echo "<button type='submit' class='btn btn-success' name='selectedseatid' value='".$row['seatid']."'>
 //                                                    Reservation
