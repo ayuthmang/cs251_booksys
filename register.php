@@ -16,16 +16,29 @@ if($conn->connect_error){
     $password = $_REQUEST['password'];
 
 
-    $insertToAccount = "INSERT INTO `student`(`sid`, `fname`, `lname`, `priority`, `password`)
-                         VALUES ('".$id."', '".$fname."', '".$lname."' , 0 , '".$password."')";
+    $checkIfExists = "SELECT 1 FROM student WHERE sid = '".$_REQUEST['sid']."' ";
 
-    print $insertToAccount;
-    if($conn->query($insertToAccount) === true){
-        print "Registration success";
-    }
-    else{
-        print "Registration failed";
+    $result = $conn->query($checkIfExists);
 
-    }
+    print mysqli_num_rows($result);
 
-    $conn->close();
+//    print $result['sid'];
+
+    var_dump($result);
+    print "<br>";
+    print_r ($result);
+
+
+//    $insertToAccount = "INSERT INTO `student`(`sid`, `fname`, `lname`, `priority`, `password`)
+//                         VALUES ('".$id."', '".$fname."', '".$lname."' , 0 , '".$password."')";
+//
+//    print $insertToAccount;
+//    if($conn->query($insertToAccount) === true){
+//        print "Registration success";
+//    }
+//    else{
+//        print "Registration failed";
+//
+//    }
+//
+//    $conn->close();
