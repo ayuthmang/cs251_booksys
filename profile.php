@@ -14,7 +14,7 @@ if (empty($_SESSION['fname'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Homepage | Angle HTML</title>
+    <title>Change Password | Angle HTML</title>
     <link rel="icon" type="image/x-icon" href="assets/images/favicons/favicon.ico" />
     <link rel="icon" type="image/png" href="assets/images/favicons/favicon.png" />
     <!-- For iPhone 4 Retina display: -->
@@ -51,7 +51,7 @@ if (empty($_SESSION['fname'])) {
                 <span class="icon-bar"></span>
             </button>
             <a href="index.php" class="navbar-brand">
-                <img src="assets/images/logo.png" alt="One of the best themes ever">Angle
+                <img src="assets/images/logo.png" alt="One of the best themes ever">Change Password | Booking System
             </a>
         </div>
         <nav class="collapse navbar-collapse main-navbar" role="navigation">
@@ -105,46 +105,35 @@ if (empty($_SESSION['fname'])) {
         </nav>
     </div>
 </header>
+
 <div id="content" role="main">
     <section class="section swatch-black-yellow">
         <div class="container" align="center">
             <form action="profile-edit.php" method="post">
-<!--                UserID &nbsp-->
-<!--                <input type="text" name="cid" value=--><?php //echo htmlspecialchars($_SESSION['C_ID']); ?><!-- disabled>-->
-<!--                <br> <br>-->
-<!--                User Password-->
-<!--                <input type="text" name="cpass" value="">-->
-<!--                <br> <br>-->
-
                 <div class="row text-center">
                     <div class="col-md-6 col-md-offset-3">
                         <form class="contact-form" id="contactForm">
 
+                            <!--name used for post , get-->
                             <div class="form-group form-icon-group">
-                                <input name="id" class="form-control" id="id" required="" type="text" placeholder="Your ID">
-                                <i class="fa fa-user"></i>
-                            </div>
-
-                            <div class="form-group form-icon-group">
-                                <input name="fname" class="form-control" id="fname" required="" type="text" placeholder="Your first name *">
-                                <i class="fa fa-user"></i>
-                            </div>
-
-
-                            <div class="form-group form-icon-group">
-                                <input name="lname" class="form-control" id="lname" required="" type="text" placeholder="Your last name">
+                                <input name="oldPass" class="form-control" required="" type="password" placeholder="Old Password">
                                 <i class="fa fa-key"></i>
                             </div>
 
                             <div class="form-group form-icon-group">
-                                <input name="pass" class="form-control" id="pass" required="" type="password" placeholder="New Password">
+                                <input name="newPass" id="newPass" class="form-control" required="" type="password" placeholder="New Password">
+                                <i class="fa fa-key"></i>
+                            </div>
+
+                            <div class="form-group form-icon-group">
+                                <input name="newPassConfirm" id="confirmNewPass" class="form-control" required="" type="password" placeholder="Confirm New Password">
                                 <i class="fa fa-key"></i>
                             </div>
 
 
                             <div class="form-group text-center">
-                                <button class="btn btn-primary btn-icon btn-icon-right type="submit">
-                                Edit Profile
+                                <button class="btn btn-primary btn-icon btn-icon-right type="Submit">
+                                Change Password
                                 <div class="hex-alt">
                                     <i class="fa fa-terminal"></i>
                                 </div>
@@ -175,6 +164,7 @@ if (empty($_SESSION['fname'])) {
 </div>
 <a class="go-top hex-alt" href="javascript:void(0)">
     <i class="fa fa-angle-up"></i>
+
 </a>
 <script src="assets/js/packages.min.js"></script>
 <script src="assets/js/theme.min.js"></script>
