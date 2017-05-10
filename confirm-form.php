@@ -75,7 +75,7 @@ if (empty($_SESSION['fname'])) {
                         echo '<li><a href="profile.php">Profile</a>';
                         echo '</li>';
                         if (isset($_SESSION['C_TYPE']) && $_SESSION["C_TYPE"] == 1) {
-                            echo '<li><a href="management.php">Management</a>';
+                            echo '<li><a href="admin-panel.php">Control Panel</a>';
                             echo '</li>';
                         }
                         echo '<li><a href="logout.php">Logout</a>';
@@ -89,7 +89,7 @@ if (empty($_SESSION['fname'])) {
                         echo '<ul class="dropdown-menu">';
                         echo '<li><a href="profile.php">Profile</a>';
                         echo '</li>';
-                        echo '<li><a href="management.php">Management</a>';
+                        echo '<li><a href="admin-panel.php">Control Panel</a>';
                         echo '</li>';
                         echo '<li><a href="logout.php">Logout</a>';
                         echo '</li>';
@@ -214,12 +214,12 @@ if (empty($_SESSION['fname'])) {
 //                                                  ";
                                                 break;
                                             case 2: //confirmed
-                                                $status = "Not Avaliable";
-                                                echo "<td class='validation_error'>$status</td>";
+                                                $status = "Confirmed";
+                                                echo "<td class='info'>$status</td>";
                                                 echo "
                                                       <form action='confirm.php' method='post'>
                                                          <td>
-                                                            
+                                                            <button type='submit' class='btn btn-danger' name='selectedseatid' value='".$row['seatid']."' href='#'>Revoke Seat</button>
                                                          </td>
                                                       </form>
                                                      ";
