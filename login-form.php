@@ -1,6 +1,19 @@
+<?php
+    error_reporting(E_ALL ^ E_NOTICE);
+    ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
+    // session_save_path("/tmp");
+    session_start();
 
+    if(isset($_SESSION['sid']) || isset($_SESSION['uid'])){
+        //if userid or student id is already storedi nsession then redirect to index.php
 
+        header("location:index.php");
+    }
+    // session_reset();
+
+?>
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
