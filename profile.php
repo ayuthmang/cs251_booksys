@@ -69,7 +69,7 @@ if (empty($_SESSION['fname'])) {
                         echo '<li><a href="profile.php">Profile</a>';
                         echo '</li>';
                         if(isset($_SESSION['C_TYPE']) && $_SESSION["C_TYPE"]==1){
-                            echo '<li><a href="management.php">Management</a>';
+                            echo '<li><a href="admin-panel.php">Control Panel</a>';
                             echo '</li>';
                         }
                         echo '<li><a href="logout.php">Logout</a>';
@@ -83,7 +83,7 @@ if (empty($_SESSION['fname'])) {
                         echo '<ul class="dropdown-menu">';
                         echo '<li class="dropdown active"><a href="profile.php">Profile</a>';
                         echo '</li>';
-                        echo '<li><a href="management.php">Management</a>';
+                        echo '<li><a href="admin-panel.php">Control Panel</a>';
                         echo '</li>';
                         echo '<li><a href="logout.php">Logout</a>';
                         echo '</li>';

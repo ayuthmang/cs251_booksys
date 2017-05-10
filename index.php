@@ -68,7 +68,7 @@ session_start();
 								echo '<li><a href="profile.php">Profile</a>';
 								echo '</li>';
 								if(isset($_SESSION['C_TYPE']) && $_SESSION["C_TYPE"]==1){
-									echo '<li><a href="management.php">Management</a>';
+									echo '<li><a href="admin-panel.php">Control Panel</a>';
 									echo '</li>';
 								}
 								echo '<li><a href="logout.php">Logout</a>';
@@ -82,7 +82,7 @@ session_start();
 								echo '<ul class="dropdown-menu">';
 								echo '<li><a href="profile.php">Profile</a>';
 								echo '</li>';
-                                echo '<li><a href="management.php">Management</a>';
+                                echo '<li><a href="admin-panel.php">Control Panel</a>';
                                 echo '</li>';
 								echo '<li><a href="logout.php">Logout</a>';
 								echo '</li>';
@@ -131,7 +131,8 @@ session_start();
                 <div class="container">
 
 
-                            <b><?php
+                            <b>
+                            <?php
                                 if(isset($_SESSION['fname']) && $_SESSION['fname'] != '') {
 
                                     echo '<header class="section-header underline text-center">';
@@ -147,10 +148,11 @@ session_start();
                                     echo 'Welcome to Booking System';
                                     echo "</h1>";
                                     echo '</header>';
-                                }
-                                ?>
-                            </b>
 
+
+                                }
+                            ?>
+                            </b>
 
 
 

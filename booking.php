@@ -2,15 +2,6 @@
     ini_set('session.save_path', realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
 
     session_start();
-
-//    var_dump($_SESSION);
-
-//    var_dump($_REQUEST);
-//    print "<br>";
-//    var_dump($_POST);
-//    print "<br>";
-//    var_dump($_GET);
-
     $queryCheckIfStudentReservedThatSeat = "
                       SELECT seat.seatid , seat.sid
                       FROM seat
@@ -46,7 +37,7 @@
 
         if($_REQUEST['selectedseatid'] === $data['seatid']){ //do some revoke this seat
             $queryRemoveCurrentSeatFromDatabase = "UPDATE seat
-                                                   set seat.sid='' , seat.status=0
+                                                   set seat.sid=NULL , seat.status=0
                                                    WHERE seat.seatid='".$_REQUEST['selectedseatid']."'";
 
             $conn->query($queryRemoveCurrentSeatFromDatabase);
