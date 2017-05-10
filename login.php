@@ -57,11 +57,11 @@
         }
 
     }else{
-        print_r($objResult);
+        // print_r($objResult);
         $_SESSION['sid'] = $objResult['sid'];
         $_SESSION['fname'] = $objResult['fname'];
         $_SESSION['priority'] = $objResult['priority'];
-        $conn->close();
+        // $conn->close();
         echo "Welcome student ".$_SESSION['fname']." <br>";
 
         $loginSucceed = true;
@@ -69,44 +69,32 @@
 //        sleep(3);
 
 //        var_dump($objResult);
-        header("location:index.php");
+        $sql_InsertToLog = 
+        "
+        INSERT INTO serverlog (sid, message) 
+        VALUES ('".$_SESSION['sid']."' , 'Login to server');
+        ";
+        $conn->query($sql_InsertToLog);
+
+
+        // header("location:index.php");
         session_write_close();
     }
     if(!$loginSucceed){
+        
 
-        $conn->close();
+        $sql_InsertToLog = 
+        "
+        INSERT INTO serverlog (sid, message) 
+        VALUES ('".$id."' , 'Login to failed');
+        ";
+
+        $conn->query($sql_InsertToLog);
+
+
         print "User name or password is incorrect";
+        // $conn->close();
     }
-
+    $conn->close();
     session_write_close();
-//    print_r($_SESSION);
-//    print_r($objResult);
-
-
-
-//    print_r($objResult);
-//    print_r($_SESSION);
-
-//    if (!$objResult){
-//        print "User name or password is incorrect";
-//        $isAdmin = false;
-//    }
-//    else{
-//
-//        //try to connect db student once
-//        $_SESSION['uid'] = $objResult['uid'];
-//        $_SESSION['C_TYPE'] = $objResult['C_TYPE'];
-//        session_write_close();
-//    //    print_r ($_SESSION);
-//        if($_SESSION['type'] === 1){
-//            echo "Welcome Administrator ".$_SESSION['C_ID']." ";
-//        }
-//        else {
-//            echo "Welcome User ".$_SESSION['C_ID']." <br>" ;
-//            echo "Auto redirect to index.php in 3 secconds";
-//    //        sleep(5);
-//            header("location:index.php");
-//        }
-//
-//
-//}
+    
