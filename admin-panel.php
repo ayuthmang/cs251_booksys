@@ -1,6 +1,27 @@
 <?php
-session_save_path("/tmp");
+
+    ini_set('session.save_path', realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
+
     session_start();
+
+    // print_r ($_SESSION);
+
+
+
+
+    if(isset($_SESSION['uid'])){
+        // This is an Administrator
+
+
+
+    }elseif (isset($_SESSION['sid'])) {
+        // This is a Student
+        header("location:index.php");
+    }else{ //if not login into server
+        
+    header("location:index.php");
+
+    }
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +30,7 @@ session_save_path("/tmp");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Homepage | Angle HTML</title>
+    <title>Admin Control | Booking System</title>
     <link rel="icon" type="image/x-icon" href="assets/images/favicons/favicon.ico" />
     <link rel="icon" type="image/png" href="assets/images/favicons/favicon.png" />
     <!-- For iPhone 4 Retina display: -->
@@ -37,7 +58,7 @@ session_save_path("/tmp");
     <link rel="stylesheet" href="assets/css/fonts.min.css" media="screen">
 </head>
 <body>
-<header id="masthead" class="navbar navbar-sticky swatch-red-white" role="banner">
+<header id="masthead" class="navbar navbar-sticky swatch-blue-white" role="banner">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".main-navbar">
@@ -46,7 +67,8 @@ session_save_path("/tmp");
                 <span class="icon-bar"></span>
             </button>
             <a href="index.php" class="navbar-brand">
-                <img src="assets/images/logo.png" alt="One of the best themes ever">Angle
+                <img src="assets/images/logo.png" alt="One of the best themes ever">
+                Admin Control | Booking System
             </a>
         </div>
         <nav class="collapse navbar-collapse main-navbar" role="navigation">
@@ -56,59 +78,7 @@ session_save_path("/tmp");
                 </li>
                 <li>
                     <?php
-//                    print_r ($_SESSION);
-                    if($_SESSION['C_ID']){
-                        echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown"> 
-									Hello!! '.$_SESSION['C_ID'].'</a>';
-                        echo '<ul class="dropdown-menu">';
-                        echo '<li><a href="profile.php">Profile</a>';
-                        echo '</li>';
-                        if($_SESSION["C_TYPE"]==1){
-                            echo '<li><a href="management.php" class="dropdown active" class="dropdown-toggle">Management</a>';
-                            echo '</li>';
-                        }
-                        echo '<li><a href="logout.php">Logout</a>';
-                        echo '</li>';
-                        echo '</ul>';
 
-//                        if($_REQUEST['cdeleteuser'] != null){
-//                            print "KUY";
-//                            print "<br>";
-//                            print_r ($_REQUEST);
-//                        }
-
-
-                        if(isset($_REQUEST['cdeleteuser']) != null && $_SESSION['C_TYPE'] == 1){
-                            $sqlCommnd = "DELETE FROM `accounts` WHERE C_ID='".$_REQUEST['cdeleteuser']."' AND C_TYPE!=1" ;
-
-                            $servername = "localhost";
-                            $username = "root"; // database id
-                            $password = ""; // database password
-                            $dbname = "mydb"; //database name
-                            $conn = new mysqli($servername,$username,$password,$dbname);
-
-                            if($conn->query($sqlCommnd) === true){
-                                echo "User '".$_REQUEST['cdeleteuser']."' was deleted successful. <br>";
-
-                            }
-                            else {
-                                echo "Failed to delete user " . $conn->error;
-                            }
-                            $conn->close();
-
-
-
-                            /* Test cases
-                                INSERT INTO `accounts`(`C_ID`, `C_PASSWORD`, `C_TYPE`) VALUES ('test01','test',0);
-                                INSERT INTO `accounts`(`C_ID`, `C_PASSWORD`, `C_TYPE`) VALUES ('test02','test',0);
-                                INSERT INTO `accounts`(`C_ID`, `C_PASSWORD`, `C_TYPE`) VALUES ('test03','test',1);
-                                INSERT INTO `accounts`(`C_ID`, `C_PASSWORD`, `C_TYPE`) VALUES ('test04','test',0);
-                                INSERT INTO `accounts`(`C_ID`, `C_PASSWORD`, `C_TYPE`) VALUES ('test05','test',1);
-                             */
-                        }
-                    }else{
-                        header("login-form.php");
-                    }
 
                     ?>
                 </li>
@@ -118,14 +88,10 @@ session_save_path("/tmp");
     </div>
 </header>
 <div id="content" role="main">
-    <section class="section swatch-white-red">
+    <section class="section swatch-white-blue">
         <div class="container" align="center">
-            <form action="profile-edit.php" method="post">
-                Delete User &nbsp
-
-                <input type="text" name="cdeleteuser" value="">
-                <br> <br>
-                <input type="submit" value="Execute">
+            <form action="admin-control.php" method="post">
+                <input name="resetAllSeat" type="submit" value="Reset All Seat" >
 
             </form>
         </div>
@@ -133,7 +99,7 @@ session_save_path("/tmp");
 
 
     <footer id="footer" role="contentinfo">
-        <section class="section swatch-red-white has-top">
+        <section class="section swatch-blue-white has-top">
             <div class="decor-top">
                 <svg class="decor" height="100%" preserveaspectratio="none" version="1.1" viewbox="0 0 100 100" width="100%" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 0 L50 100 L100 0 L100 100 L0 100" stroke-width="0"></path>
