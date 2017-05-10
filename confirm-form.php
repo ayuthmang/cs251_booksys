@@ -178,7 +178,7 @@ if (empty($_SESSION['fname'])) {
                                         //printf ("%s (%s) %s\n <br>", $row["seatid"], $row["sid"] , $row["status"]);
                                         echo "<tr>";
                                         echo "<td>".$row['seatid']."</td>";
-                                        echo "<td> ".$row['sid']." </td>";
+                                        echo "<td>".$row['sid']."</td>";
                                         $status = "Unknown";
                                         switch ($row['status']){
                                             case 0: //avaliable
@@ -215,7 +215,7 @@ if (empty($_SESSION['fname'])) {
                                                 break;
                                             case 2: //confirmed
                                                 $status = "Confirmed";
-                                                echo "<td class='info'>$status</td>";
+                                                echo "<td class='alert-info'>$status</td>";
                                                 echo "
                                                       <form action='confirm.php' method='post'>
                                                          <td>
