@@ -77,10 +77,11 @@
             $_SESSION['uid'] = $objResult['uid'];
             $_SESSION['fname'] = $objResult['fname'];
 
+            $currentTime = date('Y/m/d - G:i:s');
             $sql_InsertToLog = 
             "
             INSERT INTO serverlog (sid, message) 
-            VALUES ('".$id."' , 'Login successful');
+            VALUES ('".$id."' , '[".$currentTime."] Login successful');
             ";
             $conn->query($sql_InsertToLog);
             echo "Welcome admin ".$_SESSION['fname']." <br>";
@@ -101,30 +102,32 @@
 //      echo "Auto redirect to home in 3 secconds ...";
 //      sleep(3);
 
+
+        $currentTime = date('Y/m/d - G:i:s');
+
+        print $currentTime;
         $sql_InsertToLog = 
         "
         INSERT INTO serverlog (sid, message) 
-        VALUES ('".$_SESSION['sid']."' , 'Login successful');
+        VALUES ('".$_SESSION['sid']."' , '[".$currentTime."] Login successful');
         ";
+
         $conn->query($sql_InsertToLog);
 
 
-        header("location:index.php");
         session_write_close();
+        header("location:index.php");
     }
     if(!$loginSucceed){
         
-
-
-    
-
-
+        $currentTime = date('Y/m/d - G:i:s');
         $sql_InsertToLog = 
         "
         INSERT INTO serverlog (sid, message) 
-        VALUES ('".$id."' , 'Login failed , incorrect username or password');
+        VALUES (NULL, '[".$currentTime."] [User=".$id."] Login failed , incorrect username or password');
         ";
 
+        print $sql_InsertToLog;
         $conn->query($sql_InsertToLog);
 
 
@@ -133,10 +136,3 @@
     $conn->close();
     session_write_close();
 ?>
-
-
-<div class="alert alert-info">
-                                <button class="close" data-dismiss="alert" type="button">×</button>
-                                <strong>Useful info!</strong>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            </div>
