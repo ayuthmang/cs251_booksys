@@ -114,6 +114,11 @@ if (empty($_SESSION['fname'])) {
                     <div class="col-md-6 col-md-offset-3">
                         <form class="contact-form" id="contactForm">
 
+                            <header class="section-header underline text-center">
+                                <h1 class="headline super lead">
+                                    Change Password
+                                </h1>
+                            </header>
                             <!--name used for post , get-->
                             <div class="form-group form-icon-group">
                                 <input name="oldPass" class="form-control" required="" type="password" placeholder="Old Password">
