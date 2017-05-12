@@ -114,29 +114,30 @@ if (empty($_SESSION['fname'])) {
                     <div class="col-md-6 col-md-offset-3">
                         <form class="contact-form" id="contactForm">
 
-                            <header class="section-header underline text-center">
+                            <header class="section-header underline text-center os-animation animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay=".1s">
                                 <h1 class="headline super lead">
                                     Change Password
                                 </h1>
                             </header>
+
                             <!--name used for post , get-->
-                            <div class="form-group form-icon-group">
+                            <div class="form-group form-icon-group os-animation animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay=".0s" style="animation-delay: 0.0s">
                                 <input name="oldPass" class="form-control" required="" type="password" placeholder="Old Password">
                                 <i class="fa fa-key"></i>
                             </div>
 
-                            <div class="form-group form-icon-group">
+                            <div class="form-group form-icon-group os-animation animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay=".3s" style="animation-delay: 0.3s">
                                 <input name="newPass" id="newPass" class="form-control" required="" type="password" placeholder="New Password">
                                 <i class="fa fa-key"></i>
                             </div>
 
-                            <div class="form-group form-icon-group">
+                            <div class="form-group form-icon-group os-animation animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay=".6s" style="animation-delay: 0.6s">
                                 <input name="newPassConfirm" id="confirmNewPass" class="form-control" required="" type="password" placeholder="Confirm New Password">
                                 <i class="fa fa-key"></i>
                             </div>
 
 
-                            <div class="form-group text-center">
+                            <div class="form-group text-center animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay=".9s" style="animation-delay: 0.9s">
                                 <button class="btn btn-primary btn-icon btn-icon-right type="Submit">
                                 Change Password
                                 <div class="hex-alt">
