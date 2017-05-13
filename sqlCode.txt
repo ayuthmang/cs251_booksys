@@ -31,3 +31,10 @@ INSERT INTO serverlog (sid, message) VALUES ('5809610347' , '$fname logged into 
 -- clear all seat
 UPDATE seat
 SET sid ='' , status=0
+
+
+-- Clean seat every 1 minute using sql event
+CREATE EVENT IF NOT EXISTS `Clean seat every 1 minute`
+ON SCHEDULE EVERY 1 MINUTE
+COMMENT 'Clean up seat every minute'
+DO UPDATE blacksource_bksys.seat SET sid = NULL , status = 0 , time = 0 WHERE 1;
