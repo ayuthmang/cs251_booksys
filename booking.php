@@ -1,7 +1,7 @@
 <?php
     ini_set('session.save_path', realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
-
     session_start();
+
     $queryCheckIfStudentReservedThatSeat = "
                       SELECT seat.seatid , seat.sid
                       FROM seat
@@ -19,139 +19,33 @@
 
     }
 
+
+    /* Get post value from booking-form.php and then tokenizer to 2 pieces
+       1: seatid
+       2: what's time selected ?
+       So, we will get $_REQUEST['selectedseatid'] like this
+
+       1|0 --> this's meant seat 1 at time 8:00 - 9:30
+
+       For time table
+       -----------------------------
+       8.00 - 9.30 : 0
+       9.30 - 11.00 : 1
+       11.00 - 12.30 : 2
+       12.30 - 13.00 // break time
+       13.30 - 15.00 : 3
+       15.00 - 16.30 : 4
+       16.30 - 18.00 : 5
+       18.00 - 19.30 :6
+       -----------------------------
+    */
+
+    $result = explode('|', $_REQUEST['selectedseatid']);
+
+    var_dump($result);
+
     $result = $conn->query($queryCheckIfStudentReservedThatSeat);
     $data = $result->fetch_assoc();
-
-
-//    print_r ($data);
-
-//    $studentSeatIdInDatabase = $data['seatid'];
-//    $studentIdInDatabase = $data['sid'];
-//    print $studentSeatIdInDatabase;
-//    print $studentIdInDatabase;
-
-    if(isset($data)){ //if data not null
-//        echo "<BR>";
-//        print $_REQUEST['selectedseatid'];
-//        print $data['sid'];
-
-        if($_REQUEST['selectedseatid'] === $data['seatid']){ //do some revoke this seat
-            $queryRemoveCurrentSeatFromDatabase = "UPDATE seat
-                                                   set seat.sid=NULL , seat.status=0
-                                                   WHERE seat.seatid='".$_REQUEST['selectedseatid']."'";
-
-            $conn->query($queryRemoveCurrentSeatFromDatabase);
-            if($conn->affected_rows === 1){
-                echo "<br>Remove seat success!<br>";
-            }else{
-                echo "<br>[Failed] Remove seat failed <br>";
-                echo mysqli_error($conn);
-            }
-        }
-    }else{ //do some reservation seat
-
-        $queryReservationSeatInDatabase = "UPDATE seat
-                                           SET seat.sid='".$_SESSION['sid']."' , seat.status=1
-                                           WHERE seatid=".$_REQUEST['selectedseatid'].";  ";
-    $conn->query($queryReservationSeatInDatabase);
-
-//        echo "<br>";
-//        print $queryReservationSeatInDatabase;
-//        echo "<br>";
-        if($conn->affected_rows === 1){
-            echo "<br>Reservation seat ".$_REQUEST['selectedseatid']." success";
-        }else{
-            echo "<br>[Failed] Reservation seat ".$_REQUEST['selectedseatid']." failed <br>";
-            echo mysqli_errno($conn);
-        }
-
-
-    }
-
-
-
-    /*check if found student id in database:
-        if selectedseatid ===
-
-
-    */
-//if(isset($studentIdInDatabase)){ //if not found student in database then go RESERVATION
-//    //do some reservation seat.
-//
-//    $queryReservationSeatInDatabase = "UPDATE seat
-//                                           SET seat.sid='".$_SESSION['sid']."' , seat.status=1
-//                                           WHERE seatid=".$_REQUEST['selectedseatid'].";  ";
-//    $conn->query($queryReservationSeatInDatabase);
-//
-////        echo "<br>";
-////        print $queryReservationSeatInDatabase;
-////        echo "<br>";
-//    if($conn->affected_rows === 1){
-//        echo "<br>Reservation seat ".$_REQUEST['selectedseatid']." success";
-//    }else{
-//        echo "<br>[Failed] Reservation seat ".$_REQUEST['selectedseatid']." failed <br>";
-//        echo mysqli_errno($conn);
-//    }
-//}
-//else{
-//    //do some remove seat
-//    if($_REQUEST['selectedseatid'] === $studentSeatIdInDatabase){
-//        if($studentIdInDatabase === $_SESSION['sid']){
-//            echo "IS EQUAL";
-//
-//
-//
-//            $queryRemoveCurrentSeatFromDatabase = "UPDATE seat
-//                                                   set seat.sid='' , seat.status=0
-//                                                   WHERE seat.seatid='".$_REQUEST['selectedseatid']."'";
-//            $conn->query($queryRemoveCurrentSeatFromDatabase);
-//            if($conn->affected_rows === 1){
-//                echo "<br>Remove seat success!<br>";
-//            }else{
-//                echo "<br>[Failed] Remove seat failed <br>";
-//                echo mysqli_errno($conn);
-//            }
-//
-//        }
-//    }
-
-
-    //for remove current seat if value studentID from database is equal my session studentid
-//    if($studentIdInDatabase === $_SESSION['sid']){
-//        echo "IS EQUAL";
-//
-//
-//
-//        $queryRemoveCurrentSeatFromDatabase = "UPDATE seat
-//                                               set seat.sid='' , seat.status=0
-//                                               WHERE seat.seatid='".$_REQUEST['selectedseatid']."'";
-//        $conn->query($queryRemoveCurrentSeatFromDatabase);
-//        if($conn->affected_rows === 1){
-//            echo "<br>Remove seat success!<br>";
-//        }else{
-//            echo "<br>[Failed] Remove seat failed <br>";
-//            echo mysqli_errno($conn);
-//        }
-//
-//    }else{
-//
-//        //do some reservation seat.
-//
-//        $queryReservationSeatInDatabase = "UPDATE seat
-//                                           SET seat.sid='".$_SESSION['sid']."' , seat.status=1
-//                                           WHERE seatid=".$_REQUEST['selectedseatid'].";  ";
-//        $conn->query($queryReservationSeatInDatabase);
-//
-////        echo "<br>";
-////        print $queryReservationSeatInDatabase;
-////        echo "<br>";
-//        if($conn->affected_rows === 1){
-//            echo "<br>Reservation seat ".$_REQUEST['selectedseatid']." success";
-//        }else{
-//            echo "<br>[Failed] Reservation seat ".$_REQUEST['selectedseatid']." failed <br>";
-//            echo mysqli_errno($conn);
-//        }
-//    }
 
 
 ?>
