@@ -52,12 +52,14 @@ VALUES ('nut', "ยณัฐพล", "พงษ์อุดม" ,'123456789');
 
 
 
+        print $studentID . "<br>";
+
         if(isset($firstName) && isset($lastName)){
 
             $SQLCode =
              "INSERT INTO student (sid, fname, lname, priority, password)
               VALUES ('".$studentID."','".$firstName."' , '".$lastName."',0,'123456');";
-            $conn->query($SQLCode);
+//            $conn->query($SQLCode);
         }
 //        print_r ($array);
 //        $firstName2 = trim($firstNameAndLastName[0], ' ');

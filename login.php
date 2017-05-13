@@ -53,7 +53,7 @@
 
 
     if($conn->connect_error){
-//        print $conn->connect_error;
+        print $conn->connect_error;
         die("Connection failed: " . $conn->connect_error);
     }
     $id = $_REQUEST['id'];
@@ -78,9 +78,9 @@
             $_SESSION['fname'] = $objResult['fname'];
 
             $currentTime = date('Y/m/d - G:i:s');
-            $sql_InsertToLog = 
+            $sql_InsertToLog =
             "
-            INSERT INTO serverlog (sid, message) 
+            INSERT INTO serverlog (sid, message)
             VALUES ('".$id."' , '[".$currentTime."] Login successful');
             ";
             $conn->query($sql_InsertToLog);
@@ -105,10 +105,10 @@
 
         $currentTime = date('Y/m/d - G:i:s');
 
-        print $currentTime;
-        $sql_InsertToLog = 
+        // print $currentTime;
+        $sql_InsertToLog =
         "
-        INSERT INTO serverlog (sid, message) 
+        INSERT INTO serverlog (sid, message)
         VALUES ('".$_SESSION['sid']."' , '[".$currentTime."] Login successful');
         ";
 
@@ -119,18 +119,16 @@
         header("location:index.php");
     }
     if(!$loginSucceed){
-        
+
         $currentTime = date('Y/m/d - G:i:s');
-        $sql_InsertToLog = 
+        $sql_InsertToLog =
         "
-        INSERT INTO serverlog (sid, message) 
-        VALUES (NULL, '[".$currentTime."] [User=".$id."] Login failed , incorrect username or password');
+        INSERT INTO serverlog (sid, message)
+        VALUES (NULL, '[".$currentTime."] [user=".$id.",pass=".$pass."] Login failed , incorrect username or password');
         ";
 
-        print $sql_InsertToLog;
+        // print $sql_InsertToLog;
         $conn->query($sql_InsertToLog);
-
-
         print "User name or password is incorrect";
     }
     $conn->close();
