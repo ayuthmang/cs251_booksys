@@ -23,6 +23,8 @@ $hour = date('G');
 
 */
 // echo $hour;
+include("table.php");
+
 
 ?>
 <!DOCTYPE html>
@@ -125,7 +127,7 @@ $hour = date('G');
 
                     //print_r ($_SESSION);
                     if (isset($_SESSION['sid']) && $_SESSION['sid'] != '') {
-                        echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown"> 
+                        echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown">
 									Student ' . $_SESSION['fname'] . '</a>';
                         echo '<ul class="dropdown-menu">';
                         echo '<li><a href="profile.php">Profile</a>';
@@ -141,7 +143,7 @@ $hour = date('G');
                         echo '</ul>';
                     } elseif (isset($_SESSION['uid']) && $_SESSION['uid'] != '') {
                         //if an administrator
-                        echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown"> 
+                        echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown">
 									Administrator ' . $_SESSION['fname'] . '</a>';
                         echo '<ul class="dropdown-menu">';
                         echo '<li><a href="profile.php">Profile</a>';
@@ -202,9 +204,9 @@ $hour = date('G');
                         <form action='booking.php' method='post'>
                             <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Own by</th>
-                                <th>8.00 - 9.30</th> <!-- -->
+                                <th>Seat#</th>
+
+                                <th>8.00 - 9.30</th>
 
                                 <th>9.30 - 11.00</td>
 
@@ -222,19 +224,9 @@ $hour = date('G');
                             </thead>
                             <tbody>
                             <?php
-                            //SELECT * from seat
-                                include("table.php");
                                 $mytable = new table();
                                 $mytable->printTable();
-
-                                // print (int)$mytable->isTimeOut();
-
                             ?>
-
-                            <!--                            <td>1</td>-->
-                            <!--                            <td>Mark</td>-->
-                            <!--                            <td>Otto</td>-->
-                            <!--                            <td>@mdo</td-->
 
                             </tbody>
                         </form>

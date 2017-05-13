@@ -75,79 +75,84 @@ class Table
                     //printf ("%s (%s) %s\n <br>", $row["seatid"], $row["sid"] , $row["status"]);
                     echo "<tr>";
                     echo "<td>" . $row['seatid'] . "</td>";
-                    echo "<td>" . $row['sid'] . "</td>";
-                    $status = "Unknown";
-                    // echo "The time is " . date("h:i:sa");
-                    switch ($row['status']) {
-                        case 0: //avaliable
-                            $status = "Avaliable";
 
-                            //print 7 buttons
-                            /*
-                            8.00 - 9.30 : 0
+                    /*
+                      We have 7 columns to add to table
+                      In real database is:
+                      ---------------------
+                        sid_time0 --> for recorded student who get this seat.
+                        status0  --> for status
+                                      0 -- avalible
+                                        # Print button 'Reserve'
+                                      1 -- wait for confirmation
+                                        # Print text 'Wait for $studentid confirmed'
+                                      2 -- confirmed
+                                        # Print text 'This set not avalible right now please try again'
+                      ---------------------
+                        sid_time1 -->
+                        status2  -->
+                      ---------------------
 
-                            9.30 - 11.00 : 1
+                    */
 
-                            11.00 - 12.30 : 2
+                    for ($i=0; $i <7 ; $i++) {
 
-                            12.30 - 13.00 // break time
+                      // //for catch the studentid from seat 0 to 6
+                      // switch ("sid_time$i") {
+                      //   case 0:
+                      //
+                      //     break;
+                      //
+                      //   case 1:
+                      //
+                      //     break;
+                      //
+                      //   case 2:
+                      //
+                      //     break;
+                      //
+                      // }
 
-                            13.30 - 15.00 : 3
+                      //for catch the status from seat 0 to 6
+                      switch ($row["status$i"]) {
+                        case 0: # Avalible
+                          #if avalible then print 'Reserve' button
+                          echo "<td align=''>";
+                          echo "<div class='info'>";
+                          echo "<button type='submit' class='btn btn-success input-block-level form-control' name='selectedseatid' value='" . $row['seatid'] . "|".$i."'>
+                                  Reserve this
+                                </button>
+                          ";
+                          echo "</div>";
+                          echo '</td>';
+                          break;
+                        case 1: # Waiting for confirmation
+                          $studentidFromDB = $row["sid_time$i"];
+                          $status = sprintf("Waiting %s Confirm", $studentidFromDB);
+                          print $status;
+                          echo "<td class='alert-warning' align='center'>$status</td>";
 
-                            15.00 - 16.30 : 4
+                        // 0 -- avalible
+                        //   # Print button 'Reserve'
+                        // 1 -- wait for confirmation
+                        //   # Print text 'Wait for $studentid confirmed'
+                        // 2 -- confirmed
+                        //   # Print text 'This set not avalible right now please try again'
+                          break;
 
-                            16.30 - 18.00 : 5
-
-                            18.00 - 19.30 :6
-                            */
-                            for ($i=0; $i <7 ; $i++) {
-                              # print 7 buttons for different TIME
-                              echo "<td>";
-                              echo "<button type='submit' class='btn btn-success' name='selectedseatid' value='" . $row['seatid'] .  "|".$i."'>
-                                      Reservation
-                                    </button>
-                              ";
-                              echo '</td>';
-                            }
-
-                            echo "</tr>";
-                            break;
-                        case 1: //waiting for confirmation
-                            $status = "Waiting for confirmation";
-                            // echo "<td class='alert-warning'>$status</td>";
-                            echo "<td>";
-
-//                            var_dump($row);
-                            if (isset($_SESSION['sid'])) {
-                                if ($_SESSION['sid'] === $row['sid']) {
+                        case 2:
+                          $studentidFromDB = $row["sid_time$i"];
+                          $status = sprintf("%s Confirmed", $studentidFromDB);
 
 
-                                    echo "<button type='submit' class='btn btn-danger' name='selectedseatid' value='" . $row['seatid'] . "'>
-                                            Revoke Seat
-                                          </button>
-                                          ";
-                                }
-                            }
-                            echo "</td>";
-                            echo "</tr>";
-                            break;
-                        case 2: //confirmed
-                            $status = "Not Avaliable";
-                            // echo "<td class='validation_error'>$status</td>";
+                          echo "<td class='success' align='center'>$status</td>";
 
-                            echo "<td>";
-
-                            if ($_SESSION['sid'] === $row['sid']) {
-                                echo "<button type='submit' class='btn btn-danger' name='selectedseatid' value='" . $row['seatid'] . "'>
-                                        Revoke Seat
-                                      </button>
-                                     ";
-                            }
-                            echo "</td>";
-                            echo "</tr>";
-
-                            break;
+                          break;
+                      }
                     }
+                    print '</tr>';
+
+
                 } // end while
           $result->free();
         } //end if
