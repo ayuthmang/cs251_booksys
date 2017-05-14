@@ -65,7 +65,7 @@ session_start();
                     <?php
 
                     if (isset($_SESSION['sid']) && $_SESSION['sid'] != '') {
-                        echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown"> 
+                        echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown">
 									Student ' . $_SESSION['fname'] . '</a>';
                         echo '<ul class="dropdown-menu">';
                         echo '<li><a href="profile.php">Profile</a>';
@@ -80,7 +80,7 @@ session_start();
 
                         echo '</ul>';
                     } elseif (isset($_SESSION['uid']) && $_SESSION['uid'] != '') {
-                        echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown"> 
+                        echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown">
 									Administrator ' . $_SESSION['fname'] . '</a>';
                         echo '<ul class="dropdown-menu">';
                         echo '<li><a href="profile.php">Profile</a>';
@@ -138,28 +138,26 @@ session_start();
                     echo "</h1>";
                     echo '</header>';
                 } else {
-                    echo '<header class="section-header underline text-center">';
+                    echo '<header class="section-header underline text-center os-animation animated fadeInDown" data-os-animation="fadeInDown" data-os-animation-delay=".0s" style="animation-delay: 0s;">';
                     echo '<h1 class="headline super hairline bordered-header">';
                     echo 'Welcome to Booking System';
                     echo "</h1>";
                     echo '</header>';
-
-
                 }
                 ?>
             </b>
 
 
             <div class="text-center">
-                <a class="btn btn-primary btn-lg btn-icon-right pull-center" href="booking-form.php">
+                <a class="btn btn-primary btn-lg btn-icon-right pull-center os-animation animated fadeInLeft" data-os-animation="fadeInDown" data-os-animation-delay=".6s" style="animation-delay: 6s;" href="booking-form.php">
                     BOOKING NOW
                     <div class="hex-alt hex-alt-big">
-                        <i class="fa fa-desktop" data-animation="tada"></i>
+                        <i class="fa fa-desktop" data-animation="bounce"></i>
                     </div>
                 </a>
 
 
-                <a class="btn btn-success btn-lg btn-icon-right pull-center" href="confirm-form.php">
+                <a class="btn btn-success btn-lg btn-icon-right pull-center os-animation animated fadeInRight" data-os-animation="fadeInDown" data-os-animation-delay=".9s" style="animation-delay: 9s;" href="confirm-form.php">
                     CONFIRM BOOKING
                     <div class="hex-alt hex-alt-big">
                         <i class="fa fa-check-circle" data-animation="tada"></i>
