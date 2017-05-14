@@ -2,13 +2,6 @@
     ini_set('session.save_path', realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
     session_start();
 
-    $queryCheckIfStudentReservedThatSeat = "
-                      SELECT seat.seatid , seat.sid
-                      FROM seat
-                      WHERE seat.sid = '".$_SESSION['sid']."' ";
-
-//    print $queryCheckIfStudentReservedThatSeat;
-
     $servername = "188.166.248.254";
     $username = "blacksource_root"; // database id
     $password = "ifyounot"; // database password
@@ -16,9 +9,7 @@
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
-
     }
-
 
     /* Get post value from booking-form.php and then tokenizer to 2 pieces
        1: seatid
@@ -40,12 +31,17 @@
        -----------------------------
     */
 
+
+    //for split string with | (pipe)
     $result = explode('|', $_REQUEST['selectedseatid']);
 
-    var_dump($result);
+    
+    $fromSeatid = $result[0];
+    $fromSelectedTime = $result[1];
 
-    $result = $conn->query($queryCheckIfStudentReservedThatSeat);
-    $data = $result->fetch_assoc();
+
+    // $result = $conn->query($queryCheckIfStudentReservedThatSeat);
+    // $data = $result->fetch_assoc();
 
 
 ?>

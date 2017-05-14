@@ -92,7 +92,7 @@
     </div>
 </header>
 <div id="content" role="main">
-    <section class="section swatch-beige-black">
+    <section class="section swatch-black-beige">
 
         <div class="container">
             <header class="section-header underline os-animation animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay=".0s" style="animation-delay: 0s;">
@@ -143,9 +143,9 @@
 
         <section class="section swatch-black-yellow has-top">
             <div class="decor-top">
-                <svg class="decor hidden-xs hidden-sm" height="100%" preserveAspectRatio="none" version="1.1" viewBox="0 0 100 100" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <!-- <svg class="decor hidden-xs hidden-sm" height="100%" preserveAspectRatio="none" version="1.1" viewBox="0 0 100 100" width="100%" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 100 Q 2.5 40 5 100 Q 7.5 40 10 100 Q 12.5 40 15 100 Q 17.5 40 20 100 Q 22.5 40 25 100 Q 27.5 40 30 100 Q 32.5 40 35 100 Q 37.5 40 40 100 Q 42.5 40 45 100 Q 47.5 40 50 100 Q 52.5 40 55 100 Q 57.5 40 60 100 Q 62.5 40 65 100 Q 67.5 40 70 100 Q 72.5 40 75 100 Q 77.5 40 80 100 Q 82.5 40 85 100 Q 87.5 40 90 100 Q 92.5 40 95 100 Q 97.5 40 100 100 " stroke-width="0"></path>
-                </svg>
+                </svg> -->
                 <!-- <svg class="decor hidden-xs hidden-sm" height="100%" preserveAspectRatio="none" version="1.1" viewBox="0 0 100 100" width="100%" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 100 L0 50 L2 50 L2 100 L4 100 L4 50 L6 50 L6 100 L8 100 L8 50 L10 50 L10 100 L12 100 L12 50 L14 50 L14 100 L16 100 L16 50 L18 50 L18 100 L20 100 L20 50 L22 50 L22 100 L24 100 L24 50 L26 50 L26 100 L28 100 L28 50 L30 50 L30 100 L32 100 L32 50 L34 50 L34 100 L36 100 L36 50 L38 50 L38 100 L40 100 L40 50 L42 50 L42 100 L44 100 L44 50 L46 50 L46 100 L48 100 L48 50 L50 50 L50 100 L52 100 L52 50 L54 50 L54 100 L56 100 L56 50 L58 50 L58 100 L60 100 L60 50 L62 50 L62 100 L64 100 L64 50 L66 50 L66 100 L68 100 L68 50 L70 50 L70 100 L72 100 L72 50 L74 50 L74 100 L76 100 L76 50 L78 50 L78 100 L80 100 L80 50 L82 50 L82 100 L84 100 L84 50 L86 50 L86 100 L88 100 L88 50 L90 50 L90 100 L92 100 L92 50 L94 50 L94 100 L96 100 L96 50 L98 50 L98 100 L100 100 " stroke-width="0"></path>
                 </svg>
