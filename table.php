@@ -57,9 +57,9 @@ class Table
             return;
         } else {
             $mySqlCommand = "SELECT * FROM seat";
-            $servername = "188.166.248.254";
-            $username = "blacksource_root"; // database id
-            $password = "ifyounot"; // database password
+            $servername = "localhost";
+            $username = "root"; // database id
+            $password = ""; // database password
             $dbname = "blacksource_bksys"; //database name
             $conn = new mysqli($servername, $username, $password, $dbname);
             if ($conn->connect_error) {
@@ -80,7 +80,7 @@ class Table
                       We have 7 columns to add to table
                       In real database is:
                       ---------------------
-                        sid_time0 --> for recorded student who get this seat.
+                        stuid_attime0 --> for recorded student who get this seat.
                         status0  --> for status
                                       0 -- avalible
                                         # Print button 'Reserve'
@@ -89,7 +89,7 @@ class Table
                                       2 -- confirmed
                                         # Print text 'This set not avalible right now please try again'
                       ---------------------
-                        sid_time1 -->
+                        stuid_attime1 -->
                         status2  -->
                       ---------------------
 
@@ -98,7 +98,7 @@ class Table
                     for ($i=0; $i <7 ; $i++) {
 
                       // //for catch the studentid from seat 0 to 6
-                      // switch ("sid_time$i") {
+                      // switch ("stuid_attime$i") {
                       //   case 0:
                       //
                       //     break;
@@ -127,7 +127,7 @@ class Table
                           echo '</td>';
                           break;
                         case 1: # Waiting for confirmation
-                          $studentidFromDB = $row["sid_time$i"];
+                          $studentidFromDB = $row["stuid_attime$i"];
                           $status = sprintf("Waiting %s Confirm", $studentidFromDB);
                           print $status;
                           echo "<td class='alert-warning' align='center'>$status</td>";
@@ -141,7 +141,7 @@ class Table
                           break;
 
                         case 2:
-                          $studentidFromDB = $row["sid_time$i"];
+                          $studentidFromDB = $row["stuid_attime$i"];
                           $status = sprintf("%s Confirmed", $studentidFromDB);
 
 
@@ -176,7 +176,6 @@ class Table
             //seat number
             echo "<td>$row</td>";
             //own by
-            echo "<td class='table-striped'></td>";
             for ($col = 1; $col <= 7; $col++) {
 
                 echo "<td class='validation_error'>TIME OUT</td>";

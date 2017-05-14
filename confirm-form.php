@@ -148,9 +148,9 @@ if (empty($_SESSION['fname'])) {
                                 <?php
                                 //SELECT * from seat
                                 $mySqlCommand = "SELECT * FROM seat";
-                                $servername = "188.166.248.254";
-                                $username = "blacksource_root"; // database id
-                                $password = "ifyounot"; // database password
+                                $servername = "localhost";
+                                $username = "root"; // database id
+                                $password = ""; // database password
                                 $dbname = "blacksource_bksys"; //database name
                                 $conn = new mysqli($servername, $username, $password, $dbname);
                                 if ($conn->connect_error) {

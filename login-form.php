@@ -107,7 +107,6 @@
                     <div class="col-md-6 col-md-offset-3">
                         <form class="contact-form" id="contactForm">
 
-
                             <div class="form-group form-icon-group os-animation animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay=".0s" style="animation-delay: 0s;">
                                 <input name="id" class="form-control" id="name" required="" type="text" placeholder="Your id">
                                 <i class="fa fa-user" data-animation="bounce"></i>
@@ -118,7 +117,6 @@
                                 <i class="fa fa-key" data-animation="bounce"></i>
                             </div>
 
-
                             <div class="form-group text-center os-animation animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay=".6s" style="animation-delay: 6s;">
                                 <button class="btn btn-primary btn-icon btn-icon-right" type="submit">
                                     Login
@@ -127,7 +125,6 @@
                                     </div>
                                 </button>
                             </div>
-
 
                         </form>
                         <div id="messages"></div>

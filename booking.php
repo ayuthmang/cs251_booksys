@@ -1,10 +1,11 @@
+
 <?php
     ini_set('session.save_path', realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
     session_start();
 
-    $servername = "188.166.248.254";
-    $username = "blacksource_root"; // database id
-    $password = "ifyounot"; // database password
+    $servername = "localhost";
+    $username = "root"; // database id
+    $password = ""; // database password
     $dbname = "blacksource_bksys"; //database name
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
@@ -35,11 +36,25 @@
     //for split string with | (pipe)
     $result = explode('|', $_REQUEST['selectedseatid']);
 
-    
-    $fromSeatid = $result[0];
-    $fromSelectedTime = $result[1];
+    $selectedSeatid = $result[0];
+    $selectedSelectedTime = $result[1];
 
+    $queryIfSeatExists = ("SELECT stuid_attime$selectedSelectedTime , status$selectedSelectedTime
+                           FROM   seat
+                           WHERE  seatid = $selectedSeatid");
 
+    $result = conn->query(queryIfSeatExists);
+    $result = result->fetch_assoc();
+
+    var_dump($result);
+
+    try {
+
+    } catch (Exception $ex) {
+
+    }
+
+    print $queryIfSeatExists;
     // $result = $conn->query($queryCheckIfStudentReservedThatSeat);
     // $data = $result->fetch_assoc();
 
