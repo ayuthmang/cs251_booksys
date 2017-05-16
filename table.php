@@ -52,7 +52,7 @@ class Table
 
     public function printTable()
     {
-        if (!$this->isTimeOut()) { //time is greather than 20.00 pm
+        if ($this->isTimeOut()) { //time is greather than 20.00 pm
             $this->printOutOfServiceTable();
             return;
         } else {
@@ -129,7 +129,7 @@ class Table
                         case 1: # Waiting for confirmation
                           $studentidFromDB = $row["stuid_attime$i"];
                           $status = sprintf("Waiting %s Confirm", $studentidFromDB);
-                          print $status;
+                          // print $status;
                           echo "<td class='alert-warning' align='center'>$status</td>";
 
                         // 0 -- avalible
@@ -162,7 +162,9 @@ class Table
 
     public function isTimeOut()
     {
-        if ($this->getHour() >= 20 || ($this->getHour() >= 0 && $this->getHour() < 8)) {
+        $hour = (int) $this->getHour();
+        // print gettype($hour);
+        if ($hour >= 20 || ($hour >= 0 && $hour < 8)) {
             return true;
         }
         return false;
@@ -170,7 +172,6 @@ class Table
 
     public function printOutOfServiceTable()
     {
-
         for ($row = 1; $row <= 32; $row++) {
             echo "<tr>";
             //seat number
