@@ -225,7 +225,7 @@ include("table.php");
                             <tbody>
                             <?php
                                 $mytable = new table();
-                                $mytable->printTable();
+                                $mytable->printTableBookingPage();
                             ?>
 
                             </tbody>
