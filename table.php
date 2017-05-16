@@ -124,7 +124,7 @@ class Table
                         case 2:
                           $studentidFromDB = $row["stuid_attime$i"];
                           $status = sprintf("%s Confirmed", $studentidFromDB);
-                          echo "<td class='success' align='center'>$status</td>";
+                          echo "<td class='alert alert-success' align='center'>$status</td>";
 
                           break;
                       }
@@ -185,22 +185,6 @@ class Table
 
                     for ($i=0; $i <7 ; $i++) {
 
-                      // //for catch the studentid from seat 0 to 6
-                      // switch ("stuid_attime$i") {
-                      //   case 0:
-                      //
-                      //     break;
-                      //
-                      //   case 1:
-                      //
-                      //     break;
-                      //
-                      //   case 2:
-                      //
-                      //     break;
-                      //
-                      // }
-
                       //for catch the status from seat 0 to 6
                       switch ($row["status$i"]) {
 
@@ -211,25 +195,35 @@ class Table
 
                         case 0: # Avalible
                           #if avalible then print 'Reserve' button
+                          echo "<td class='alert alert-info' align='center'>Avaliable</td>";
+
+                          // echo "<td align=''>";
+                          // echo "<div class='info'>";
+                          // echo "<button type='submit' class='btn btn-success input-block-level form-control' name='selectedseatid' value='" . $row['seatid'] . "|".$i."'>
+                          //         Reserve this
+                          //       </button>
+                          // ";
+                          // echo "</div>";
+                          // echo '</td>';
+                          break;
+                        case 1: # Waiting for confirmation
+                        # btn btn-lg btn-link
+
+                        # Seat is mine
+                        if($_SESSION['sid'] === $row["stuid_attime$i"]){
                           echo "<td align=''>";
                           echo "<div class='info'>";
-                          echo "<button type='submit' class='btn btn-success input-block-level form-control' name='selectedseatid' value='" . $row['seatid'] . "|".$i."'>
-                                  Reserve this
+                          echo "<button type='submit' class='btn btn-lg btn-link' name='selectedseatid' value='" . $row['seatid'] . "|".$i."'>
+                                  Confirm seat
                                 </button>
                           ";
                           echo "</div>";
                           echo '</td>';
-                          break;
-                        case 1: # Waiting for confirmation
-                        # btn btn-lg btn-link
-                        echo "<td align=''>";
-                        echo "<div class='info'>";
-                        echo "<button type='submit' class='btn btn-success input-block-level form-control' name='selectedseatid' value='" . $row['seatid'] . "|".$i."'>
-                                Reserve this
-                              </button>
-                        ";
-                        echo "</div>";
-                        echo '</td>';
+                        }else{
+                          $studentInCurrentSeat = $row["stuid_attime$i"];
+                          echo "<td class='alert alert-warning' align='center'>Waiting $studentInCurrentSeat confirm</td>";
+                        }
+
                           break;
 
                         case 2:
@@ -237,7 +231,7 @@ class Table
                           $status = sprintf("%s Confirmed", $studentidFromDB);
 
 
-                          echo "<td class='success' align='center'>$status</td>";
+                          echo "<td class='alert alert-success' align='center'>$status</td>";
 
                           break;
                       }
