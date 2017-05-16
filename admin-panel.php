@@ -1,4 +1,5 @@
 <?php
+    date_default_timezone_set('Asia/Bangkok');
 
     ini_set('session.save_path', realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
 
@@ -89,9 +90,15 @@
 </header>
 <div id="content" role="main">
     <section class="section swatch-white-blue">
+
+        <header class="section-header underline">
+            <h1 class="headline hyper hairline">SEAT CONTROL</h1>
+        </header>
         <div class="container" align="center">
-            <form action="admin-control.php" method="post">
-                <input name="resetAllSeat" type="submit" value="Reset All Seat" >
+            <form action="admin-command.php" method="post">
+                <button type='submit' class='btn btn-lg btn-link' name='command' value='resetAllSeat'>
+                    Reset all seat
+                </button>
 
             </form>
         </div>
