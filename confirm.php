@@ -9,6 +9,16 @@ if(!isset($_REQUEST['selectedseatid'])){
   header("location:index.php");
 
 }
+
+if(isset($_SESSION['uid'])){ //this is an administrator so donothing @_@
+  print "Administrator can not use this function right now";
+  return ;
+}
+
+if(isset($_SESSION['sid']) === false){
+  print "Please login before booking" . ", <a href='login.php'>click here to login</a><br>";
+  header("location:login.php");
+}
 $servername = "localhost";
 $username = "root"; // database id
 $password = ""; // database password
