@@ -52,7 +52,7 @@ class Table
 
     public function printTable()
     {
-        if ($this->isTimeOut()) { //time is greather than 20.00 pm
+        if (!$this->isTimeOut()) { //time is greather than 20.00 pm
             $this->printOutOfServiceTable();
             return;
         } else {
@@ -115,6 +115,12 @@ class Table
 
                       //for catch the status from seat 0 to 6
                       switch ($row["status$i"]) {
+
+                        case -1:
+
+                          echo "<td class='validation_error'>TIME OUT</td>";
+                          break;
+
                         case 0: # Avalible
                           #if avalible then print 'Reserve' button
                           echo "<td align=''>";
@@ -127,17 +133,15 @@ class Table
                           echo '</td>';
                           break;
                         case 1: # Waiting for confirmation
-                          $studentidFromDB = $row["stuid_attime$i"];
-                          $status = sprintf("Waiting %s Confirm", $studentidFromDB);
-                          // print $status;
-                          echo "<td class='alert-warning' align='center'>$status</td>";
-
-                        // 0 -- avalible
-                        //   # Print button 'Reserve'
-                        // 1 -- wait for confirmation
-                        //   # Print text 'Wait for $studentid confirmed'
-                        // 2 -- confirmed
-                        //   # Print text 'This set not avalible right now please try again'
+                        # btn btn-lg btn-link
+                        echo "<td align=''>";
+                        echo "<div class='info'>";
+                        echo "<button type='submit' class='btn btn-success input-block-level form-control' name='selectedseatid' value='" . $row['seatid'] . "|".$i."'>
+                                Reserve this
+                              </button>
+                        ";
+                        echo "</div>";
+                        echo '</td>';
                           break;
 
                         case 2:
@@ -158,7 +162,6 @@ class Table
         } //end if
       } //end else
     } // end function printTable
-
 
     public function isTimeOut()
     {

@@ -40,71 +40,57 @@
        -----------------------------
     */
 
-
     //for split string with | (pipe)
     $result = explode('|', $_REQUEST['selectedseatid']);
 
+    # seat that student click
     $selectedSeatid = $result[0];
+
+    # time at student clicked range 0 - 6
     $selectedSelectedTime = $result[1];
 
 
-    // $queryIfStudentHasNameInDatabase =
-    //  "SELECT *
-    //   FROM seat
-    //   WHERE
-    //     stuid_attime0 = $_SESSION['sid'] or
-    //     stuid_attime1 = $_SESSION['sid'] or
-    //     stuid_attime2 = $_SESSION['sid'] or
-    //     stuid_attime3 = $_SESSION['sid'] or
-    //     stuid_attime4 = $_SESSION['sid'] or
-    //     stuid_attime5 = $_SESSION['sid'] or
-    //     stuid_attime6 = $_SESSION['sid'] ";
-    //
-    // $queryIfStudentHasNameInSeat = ("SELECT stuid_attime$selectedSelectedTime , status$selectedSelectedTime
-    //                                  FROM   seat
-    //                                  WHERE  seatid = $selectedSeatid");
+    $queryIfSeatExists =
+    "
+    SELECT *
+    FROM seat
+    WHERE (stuid_attime0 = '".$_SESSION['sid']."' OR
+    			 stuid_attime1 = '".$_SESSION['sid']."' OR
+    			 stuid_attime2 = '".$_SESSION['sid']."' OR
+    			 stuid_attime3 = '".$_SESSION['sid']."' OR
+    			 stuid_attime4 = '".$_SESSION['sid']."' OR
+    			 stuid_attime5 = '".$_SESSION['sid']."' OR
+    			 stuid_attime6 = '".$_SESSION['sid']."'
+    			)
+    ";
 
-
-
-    // print $queryIfStudentHasNameInSeat;
     try {
       $result = $conn->query($queryIfSeatExists);
-      $result = $result->fetch_assoc(); # array(2) { ["stuid_attime1"]=> NULL ["status1"]=> string(1) "0" }
+      $countFromResult = mysqli_num_rows($result);
 
-      $studentAtTime = $result["stuid_attime$selectedSelectedTime"];
+      # If student already reserved seat in table 'seat'
+      if($countFromResult >= 1){
+        print "You already reserved seat" . ", <a href='booking-form.php'>click here to go back</a><br>";
 
-      # CAUTION! --> this var can be NULL
-      $seatStatusAtTime = $result["status$selectedSelectedTime"];
+      } else {
+        // $result = $result->fetch_assoc(); # array(2) { ["stuid_attime1"]=> NULL ["status1"]=> string(1) "0" }
+        $sqlReserveSeat ="UPDATE seat
+                          SET stuid_attime$selectedSelectedTime = '".$_SESSION['sid']."' , seat.status$selectedSelectedTime = 1
+                          WHERE seatid = $selectedSeatid;";
+        $result = $conn->query($sqlReserveSeat);
 
-      // print $studentAtTime;
-      // print $seatStatusAtTime;
-
-
-      # check if student id from query not match in session studentID
-      if($studentAtTime != $_SESSION['sid'] && $seatStatusAtTime != 0){
-        print "This seat is not avalible right now." . "<br>";
-        print "Please try again later" . "<br>";
-        print '<input action="action" onclick="history.go(-1);" type="button" value="Back" />';
-      }
-      # if studentid match in query and session
-      elseif ($studentAtTime == $_SESSION['sid'] && $seatStatusAtTime == 1) {
-        print "You've already reserve this seat please <a href='confirm-form.php'>go to confirm page</a>" . "<br>";
-      }
-      # if studentid match in query and session
-      elseif ($studentAtTime == $_SESSION['sid'] && $seatStatusAtTime == 2) {
-        print "Other people've already reserved this seat please <a href='confirm-form.php'>go to confirm page</a>" . "<br>";
-      }
-      #if this seat avalible for reserve
-      elseif ($studentAtTime === NULL && $seatStatusAtTime == 0){
-        $queryReserveThisSeat =("UPDATE seat
-                                 SET  stuid_attime$selectedSelectedTime = '".$_SESSION['sid']."', status$selectedSelectedTime = 1
-                                 WHERE seat.seatid = $selectedSeatid ");
-        print $queryReserveThisSeat;
+        # if query succeed
+        if($result){
+          print "Reserve succeed " . ", <a href='booking-form.php'>click here to go back</a><br>";
+        }else{
+          print "Failed to reserve seat $selectedSeatid " . ", <a href='booking-form.php'>click here to go back</a><br>";
+        }
       }
 
-    } catch (Exception $e) {
-      echo 'Caught exception: ',  $e->getMessage(), "\n";
+
+    } catch (Exception $ex) {
+      print "Failed [Exception] -> $ex " . ", <a href='booking-form.php'>click here to go back</a><br>";
     }
-
     $conn->close();
+
 ?>
