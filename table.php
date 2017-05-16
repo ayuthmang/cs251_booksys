@@ -50,7 +50,95 @@ class Table
 
     }
 
-    public function printTable()
+    public function printTableBookingPage()
+    {
+        if (!$this->isTimeOut()) { //time is greather than 20.00 pm
+            $this->printOutOfServiceTable();
+            return;
+        } else {
+            $mySqlCommand = "SELECT * FROM seat";
+            $servername = "localhost";
+            $username = "root"; // database id
+            $password = ""; // database password
+            $dbname = "blacksource_bksys"; //database name
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+
+            }
+            $query = "SELECT * FROM seat";
+
+            if ($result = $conn->query($query)) {
+
+                while ($row = $result->fetch_assoc()) {
+
+                    echo "<tr>";
+                    echo "<td>" . $row['seatid'] . "</td>";
+
+                    /*
+                      We have 7 columns to add to table
+                      In real database is:
+                      ---------------------
+                        stuid_attime0 --> for recorded student who get this seat.
+                        status0  --> for status
+                                      0 -- avalible
+                                        # Print button 'Reserve'
+                                      1 -- wait for confirmation
+                                        # Print text 'Wait for $studentid confirmed'
+                                      2 -- confirmed
+                                        # Print text 'This set not avalible right now please try again'
+                      ---------------------
+                        stuid_attime1 -->
+                        status2  -->
+                      ---------------------
+
+                    */
+
+                    for ($i=0; $i <7 ; $i++) {
+
+                      //for catch the status from seat 0 to 6
+                      switch ($row["status$i"]) {
+
+                        case -1:
+
+                          echo "<td class='validation_error'>TIME OUT</td>";
+                          break;
+
+                        case 0: # Avalible
+                          #if avalible then print 'Reserve' button
+                          echo "<td align=''>";
+                          echo "<div class='info'>";
+                          echo "<button type='submit' class='btn btn-success input-block-level form-control' name='selectedseatid' value='" . $row['seatid'] . "|".$i."'>
+                                  Reserve this
+                                </button>
+                          ";
+                          echo "</div>";
+                          echo '</td>';
+                          break;
+                        case 1: # Waiting for confirmation
+                        # btn btn-lg btn-link
+                          $studentInCurrentSeat = $row["stuid_attime$i"];
+                          echo "<td class='warning' align='center'>Waiting $studentInCurrentSeat confirm</td>";
+                          break;
+
+                        case 2:
+                          $studentidFromDB = $row["stuid_attime$i"];
+                          $status = sprintf("%s Confirmed", $studentidFromDB);
+                          echo "<td class='success' align='center'>$status</td>";
+
+                          break;
+                      }
+                    }
+                    print '</tr>';
+
+
+                } // end while
+          $result->free();
+        } //end if
+      } //end else
+    } // end function printTable
+
+    public function printTableConfirmPage()
     {
         if (!$this->isTimeOut()) { //time is greather than 20.00 pm
             $this->printOutOfServiceTable();
@@ -162,6 +250,7 @@ class Table
         } //end if
       } //end else
     } // end function printTable
+
 
     public function isTimeOut()
     {
