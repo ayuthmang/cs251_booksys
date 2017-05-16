@@ -84,12 +84,13 @@ include("table.php");
     <link rel="stylesheet" href="assets/css/swatch-black-yellow.min.css">
     <link rel="stylesheet" href="assets/css/swatch-blue-white.min.css">
     <link rel="stylesheet" href="assets/css/swatch-green-white.min.css">
-    <link rel="stylesheet" href="assets/css/swatch-black-beige.min.css">
     <link rel="stylesheet" href="assets/css/swatch-white-black.min.css">
     <link rel="stylesheet" href="assets/css/swatch-white-blue.min.css">
     <link rel="stylesheet" href="assets/css/swatch-white-green.min.css">
-    <link rel="stylesheet" href="assets/css/swatch-black-beige.min.css">
     <link rel="stylesheet" href="assets/css/swatch-yellow-black.min.css">
+    <link rel="stylesheet" href="assets/css/swatch-red-white.min.css">
+    <link rel="stylesheet" href="assets/css/swatch-white-red.min.css">
+
     <link rel="stylesheet" href="assets/css/fonts.min.css" media="screen">
 </head>
 <body onload="display_ct()">
@@ -196,11 +197,10 @@ include("table.php");
                 </h1>
             </header>
 
-
             <div class="text-left">
                 <div class="row-fluid">
                     <div class="span12">
-                        <table class="table table-hover">
+                        <table class="swatch-black-yellow table table-hover">
                         <form action='booking.php' method='post'>
                             <thead>
                             <tr>

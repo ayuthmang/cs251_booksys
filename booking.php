@@ -3,6 +3,14 @@
     ini_set('session.save_path', realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
     session_start();
 
+    if(isset($_SESSION['uid'])){ //this is an administrator so donothing @_@
+      print "Administrator can not use this function right now";
+    }
+
+    if(isset($_SESSION['sid']) === false){
+      print "Please login before booking" . ", <a href='login.php'>click here to login</a><br>";
+      // header("location:login.php");
+    }
     $servername = "localhost";
     $username = "root"; // database id
     $password = ""; // database password
@@ -39,24 +47,64 @@
     $selectedSeatid = $result[0];
     $selectedSelectedTime = $result[1];
 
-    $queryIfSeatExists = ("SELECT stuid_attime$selectedSelectedTime , status$selectedSelectedTime
-                           FROM   seat
-                           WHERE  seatid = $selectedSeatid");
 
-    $result = conn->query(queryIfSeatExists);
-    $result = result->fetch_assoc();
+    // $queryIfStudentHasNameInDatabase =
+    //  "SELECT *
+    //   FROM seat
+    //   WHERE
+    //     stuid_attime0 = $_SESSION['sid'] or
+    //     stuid_attime1 = $_SESSION['sid'] or
+    //     stuid_attime2 = $_SESSION['sid'] or
+    //     stuid_attime3 = $_SESSION['sid'] or
+    //     stuid_attime4 = $_SESSION['sid'] or
+    //     stuid_attime5 = $_SESSION['sid'] or
+    //     stuid_attime6 = $_SESSION['sid'] ";
+    //
+    // $queryIfStudentHasNameInSeat = ("SELECT stuid_attime$selectedSelectedTime , status$selectedSelectedTime
+    //                                  FROM   seat
+    //                                  WHERE  seatid = $selectedSeatid");
 
-    var_dump($result);
 
+
+    // print $queryIfStudentHasNameInSeat;
     try {
+      $result = $conn->query($queryIfSeatExists);
+      $result = $result->fetch_assoc(); # array(2) { ["stuid_attime1"]=> NULL ["status1"]=> string(1) "0" }
 
-    } catch (Exception $ex) {
+      $studentAtTime = $result["stuid_attime$selectedSelectedTime"];
 
+      # CAUTION! --> this var can be NULL
+      $seatStatusAtTime = $result["status$selectedSelectedTime"];
+
+      // print $studentAtTime;
+      // print $seatStatusAtTime;
+
+
+      # check if student id from query not match in session studentID
+      if($studentAtTime != $_SESSION['sid'] && $seatStatusAtTime != 0){
+        print "This seat is not avalible right now." . "<br>";
+        print "Please try again later" . "<br>";
+        print '<input action="action" onclick="history.go(-1);" type="button" value="Back" />';
+      }
+      # if studentid match in query and session
+      elseif ($studentAtTime == $_SESSION['sid'] && $seatStatusAtTime == 1) {
+        print "You've already reserve this seat please <a href='confirm-form.php'>go to confirm page</a>" . "<br>";
+      }
+      # if studentid match in query and session
+      elseif ($studentAtTime == $_SESSION['sid'] && $seatStatusAtTime == 2) {
+        print "Other people've already reserved this seat please <a href='confirm-form.php'>go to confirm page</a>" . "<br>";
+      }
+      #if this seat avalible for reserve
+      elseif ($studentAtTime === NULL && $seatStatusAtTime == 0){
+        $queryReserveThisSeat =("UPDATE seat
+                                 SET  stuid_attime$selectedSelectedTime = '".$_SESSION['sid']."', status$selectedSelectedTime = 1
+                                 WHERE seat.seatid = $selectedSeatid ");
+        print $queryReserveThisSeat;
+      }
+
+    } catch (Exception $e) {
+      echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
 
-    print $queryIfSeatExists;
-    // $result = $conn->query($queryCheckIfStudentReservedThatSeat);
-    // $data = $result->fetch_assoc();
-
-
+    $conn->close();
 ?>
