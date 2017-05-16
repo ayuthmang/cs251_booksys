@@ -20,9 +20,9 @@ VALUES ('joe',"ยพงศกร","พรมมา" ,'123456789');
 INSERT INTO admin (uid, fname, lname, password)
 VALUES ('nut', "ยณัฐพล", "พงษ์อุดม" ,'123456789');
  */
-    $servername = "188.166.248.254";
-    $username = "blacksource_root"; // database id
-    $password = "ifyounot"; // database password
+    $servername = "localhost";
+    $username = "root"; // database id
+    $password = ""; // database password
     $dbname = "blacksource_bksys"; //database name
     $conn = new mysqli($servername,$username,$password,$dbname);
     mysqli_set_charset($conn, "utf8");
@@ -52,12 +52,14 @@ VALUES ('nut', "ยณัฐพล", "พงษ์อุดม" ,'123456789');
 
 
 
+        print $studentID . "<br>";
+
         if(isset($firstName) && isset($lastName)){
 
             $SQLCode =
              "INSERT INTO student (sid, fname, lname, priority, password)
               VALUES ('".$studentID."','".$firstName."' , '".$lastName."',0,'123456');";
-            $conn->query($SQLCode);
+//            $conn->query($SQLCode);
         }
 //        print_r ($array);
 //        $firstName2 = trim($firstNameAndLastName[0], ' ');

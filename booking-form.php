@@ -7,15 +7,24 @@ ini_set('session.save_path', realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../
 
 session_start();
 
-//var_dump($_SESSION);
-
-//print $_SESSION['sid'];
-//print $_SESSION['uid'];
-
+date_default_timezone_set('Asia/Bangkok');
 
 if (empty($_SESSION['fname'])) {
-    header("location:login-form.html");
+    header("location:login-form.php");
 }
+
+/*for get full time in 24 Hour format
+https://www.w3schools.com/php/php_date.asp
+
+$currentTime = date('G:i:s');
+
+$hour = date('G');
+
+
+*/
+// echo $hour;
+include("table.php");
+
 
 ?>
 <!DOCTYPE html>
@@ -75,12 +84,13 @@ if (empty($_SESSION['fname'])) {
     <link rel="stylesheet" href="assets/css/swatch-black-yellow.min.css">
     <link rel="stylesheet" href="assets/css/swatch-blue-white.min.css">
     <link rel="stylesheet" href="assets/css/swatch-green-white.min.css">
-    <link rel="stylesheet" href="assets/css/swatch-black-beige.min.css">
     <link rel="stylesheet" href="assets/css/swatch-white-black.min.css">
     <link rel="stylesheet" href="assets/css/swatch-white-blue.min.css">
     <link rel="stylesheet" href="assets/css/swatch-white-green.min.css">
-    <link rel="stylesheet" href="assets/css/swatch-black-beige.min.css">
     <link rel="stylesheet" href="assets/css/swatch-yellow-black.min.css">
+    <link rel="stylesheet" href="assets/css/swatch-red-white.min.css">
+    <link rel="stylesheet" href="assets/css/swatch-white-red.min.css">
+
     <link rel="stylesheet" href="assets/css/fonts.min.css" media="screen">
 </head>
 <body onload="display_ct()">
@@ -102,7 +112,7 @@ if (empty($_SESSION['fname'])) {
     <ul class="nav navbar-nav navbar-right">
 
 
-    <li class="swatch-black-yellow"><a href=# id="ct" class="dropdown-toggle"
+    <li class=""><a href=# id="ct" class="dropdown-toggle"
                                    data-toggle="dropdown">Time: </a>
     </li>
 
@@ -118,7 +128,7 @@ if (empty($_SESSION['fname'])) {
 
                     //print_r ($_SESSION);
                     if (isset($_SESSION['sid']) && $_SESSION['sid'] != '') {
-                        echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown"> 
+                        echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown">
 									Student ' . $_SESSION['fname'] . '</a>';
                         echo '<ul class="dropdown-menu">';
                         echo '<li><a href="profile.php">Profile</a>';
@@ -134,7 +144,7 @@ if (empty($_SESSION['fname'])) {
                         echo '</ul>';
                     } elseif (isset($_SESSION['uid']) && $_SESSION['uid'] != '') {
                         //if an administrator
-                        echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown"> 
+                        echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown">
 									Administrator ' . $_SESSION['fname'] . '</a>';
                         echo '<ul class="dropdown-menu">';
                         echo '<li><a href="profile.php">Profile</a>';
@@ -187,144 +197,39 @@ if (empty($_SESSION['fname'])) {
                 </h1>
             </header>
 
-
             <div class="text-left">
                 <div class="row-fluid">
                     <div class="span12">
-                        <table class="table">
+                        <table class="swatch-black-yellow table table-hover">
+                        <form action='booking.php' method='post'>
                             <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Own by</th>
-                                <th>Status</th>
-                                <th>Select</th>
+                                <th>Seat#</th>
+
+                                <th>8.00 - 9.30</th>
+
+                                <th>9.30 - 11.00</td>
+
+                                <th>11.00 - 12.30</th>
+
+                                <th>13.30 - 15.00</th>
+
+                                <th>15.00 - 16.30</th>
+
+                                <th>16.30 - 18.00</th>
+
+                                <th>18.00 - 19.30</th>
+
                             </tr>
                             </thead>
                             <tbody>
                             <?php
-                            //SELECT * from seat
-                            $mySqlCommand = "SELECT * FROM seat";
-                            $servername = "188.166.248.254";
-                            $username = "blacksource_root"; // database id
-                            $password = "ifyounot"; // database password
-                            $dbname = "blacksource_bksys"; //database name
-                            $conn = new mysqli($servername, $username, $password, $dbname);
-                            if ($conn->connect_error) {
-                                die("Connection failed: " . $conn->connect_error);
-
-                            }
-                            $query = "SELECT * FROM seat";
-
-                            if ($result = $conn->query($query)) {
-
-                                while ($row = $result->fetch_assoc()) {
-                                    //printf ("%s (%s) %s\n <br>", $row["seatid"], $row["sid"] , $row["status"]);
-                                    echo "<tr>";
-                                    echo "<td>" . $row['seatid'] . "</td>";
-                                    echo "<td>" . $row['sid'] . "</td>";
-                                    $status = "Unknown";
-                                    switch ($row['status']) {
-                                        case 0: //avaliable
-                                            $status = "Avaliable";
-                                            echo "<td class='alert-success'>$status</td>";
-                                            echo "<td>";
-                                            echo "<form action='booking.php' method='post'>";
-                                            echo "<button type='submit' class='btn btn-success' name='selectedseatid' value='".$row['seatid']."'>
-                                                    Reservation
-                                                  </button>
-                                                  ";
-                                            echo "</form>";
-
-                                            echo "</td>";
-                                            echo "</tr>";
-                                            break;
-                                        case 1: //waiting for confirmation
-                                            $status = "Waiting for confirmation";
-                                            echo "<td class='alert-warning'>$status</td>";
-
-
-                                            echo "<td>";
-                                            echo "<form action='booking.php' method='post'>";
-
-
-                                            if(isset($_SESSION['sid'])){
-                                                if($_SESSION['sid'] === $row['sid']){
-    //                                                var_dump($row);
-    //                                                var_dump($_SESSION);
-                                                    echo "<button type='submit' class='btn btn-danger' name='selectedseatid' value='".$row['seatid']."'>
-                                                            Revoke Seat
-                                                          </button>
-                                                      ";
-                                                }
-                                            }
-//                                            echo "<button type='submit' class='btn btn-success' name='selectedseatid' value='".$row['seatid']."'>
-//                                                    Reservation
-//                                                  </button>
-//                                                  ";
-                                            echo "</form>";
-
-                                            echo "</td>";
-                                            echo "</tr>";
-
-
-
-//                                            echo "
-//
-//                                                         <td>
-//                                                            <a class='btn btn-warning' href='confirm-form.php'>Goto Confirm Page</a>
-//                                                         </td>
-//
-//                                                 ";
-
-                                            /*
-                                                            <button class='btn btn-success' type='submit'id='".$row['seatid']."|".$row['sid']."' name='".$row['seatid']."|".$row['sid']."'>Confirm Seat</button>
-                                                            
-                                                            <button class='btn btn-danger' type='submit' id='".$row['seatid']."|".$row['sid']."'>Revoke Seat</a>
-                                            */
-                                            echo "</tr>";
-                                            break;
-                                        case 2: //confirmed
-                                            $status = "Not Avaliable";
-                                            echo "<td class='validation_error'>$status</td>";
-
-
-                                            echo "<td>";
-                                            echo "<form action='booking.php' method='post'>";
-
-
-                                            if($_SESSION['sid'] === $row['sid']) {
-                                                echo "<button type='submit' class='btn btn-danger' name='selectedseatid' value='".$row['seatid']."'>
-                                                        Revoke Seat
-                                                      </button>
-                                                  ";
-                                            }
-                                            echo "</form>";
-
-                                            echo "</td>";
-                                            echo "</tr>";
-
-                                            break;
-                                    }
-
-
-//                                        echo "<td>$status</td>";
-
-                                }
-                                $result->free();
-                            }
-
+                                $mytable = new table();
+                                $mytable->printTableBookingPage();
                             ?>
-                            <!--                            <td>1</td>-->
-                            <!--                            <td>Mark</td>-->
-                            <!--                            <td>Otto</td>-->
-                            <!--                            <td>@mdo</td-->
-
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
 
                             </tbody>
+                        </form>
                         </table>
                     </div>
                 </div>

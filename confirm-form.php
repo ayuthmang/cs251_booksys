@@ -4,20 +4,65 @@
 // session_save_path("/tmp");
 ini_set('session.save_path', realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
 
+
 session_start();
 
+date_default_timezone_set('Asia/Bangkok');
+
 if (empty($_SESSION['fname'])) {
-    header("location:login-form.html");
+    header("location:login-form.php");
 }
+
+/*for get full time in 24 Hour format
+https://www.w3schools.com/php/php_date.asp
+
+$currentTime = date('G:i:s');
+
+$hour = date('G');
+
+
+*/
+// echo $hour;
+include("table.php");
+
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
+
+
+    <script type="text/javascript">
+        function display_ct() {
+            var strcount
+            var x = new Date()
+            var x1= "Time: " + x.getHours( )+ ":" + x.getMinutes() + ":" + x.getSeconds();
+
+//            var x1=x.getMonth() + "/" + x.getDate() + "/" + x.getYear();
+//            x1 = x1 + " - " + x.getHours( )+ ":" + x.getMinutes() + ":" + x.getSeconds();
+            document.getElementById('ct').innerHTML = x1;
+
+            tt=display_c();
+        }
+        function display_c(){
+            var refresh=1000; // Refresh rate in milli seconds
+            mytime=setTimeout('display_ct()',refresh)
+        }
+    </script>
+
+
+
+
+
+
+
+    <title>Confirm a Seat | Booking System</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Confirm a Seat | Booking System</title>
+    <title></title>
     <link rel="icon" type="image/x-icon" href="assets/images/favicons/favicon.ico"/>
     <link rel="icon" type="image/png" href="assets/images/favicons/favicon.png"/>
     <!-- For iPhone 4 Retina display: -->
@@ -39,37 +84,51 @@ if (empty($_SESSION['fname'])) {
     <link rel="stylesheet" href="assets/css/swatch-black-yellow.min.css">
     <link rel="stylesheet" href="assets/css/swatch-blue-white.min.css">
     <link rel="stylesheet" href="assets/css/swatch-green-white.min.css">
-    <link rel="stylesheet" href="assets/css/swatch-black-beige.min.css">
     <link rel="stylesheet" href="assets/css/swatch-white-black.min.css">
     <link rel="stylesheet" href="assets/css/swatch-white-blue.min.css">
     <link rel="stylesheet" href="assets/css/swatch-white-green.min.css">
-    <link rel="stylesheet" href="assets/css/swatch-black-beige.min.css">
     <link rel="stylesheet" href="assets/css/swatch-yellow-black.min.css">
+    <link rel="stylesheet" href="assets/css/swatch-red-white.min.css">
+    <link rel="stylesheet" href="assets/css/swatch-white-red.min.css">
+
     <link rel="stylesheet" href="assets/css/fonts.min.css" media="screen">
 </head>
-<body>
+<body onload="display_ct()">
 
 <header id="masthead" class="navbar navbar-sticky swatch-black-yellow" role="banner">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".main-navbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="./index.php" class="navbar-brand">
-                <img src="assets/images/logo.png" alt="">Confirm Seat | Booking System
-            </a>
-        </div>
-        <nav class="collapse navbar-collapse main-navbar" role="navigation">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown active"><a href=# class="dropdown-toggle"
-                                               data-toggle="dropdown">Home</a></li>
-                <li>
-                    <?php
-                    //                        print_r ($_SESSION);
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".main-navbar">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+</button>
+    <a href="./index.php" class="navbar-brand">
+    <img src="assets/images/logo.png" alt="">Confirm Seat | Booking System
+    </a>
+
+</div>
+    <nav class="collapse navbar-collapse main-navbar" role="navigation">
+    <ul class="nav navbar-nav navbar-right">
+
+
+    <li class=""><a href=# id="ct" class="dropdown-toggle"
+                                   data-toggle="dropdown">Time: </a>
+    </li>
+
+    <li class="dropdown active"><a href=# class="dropdown-toggle"
+                                   data-toggle="dropdown">Home</a>
+    </li>
+
+
+
+        <li>
+
+        <?php
+
+                    //print_r ($_SESSION);
                     if (isset($_SESSION['sid']) && $_SESSION['sid'] != '') {
-                        echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown"> 
+                        echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown">
 									Student ' . $_SESSION['fname'] . '</a>';
                         echo '<ul class="dropdown-menu">';
                         echo '<li><a href="profile.php">Profile</a>';
@@ -84,7 +143,8 @@ if (empty($_SESSION['fname'])) {
 
                         echo '</ul>';
                     } elseif (isset($_SESSION['uid']) && $_SESSION['uid'] != '') {
-                        echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown"> 
+                        //if an administrator
+                        echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown">
 									Administrator ' . $_SESSION['fname'] . '</a>';
                         echo '<ul class="dropdown-menu">';
                         echo '<li><a href="profile.php">Profile</a>';
@@ -128,120 +188,47 @@ if (empty($_SESSION['fname'])) {
 
     <section class="section swatch-black-yellow">
         <div class="container">
+
+
             <header class="section-header underline text-center">
-                <h1 class="headline super lead">Confirm a Seat</h1>
+                <h1 class="headline super lead">
+                    Confirm a Seat
+                </h1>
             </header>
 
             <div class="text-left">
                 <div class="row-fluid">
                     <div class="span12">
-                        <table class="table">
+                        <table class="swatch-black-yellow table table-hover">
+                        <form action='confirm.php' method='post'>
                             <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Own by</th>
-                                <th>Status</th>
-                                <th>Select</th>
+                                <th>Seat#</th>
+
+                                <th>8.00 - 9.30</th>
+
+                                <th>9.30 - 11.00</td>
+
+                                <th>11.00 - 12.30</th>
+
+                                <th>13.30 - 15.00</th>
+
+                                <th>15.00 - 16.30</th>
+
+                                <th>16.30 - 18.00</th>
+
+                                <th>18.00 - 19.30</th>
+
                             </tr>
                             </thead>
                             <tbody>
-                                <?php
-                                //SELECT * from seat
-                                $mySqlCommand = "SELECT * FROM seat";
-                                $servername = "188.166.248.254";
-                                $username = "blacksource_root"; // database id
-                                $password = "ifyounot"; // database password
-                                $dbname = "blacksource_bksys"; //database name
-                                $conn = new mysqli($servername, $username, $password, $dbname);
-                                if ($conn->connect_error) {
-                                    die("Connection failed: " . $conn->connect_error);
-
-                                }
-
-
-//                                $objResult = mysqli_fetch_array($conn->query($mySqlCommand));
-
-
-                                $query = "SELECT * FROM seat";
-
-
-                                    /* fetch associative array */
-
-
-
-                                    /* free result set */
-
-
-                                if ($result = $conn->query($query)) {
-
-                                    while ($row = $result->fetch_assoc()) {
-                                        //printf ("%s (%s) %s\n <br>", $row["seatid"], $row["sid"] , $row["status"]);
-                                        echo "<tr>";
-                                        echo "<td>".$row['seatid']."</td>";
-                                        echo "<td>".$row['sid']."</td>";
-                                        $status = "Unknown";
-                                        switch ($row['status']){
-                                            case 0: //avaliable
-                                                $status = "Avaliable";
-                                                echo "<td class='alert-success'>$status</td>";
-                                                echo "
-                                                      <form action='confirm.php' method='post'>
-                                                         <td>
-                                                            
-                                                         </td>
-                                                      </form>
-                                                     ";
-                                                echo "</tr>";
-                                                break;
-                                            case 1: //waiting for confirmation
-                                                $status = "Waiting for confirmation";
-                                                echo "<td class='alert-warning'>$status</td>";
-                                                echo "<form action='confirm.php' method='post'>";
-                                                echo "    <td>";
-                                                echo "        <button type='submit' class='btn btn-success' name='selectedseatid' value='".$row['seatid']."' href='#'>
-                                                                Confirm Seat
-                                                              </button>";
-
-                                                echo "        <button type='submit' class='btn btn-danger' name='selectedseatid' value='".$row['seatid']."' href='#'>
-                                                                Revoke Seat
-                                                              </button>";
-                                                echo "    </td>";
-                                                echo "</form> ";
-                                                echo "</tr>";
-//                                                echo "<button type='submit' class='btn btn-danger' name='selectedseatid' value='".$row['seatid']."'>
-//                                                        Revoke Seat
-//                                                      </button>
-//                                                  ";
-                                                break;
-                                            case 2: //confirmed
-                                                $status = "Confirmed";
-                                                echo "<td class='alert-info'>$status</td>";
-                                                echo "
-                                                      <form action='confirm.php' method='post'>
-                                                         <td>
-                                                            <button type='submit' class='btn btn-danger' name='selectedseatid' value='".$row['seatid']."' href='#'>Revoke Seat</button>
-                                                         </td>
-                                                      </form>
-                                                     ";
-                                                echo "</tr>";
-                                                break;
-                                        }
-
-
-
-//                                        echo "<td>$status</td>";
-
-                                    }
-                                    $result->free();
-                                }
-
-                                ?>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td
+                            <?php
+                                $mytable = new table();
+                                $mytable->printTableConfirmPage();
+                            ?>
 
                             </tbody>
+                        </form>
                         </table>
                     </div>
                 </div>
