@@ -190,12 +190,10 @@ include("table.php");
         <div class="container">
 
 
-            <header class="section-header underline text-center">
-                <h1 class="headline super lead">
-                    Select a Seat
-
-                </h1>
+            <header class="section-header underline">        
+                <h1 class="headline hyper hairline">Select a Seat</h1>
             </header>
+            
 
             <div class="text-left">
                 <div class="row-fluid">

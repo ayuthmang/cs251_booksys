@@ -1,35 +1,6 @@
-<meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Home | Booking System</title>
-        <link rel="icon" type="image/x-icon" href="assets/images/favicons/favicon.ico" />
-        <link rel="icon" type="image/png" href="assets/images/favicons/favicon.png" />
-        <!-- For iPhone 4 Retina display: -->
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/favicons/apple-touch-icon-114x114-precomposed.png">
-        <!-- For iPad: -->
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/favicons/apple-touch-icon-72x72-precomposed.png">
-        <!-- For iPhone: -->
-        <link rel="apple-touch-icon-precomposed" href="assets/images/favicons/apple-touch-icon-60x60-precomposed.png">
-        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/theme.min.css">
-        <link rel="stylesheet" href="assets/css/color-defaults.min.css">
-        <link rel="stylesheet" href="assets/css/swatch-beige-black.min.css">
-        <link rel="stylesheet" href="assets/css/swatch-black-beige.min.css">
-        <link rel="stylesheet" href="assets/css/swatch-black-white.min.css">
-        <link rel="stylesheet" href="assets/css/swatch-black-yellow.min.css">
-        <link rel="stylesheet" href="assets/css/swatch-blue-white.min.css">
-        <link rel="stylesheet" href="assets/css/swatch-green-white.min.css">
-        <link rel="stylesheet" href="assets/css/swatch-black-beige.min.css">
-        <link rel="stylesheet" href="assets/css/swatch-white-black.min.css">
-        <link rel="stylesheet" href="assets/css/swatch-white-blue.min.css">
-        <link rel="stylesheet" href="assets/css/swatch-white-green.min.css">
-        <link rel="stylesheet" href="assets/css/swatch-black-beige.min.css">
-        <link rel="stylesheet" href="assets/css/swatch-yellow-black.min.css">
-        <link rel="stylesheet" href="assets/css/fonts.min.css" media="screen">
-</meta>
-
 <?php
+    date_default_timezone_set('Asia/Bangkok');
+
     error_reporting(E_ALL ^ E_NOTICE);
     ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
     // session_save_path("/tmp");

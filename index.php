@@ -68,7 +68,7 @@ session_start();
                         echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown">
 									Student ' . $_SESSION['fname'] . '</a>';
                         echo '<ul class="dropdown-menu">';
-                        echo '<li><a href="profile.php">Profile</a>';
+                        echo '<li><a href="profile-form.php">Profile</a>';
                         echo '</li>';
                         if (isset($_SESSION['C_TYPE']) && $_SESSION["C_TYPE"] == 1) {
                             echo '<li><a href="admin-panel.php">Control Panel</a>';
@@ -83,7 +83,7 @@ session_start();
                         echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown">
 									Administrator ' . $_SESSION['fname'] . '</a>';
                         echo '<ul class="dropdown-menu">';
-                        echo '<li><a href="profile.php">Profile</a>';
+                        echo '<li><a href="profile-form.php">Profile</a>';
                         echo '</li>';
                         echo '<li><a href="admin-panel.php">Control Panel</a>';
                         echo '</li>';
@@ -131,13 +131,15 @@ session_start();
                 // e.g. Somsri, Hello
                 if (isset($_SESSION['fname']) && $_SESSION['fname'] != '') {
 
-                    echo '<header class="section-header underline text-center">';
-                    echo '<h1 class="headline super hairline ">';
+
+                    echo '<header class="section-header underline os-animation animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay=".2s" style="animation-delay: 2s;">';
+                    echo '<h1 class="headline super hyper hairline ">';
                     echo ' ' . $_SESSION['fname'] . ',  Hello.';
 
                     echo "</h1>";
                     echo '</header>';
                 } else {
+
                     echo '<header class="section-header underline text-center os-animation animated fadeInDown" data-os-animation="fadeInDown" data-os-animation-delay=".0s" style="animation-delay: 0s;">';
                     echo '<h1 class="headline super hairline bordered-header">';
                     echo 'Welcome to Booking System';

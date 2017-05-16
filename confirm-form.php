@@ -2,6 +2,9 @@
 // error_reporting(E_ALL ^ E_NOTICE);
 // error_reporting(E_ERROR | E_PARSE);
 // session_save_path("/tmp");
+
+date_default_timezone_set('Asia/Bangkok');
+
 ini_set('session.save_path', realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
 
 
@@ -190,12 +193,9 @@ include("table.php");
         <div class="container">
 
 
-            <header class="section-header underline text-center">
-                <h1 class="headline super lead">
-                    Confirm a Seat
-                </h1>
+            <header class="section-header underline">        
+                <h1 class="headline hyper hairline">Confirm Seat</h1>
             </header>
-
             <div class="text-left">
                 <div class="row-fluid">
                     <div class="span12">
