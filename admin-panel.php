@@ -102,6 +102,19 @@
 
             </form>
         </div>
+
+        <header class="section-header underline">
+            <h1 class="headline hyper hairline">Student Log</h1>
+        </header>
+        <div class="container" align="center">
+            <form action="admin-command.php" method="post">
+                <input type="text" name="stuid"></input>
+                <button type='submit' class='btn btn-success' name='command' value='viewLog' >
+                    Query
+                </button>
+
+            </form>
+        </div>
     </section>
 
 

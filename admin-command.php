@@ -21,19 +21,20 @@
 
    	$command = $_REQUEST['command'];
 	
+	$servername = "localhost";
+    $username = "root"; // database id
+    $password = ""; // database password
+    $dbname = "blacksource_bksys"; //database name
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+        return ;
+    }
 	switch ($command) {
 
 		# Reset all seat
 		case 'resetAllSeat':
-			$servername = "localhost";
-            $username = "root"; // database id
-            $password = ""; // database password
-            $dbname = "blacksource_bksys"; //database name
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-                return ;
-            }
+
             $sqlCommand = 
             "
             UPDATE seat
@@ -86,13 +87,71 @@
 			}
 
 			break;
-		
+
+
+		case 'viewLog':
+
+			// var_dump($_REQUEST);
+
+			$sqlCommand =
+			"
+			SELECT DISTINCT serverlog.sid , serverlog.message 
+			FROM student
+			INNER JOIN serverlog ON serverlog.sid = '5809610347'
+			ORDER BY message ASC 
+			";
+
+			$result = $conn->query($sqlCommand);
+
+			if(!$result){
+				print "Query failed";
+				$conn->close();
+				return;
+			}else{
+				echo "<!DOCTYPE html>
+						<html>
+						<head>
+						<style>
+						table {
+						    font-family: arial, sans-serif;
+						    border-collapse: collapse;
+						    width: 100%;
+						}
+
+						td, th {
+						    border: 1px solid #dddddd;
+						    text-align: left;
+						    padding: 8px;
+						}
+
+						tr:nth-child(even) {
+						    background-color: #dddddd;
+						}
+						</style>
+						</head>
+						<body>";
+				echo "<table>";
+				echo "<tr>";
+				echo "	<th>StudentID</th>";
+				echo "	<th>Message Log</th>";
+				echo "</tr>";
+
+				while($row = $result->fetch_assoc()){
+					echo "<tr><td>".$row['sid']."</td>";
+					echo "<td>".$row['message']."</td></tr>";
+				}
+				echo "	</body>
+					</html>";
+				echo "</table>";
+				
+			}
+			break;
 		default:
 
-
+			$conn->close();
 			print "Command not found.";
 			break;
 	}
 
-	$conn->close();
+
 ?>
