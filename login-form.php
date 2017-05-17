@@ -102,7 +102,6 @@
         <div class="container" align="center">
             <form action="login.php" method="post">
 
-
                 <div class="row text-center">
                     <div class="col-md-6 col-md-offset-3">
                         <form class="contact-form" id="contactForm">
@@ -117,7 +116,7 @@
                                 <i class="fa fa-key" data-animation="bounce"></i>
                             </div>
 
-                            <div class="form-group text-center os-animation animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay=".6s" style="animation-delay: 6s;">
+                            <div class="swatch-black-yellow hn form-group text-center os-animation animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay=".6s" style="animation-delay: 6s;">
                                 <button class="btn btn-primary btn-icon btn-icon-right" type="submit">
                                     Login
                                     <div class="hex-alt">

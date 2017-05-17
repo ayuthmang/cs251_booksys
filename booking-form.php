@@ -116,14 +116,22 @@ include("table.php");
                                    data-toggle="dropdown">Time: </a>
     </li>
 
-    <li class="dropdown active"><a href=# class="dropdown-toggle"
-                                   data-toggle="dropdown">Home</a>
+    <li class="dropdown active">
+        <a href=# class="dropdown-toggle" data-toggle="dropdown">
+            Home
+        </a>
+
+        <ul class='dropdown-menu'>
+            <li>
+                <a href="booking-form.php">Booking Form</a>
+            </li>
+
+            <li>
+                <a href="confirm-form.php">Confirm Form</a>
+            </li>
+        </ul>
     </li>
-
-
-
         <li>
-
         <?php
 
                     //print_r ($_SESSION);
@@ -131,7 +139,7 @@ include("table.php");
                         echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown">
 									Student ' . $_SESSION['fname'] . '</a>';
                         echo '<ul class="dropdown-menu">';
-                        echo '<li><a href="profile.php">Profile</a>';
+                        echo '<li><a href="profile-form.php">Profile</a>';
                         echo '</li>';
                         if (isset($_SESSION['C_TYPE']) && $_SESSION["C_TYPE"] == 1) {
                             echo '<li><a href="admin-panel.php">Control Panel</a>';
@@ -147,7 +155,7 @@ include("table.php");
                         echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown">
 									Administrator ' . $_SESSION['fname'] . '</a>';
                         echo '<ul class="dropdown-menu">';
-                        echo '<li><a href="profile.php">Profile</a>';
+                        echo '<li><a href="profile-form.php">Profile</a>';
                         echo '</li>';
                         echo '<li><a href="admin-panel.php">Control Panel</a>';
                         echo '</li>';

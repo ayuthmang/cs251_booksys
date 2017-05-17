@@ -52,7 +52,7 @@ class Table
 
     public function printTableBookingPage()
     {
-        if (!$this->isTimeOut()) { //time is greather than 20.00 pm
+        if ($this->isTimeOut()) { //time is greather than 20.00 pm
             $this->printOutOfServiceTable();
             return;
         } else {
@@ -101,7 +101,7 @@ class Table
 
                         case -1:
 
-                          echo "<td class='validation_error'>TIME OUT</td>";
+                          echo "<td class='validation_error text-center'>TIME OUT</td>";
                           break;
 
                         case 0: # Avalible
@@ -140,7 +140,7 @@ class Table
 
     public function printTableConfirmPage()
     {
-        if (!$this->isTimeOut()) { //time is greather than 20.00 pm
+        if ($this->isTimeOut()) { //time is greather than 20.00 pm
             $this->printOutOfServiceTable();
             return;
         } else {
@@ -190,7 +190,7 @@ class Table
 
                         case -1:
 
-                          echo "<td class='validation_error'>TIME OUT</td>";
+                          echo "<td class='validation_error text-center'>TIME OUT</td>";
                           break;
 
                         case 0: # Avalible
@@ -206,13 +206,14 @@ class Table
                           // echo "</div>";
                           // echo '</td>';
                           break;
+
                         case 1: # Waiting for confirmation
                         # btn btn-lg btn-link
 
                         # Seat is mine
                         if($_SESSION['sid'] === $row["stuid_attime$i"]){
                           echo "<td align=''>";
-                          echo "<div class='info'>";
+                          echo "<div class='info' align='center'>";
                           echo "<button type='submit' class='btn btn-lg btn-link' name='selectedseatid' value='" . $row['seatid'] . "|".$i."'>
                                   Confirm seat
                                 </button>

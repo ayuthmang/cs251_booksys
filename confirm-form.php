@@ -119,8 +119,19 @@ include("table.php");
                                    data-toggle="dropdown">Time: </a>
     </li>
 
-    <li class="dropdown active"><a href=# class="dropdown-toggle"
-                                   data-toggle="dropdown">Home</a>
+    <li class="dropdown active">
+        <a href=# class="dropdown-toggle" data-toggle="dropdown">
+            Home
+        </a>
+        <ul class='dropdown-menu'>
+            <li>
+                <a href="booking-form.php">Booking Form</a>
+            </li>
+
+            <li>
+                <a href="confirm-form.php">Confirm Form</a>
+            </li>
+        </ul>
     </li>
 
 
