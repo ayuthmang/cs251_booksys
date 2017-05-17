@@ -58,9 +58,6 @@ include("table.php");
 
 
 
-
-
-
     <title>Confirm a Seat | Booking System</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -139,13 +136,12 @@ include("table.php");
         <li>
 
         <?php
-
                     //print_r ($_SESSION);
                     if (isset($_SESSION['sid']) && $_SESSION['sid'] != '') {
                         echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown">
 									Student ' . $_SESSION['fname'] . '</a>';
                         echo '<ul class="dropdown-menu">';
-                        echo '<li><a href="profile.php">Profile</a>';
+                        echo '<li><a href="profile-form.php">Profile</a>';
                         echo '</li>';
                         if (isset($_SESSION['C_TYPE']) && $_SESSION["C_TYPE"] == 1) {
                             echo '<li><a href="admin-panel.php">Control Panel</a>';
@@ -161,7 +157,7 @@ include("table.php");
                         echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown">
 									Administrator ' . $_SESSION['fname'] . '</a>';
                         echo '<ul class="dropdown-menu">';
-                        echo '<li><a href="profile.php">Profile</a>';
+                        echo '<li><a href="profile-form.php">Profile</a>';
                         echo '</li>';
                         echo '<li><a href="admin-panel.php">Control Panel</a>';
                         echo '</li>';

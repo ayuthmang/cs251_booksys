@@ -78,6 +78,8 @@ session_start();
                     <?php
 
                     if (isset($_SESSION['sid']) && $_SESSION['sid'] != '') {
+
+                        # for print admin toggle drop down
                         echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown">
 									Student ' . $_SESSION['fname'] . '</a>';
                         echo '<ul class="dropdown-menu">';
@@ -90,9 +92,12 @@ session_start();
                         echo '<li><a href="logout.php">Logout</a>';
                         echo '</li>';
 
-
                         echo '</ul>';
+
+
                     } elseif (isset($_SESSION['uid']) && $_SESSION['uid'] != '') {
+
+
                         echo '<a href ="#" class ="dropdown-toggle" data-toggle="dropdown">
 									Administrator ' . $_SESSION['fname'] . '</a>';
                         echo '<ul class="dropdown-menu">';
@@ -103,7 +108,10 @@ session_start();
                         echo '<li><a href="logout.php">Logout</a>';
                         echo '</li>';
                         echo '</ul>';
+
+
                     } else {
+                        
                         echo '<li class="">';
                         echo '<a href =login-form.php >Login</a>';
                         echo '</li>';
