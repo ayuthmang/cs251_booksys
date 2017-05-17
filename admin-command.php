@@ -97,7 +97,7 @@
 			"
 			SELECT DISTINCT serverlog.sid , serverlog.message 
 			FROM student
-			INNER JOIN serverlog ON serverlog.sid = '5809610347'
+			INNER JOIN serverlog ON serverlog.sid = '".$_REQUEST['stuid']."'
 			ORDER BY message ASC 
 			";
 
