@@ -111,7 +111,7 @@ session_start();
 
 
                     } else {
-                        
+
                         echo '<li class="">';
                         echo '<a href =login-form.php >Login</a>';
                         echo '</li>';
@@ -120,7 +120,9 @@ session_start();
                         echo '</li>';
 
                     }
-
+                    echo '<li class="">';
+                    echo '<a href ="help.php" >Help</a>';
+                    echo '</li>';
                     ?>
                 </li>
             </ul>
@@ -142,9 +144,9 @@ session_start();
         </svg>
     </div>
 
+
     <section class="section swatch-black-yellow">
         <div class="container">
-
 
             <b>
                 <?php
@@ -171,7 +173,9 @@ session_start();
             </b>
 
 
+
             <div class="text-center">
+
                 <a class="btn btn-primary btn-lg btn-icon-right pull-center os-animation animated fadeInLeft" data-os-animation="fadeInDown" data-os-animation-delay=".6s" style="animation-delay: 6s;" href="booking-form.php">
                     BOOKING NOW
                     <div class="hex-alt hex-alt-big">
@@ -186,10 +190,19 @@ session_start();
                         <i class="fa fa-check-circle" data-animation="tada"></i>
                     </div>
                 </a>
+
             </div>
 
         </div>
+
+
+
     </section>
+
+
+
+
+
     <footer id="footer" role="contentinfo">
         <section class="section swatch-black-beige has-top">
             <div class="decor-top">
