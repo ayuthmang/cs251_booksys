@@ -9,25 +9,22 @@ class Table
 
           //Every new object table will check if in time then query remove all seat
           /*
-                              8.00 - 9.30 : 8
+            8.00 - 9.30 : 8
 
-                              9.30 - 11.00 : 9
+            9.30 - 11.00 : 9
 
-                              11.00 - 12.30 : 11
+            11.00 - 12.30 : 11
 
-                              12.30 - 13.00 // break time
+            12.30 - 13.00 // break time
 
-                              13.30 - 15.00 :13
+            13.30 - 15.00 :13
 
-                              15.00 - 16.30 :15
+            15.00 - 16.30 :15
 
-                              16.30 - 18.00 : 16
+            16.30 - 18.00 : 16
 
-                              18.00 - 19.30 :18
-                              */
-
-          $hour = $this->getHour();
-          $minute = $this->getMinute();
+            18.00 - 19.30 :18
+          */
   	}
 
 
