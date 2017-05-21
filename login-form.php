@@ -87,6 +87,10 @@
                 <li>
                     <a href="register-form.html" class="dropdown" data>Register</a>
                 </li>
+
+                <li class="">
+                    <a href ="help.php" >Help</a>
+                </li>
             </ul>
         </nav>
     </div>
