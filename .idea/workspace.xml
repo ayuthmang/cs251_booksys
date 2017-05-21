@@ -4,13 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/register-form.html" line="37" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b10c894-ccf4-4e59-8716-76b33590e7a7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/confirm-form.php" afterPath="$PROJECT_DIR$/confirm-form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/help.php" afterPath="$PROJECT_DIR$/help.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profile-form.php" afterPath="$PROJECT_DIR$/profile-form.php" />
-    </list>
+    <list default="true" id="9b10c894-ccf4-4e59-8716-76b33590e7a7" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -132,8 +126,8 @@
       <file leaf-file-name="help.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/help.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="190" column="154" lean-forward="false" selection-start-line="190" selection-start-column="154" selection-end-line="190" selection-end-column="154" />
+            <state relative-caret-position="210">
+              <caret line="193" column="37" lean-forward="true" selection-start-line="193" selection-start-column="37" selection-end-line="193" selection-end-column="37" />
               <folding>
                 <element signature="n#path#0;n#svg#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="e#7618#7637#0#PHP" expanded="true" />
@@ -526,7 +520,7 @@
       <workItem from="1494961454535" duration="633000" />
       <workItem from="1494962831917" duration="108000" />
       <workItem from="1494962980579" duration="948000" />
-      <workItem from="1495393410341" duration="5315000" />
+      <workItem from="1495393410341" duration="5466000" />
     </task>
     <task id="LOCAL-00001" summary="Updated login">
       <created>1491304747318</created>
@@ -609,7 +603,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99493000" />
+    <option name="totallyTimeSpent" value="99644000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -622,7 +616,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21530758" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1042,8 +1035,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/help.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="190" column="154" lean-forward="false" selection-start-line="190" selection-start-column="154" selection-end-line="190" selection-end-column="154" />
+        <state relative-caret-position="210">
+          <caret line="193" column="37" lean-forward="true" selection-start-line="193" selection-start-column="37" selection-end-line="193" selection-end-column="37" />
           <folding>
             <element signature="n#path#0;n#svg#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="e#7618#7637#0#PHP" expanded="true" />

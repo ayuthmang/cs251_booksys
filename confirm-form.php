@@ -39,19 +39,19 @@ include("table.php");
 
     <script type="text/javascript">
         function display_ct() {
-            var strcount
-            var x = new Date()
-            var x1= "Time: " + x.getHours( )+ ":" + x.getMinutes() + ":" + x.getSeconds();
+//             var strcount
+//             var x = new Date()
+//             var x1= "Time: " + x.getHours( )+ ":" + x.getMinutes() + ":" + x.getSeconds();
 
-//            var x1=x.getMonth() + "/" + x.getDate() + "/" + x.getYear();
-//            x1 = x1 + " - " + x.getHours( )+ ":" + x.getMinutes() + ":" + x.getSeconds();
-            document.getElementById('ct').innerHTML = x1;
+// //            var x1=x.getMonth() + "/" + x.getDate() + "/" + x.getYear();
+// //            x1 = x1 + " - " + x.getHours( )+ ":" + x.getMinutes() + ":" + x.getSeconds();
+//             document.getElementById('ct').innerHTML = x1;
 
-            tt=display_c();
+//             tt=display_c();
         }
         function display_c(){
-            var refresh=1000; // Refresh rate in milli seconds
-            mytime=setTimeout('display_ct()',refresh)
+            // var refresh=1000; // Refresh rate in milli seconds
+            // mytime=setTimeout('display_ct()',refresh)
         }
     </script>
 
@@ -112,8 +112,13 @@ include("table.php");
     <ul class="nav navbar-nav navbar-right">
 
 
-    <li class=""><a href=# id="ct" class="dropdown-toggle"
-                                   data-toggle="dropdown">Time: </a>
+    <li class="">
+        <a href=# id="ct" class="dropdown-toggle" data-toggle="dropdown">
+            <?php
+                $time = sprintf("%02d:%02d", table::getHour() , table::getMinute());
+                echo "Time: " . $time;
+            ?>
+        </a>
     </li>
 
     <li class="dropdown active">
