@@ -28,19 +28,19 @@ class Table
   	}
 
 
-    public function getHour()
+    public static function getHour()
     {
         $time = date('G');
         return $time;
     }
 
-    public function getMinute()
+    public static function getMinute()
     {
         $time = date('i');
         return $time;
     }
 
-    public function getSeccond()
+    public static function getSeccond()
     {
         $time = date('s');
         return $time;
