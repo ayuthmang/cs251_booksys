@@ -191,6 +191,13 @@ session_start();
                     </div>
                 </a>
 
+
+                <a class="btn btn-info btn-lg btn-icon-right pull-center os-animation animated fadeInRight" data-os-animation="fadeInDown" data-os-animation-delay="1.2s" style="animation-delay: 1.2s;" href="help.php">
+                    NEED HELP?
+                    <div class="hex-alt hex-alt-big">
+                        <i class="fa fa-book" data-animation="tada"></i>
+                    </div>
+                </a>
             </div>
 
         </div>

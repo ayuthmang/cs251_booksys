@@ -99,6 +99,11 @@ if (empty($_SESSION['fname'])) {
                     }
 
                     ?>
+
+                <li class="">
+                    <a href ="help.php" >Help</a>
+                </li>
+
                 </li>
             </ul>
 

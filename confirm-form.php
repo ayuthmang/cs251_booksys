@@ -176,7 +176,7 @@ include("table.php");
 
                     ?>
                 </li>
-        
+
                 <li class="">
                     <a href ="help.php" >Help</a>
                 </li>

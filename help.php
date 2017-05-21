@@ -188,7 +188,7 @@ session_start();
                 <div class="container">
                     <header class="section-header">
                         <h1 class="headline super hairline hyper os-animation animated" data-os-animation="fadeInDown" data-os-animation-delay=".125s">It's very easy</h1>
-                        <h3 class="hairline headline  os-animation animated" data-os-animation="fadeInDown" data-os-animation-delay=".250s">There are four more steps that you need to follow</h3>
+                        <h3 class="hairline headline  os-animation animated" data-os-animation="fadeInDown" data-os-animation-delay=".250s">There are four steps that you need to follow</h3>
                         <!--                <p class="">There are four more steps that you need to follow</p>-->
                     </header>
                     <div class="row">
