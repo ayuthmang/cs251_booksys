@@ -83,8 +83,28 @@
 
       # if query succeed
       if($result){
+        
+
+        $currentTime = date('Y/m/d - G:i:s');
+        $sql_InsertToLog =
+        "
+        INSERT INTO serverlog (sid, message)
+        VALUES (".$_SESSION['sid'].", '[".$currentTime."] Reserved seat [stuid_attime$selectedSelectedTime , seat.status$selectedSelectedTime] succeed');
+        ";
+
+        // print $sql_InsertToLog;
+        $conn->query($sql_InsertToLog);
         print "Reserve succeed " . ", <a href='booking-form.php'>click here to go back</a><br>";
       }else{
+
+        $currentTime = date('Y/m/d - G:i:s');
+        $sql_InsertToLog =
+        "
+        INSERT INTO serverlog (sid, message)
+        VALUES (".$_SESSION['sid'].", '[".$currentTime."] Reserved seat [stuid_attime$selectedSelectedTime , seat.status$selectedSelectedTime] failed');
+        ";
+        // print $sql_InsertToLog;
+        $conn->query($sql_InsertToLog);
         print "Failed to reserve seat $selectedSeatid " . ", <a href='booking-form.php'>click here to go back</a><br>";
       }
     }

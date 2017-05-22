@@ -70,14 +70,36 @@ WHERE seatid = $selectedSeatid;
         $result = $conn->query($queryConfirmSeat);
 
         if($result){
+
+
+          $currentTime = date('Y/m/d - G:i:s');
+          $sql_InsertToLog =
+          "
+          INSERT INTO serverlog (sid, message)
+          VALUES (".$_SESSION['sid'].", '[".$currentTime."] Confirm seat [stuid_attime$selectedSelectedTime , seat.status$selectedSelectedTime] succeed');
+          ";
+
+          // print $sql_InsertToLog;
+          $conn->query($sql_InsertToLog);
+
           print "Confirmed succeed";
         }else{
+
+          $currentTime = date('Y/m/d - G:i:s');
+          $sql_InsertToLog =
+          "
+          INSERT INTO serverlog (sid, message)
+          VALUES (".$_SESSION['sid'].", '[".$currentTime."] Confirm seat [stuid_attime$selectedSelectedTime , seat.status$selectedSelectedTime] failed');
+          ";
+
+          // print $sql_InsertToLog;
+          $conn->query($sql_InsertToLog);
           print "Confirmed failed ";
         }
 
       }else{
         #this is not your seat
-        print "KY";
+        // print "KY";
 
         // var_dump($_SESSION);
       }
