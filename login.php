@@ -1,7 +1,11 @@
 <?php
     date_default_timezone_set('Asia/Bangkok');
 
-    error_reporting(E_ALL ^ E_NOTICE);
+    error_reporting(E_ALL ^ E_NOTICE );
+
+    error_reporting(E_ERROR | E_PARSE);
+
+    
     ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
     // session_save_path("/tmp");
     session_start();
