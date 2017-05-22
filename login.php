@@ -5,7 +5,7 @@
 
     error_reporting(E_ERROR | E_PARSE);
 
-    
+
     ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
     // session_save_path("/tmp");
     session_start();
@@ -40,7 +40,7 @@
     //SELECT sid , fname , priority FROM student WHERE sid='' AND password='';
     //"SELECT uid , fname FROM admin WHERE uid='$id' AND password='$pass'";
 
-    $loginStudentQuery = "SELECT sid , fname , priority FROM student WHERE sid='$id' AND password='$pass' ";
+    $loginStudentQuery = "SELECT sid , fname FROM student WHERE sid='$id' AND password='$pass' ";
     $loginAdminQuery = "SELECT uid , fname FROM admin WHERE uid='$id' AND password='$pass'";
 
 
