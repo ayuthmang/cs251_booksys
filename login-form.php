@@ -85,7 +85,7 @@
                 </li>
 
                 <li>
-                    <a href="register-form.html" class="dropdown" data>Register</a>
+                    <a href="register-form.php" class="dropdown" data>Register</a>
                 </li>
 
                 <li class="">
