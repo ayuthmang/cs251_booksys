@@ -116,7 +116,7 @@ session_start();
                         echo '<a href =login-form.php >Login</a>';
                         echo '</li>';
                         echo '<li class="">';
-                        echo '<a href =register-form.html>Register</a>';
+                        echo '<a href =register-form.php>Register</a>';
                         echo '</li>';
 
                     }
