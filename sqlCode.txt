@@ -1,3 +1,5 @@
+-- For start our event 
+SET GLOBAL event_scheduler="ON" 
 
 --insert admin account to database
 INSERT INTO `admin`(`uid`, `fname`, `lname`, `password`) VALUES ([uid],[fname],[lname],[password])
